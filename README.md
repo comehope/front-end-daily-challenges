@@ -1,1 +1,1 @@
-# front-end-daily-challenges
+# Front-End Daily Challenges

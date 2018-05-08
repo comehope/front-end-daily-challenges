@@ -1,0 +1,87 @@
+html, body {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	color: silver;
+}
+
+.box {
+	width: 9em;
+	height: 3em;
+	font-size: 30px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 3em;
+	letter-spacing: 0.2em;
+	position: relative;
+	filter: blur(2px);
+	transition: 0.5s;
+}
+
+.box:hover {
+	filter: blur(0.2px);
+}
+
+.box::after {
+	content: '';
+	position: absolute;
+	width: 3em;
+	height: 3em;
+	border: 1px solid red;
+	border-radius: 50%;
+	left: 3em;
+	filter: opacity(0);
+}
+
+.box span:not(:first-child) {
+	position: absolute;
+	background-color: red;
+	filter: opacity(0);
+}
+
+.box span.top,
+.box span.bottom {
+	width: 1px;
+	height: 3em;
+	left: 50%;
+}
+
+.box span.top {
+	top: -3em;
+}
+
+.box span.bottom {
+	bottom: -3em;
+}
+
+.box span.left,
+.box span.right {
+	width: 3em;
+	height: 1px;
+	top: 50%;
+}
+
+.box span.left {
+	left: 0;
+}
+
+.box span.right {
+	right: 0;
+}
+
+.box:hover::after,
+.box:hover span:not(:first-child) {
+	animation: aim 1s linear infinite alternate;
+}
+
+@keyframes aim {
+	from {
+		filter: opacity(0.2);
+	}
+
+	to {
+		filter: opacity(0.8);
+	}
+}

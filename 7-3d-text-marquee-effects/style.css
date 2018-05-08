@@ -1,0 +1,57 @@
+html,
+body {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: navajowhite;
+}
+
+.box {
+	display: flex;
+}
+
+.box .inner {
+	width: 200px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+	background-color: indianred;
+	color: darkred;
+	transform-origin: left;
+	transform: perspective(300px) rotateY(-67.3deg);
+}
+
+.box .inner:last-child {
+	background-color: lightcoral;
+	color: antiquewhite;
+	transform-origin: right;
+	transform: perspective(300px) rotateY(67.3deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+	animation-delay: 2.5s;
+	left: -100%;
+}
+
+@keyframes marquee {
+	from {
+		left: 100%;
+	}
+
+	to {
+		left: -100%;
+	}
+}

@@ -1,0 +1,63 @@
+html,
+body,
+.box .content {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: pink;
+}
+
+.box {
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(
+		-45deg,
+		white 0%,
+		white 25%,
+		hotpink 25%,
+		hotpink 50%,
+		white 50%,
+		white 75%,
+		hotpink 75%,
+		hotpink 100%);
+	background-size: 10%;
+	box-sizing: border-box;
+	padding: 15px;
+	animation: animate 2s linear infinite;
+}
+
+.box .content {
+	background-color: white;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 30px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.box,
+.box .content {
+	box-shadow: 0 0 2px deeppink,
+				0 0 5px rgba(0, 0, 0, 1),
+				inset 0 0 5px rgba(0, 0, 0, 1);
+	border-radius: 10px;
+}
+
+.box .content h2 {
+	color: deeppink;
+}
+
+.box .content p {
+	color: dimgray;
+}
+
+@keyframes animate {
+	from {
+		background-position: 0;
+	}
+
+	to {
+		background-position: 10%;
+	}
+}

@@ -1,0 +1,67 @@
+html,
+body,
+.checkbox,
+.checkbox .inner,
+.checkbox .inner .toggle {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	background-color: darkseagreen;
+}
+
+.checkbox {
+	width: 10em;
+	height: 5em;
+	background: linear-gradient(silver, whitesmoke);
+	border-radius: 2.5em;
+	font-size: 40px;
+}
+
+.checkbox .inner {
+	width: 8em;
+	height: 3.5em;
+	background: linear-gradient(dimgray, silver);
+	border-radius: 2em;
+	box-shadow: inset 0 0 1.5em rgba(0, 0, 0, 0.5);
+}
+
+.checkbox .inner .toggle {
+	width: 3.5em;
+	height: 3.5em;
+	background: linear-gradient(to top, silver, whitesmoke);
+	border-radius: 50%;
+	box-shadow: 0 0.4em 0.6em rgba(0, 0, 0, 0.2);
+	position: relative;
+	left: -30%;
+	transition: 0.5s;
+}
+
+.checkbox .inner .toggle::before {
+	content: 'OFF';
+	position: absolute;
+	width: 80%;
+	height: 80%;
+	background: linear-gradient(silver, whitesmoke);
+	border-radius: 50%;
+	text-align: center;
+	line-height: calc(3.5em * 0.8);
+	font-family: sans-serif;
+	color: gray;
+}
+
+.checkbox .inner.active {
+	background: linear-gradient(green, limegreen);
+}
+
+.checkbox .inner.active .toggle {
+	left: 30%;
+}
+
+.checkbox .inner.active .toggle::before {
+	content: 'ON';
+	color: limegreen;
+}
