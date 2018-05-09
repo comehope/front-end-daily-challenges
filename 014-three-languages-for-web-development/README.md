@@ -2,7 +2,7 @@
 
 See demo on Codepen: https://codepen.io/comehope/pen/deVgRM
 
-Watch interractive video on Scrimba: https://scrimba.com/p/pEgDAM/cb6pkUE
+Watch interactive screencast on Scrimba: https://scrimba.com/p/pEgDAM/cb6pkUE
 
 Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/a/1190000014751037
 
