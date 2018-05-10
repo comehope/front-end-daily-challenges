@@ -1,0 +1,102 @@
+html,
+body,
+.loader {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+.loader {
+	width: 10em;
+	height: 10em;
+	font-size: 28px;
+	position: relative;
+}
+
+.loader span {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(100%, 0%, 0%, 0.3);
+	box-sizing: border-box;
+	border: 0.5em solid;
+	border-color: white rgba(100%, 100%, 100%, 0.2);
+	animation: animate 5s ease-in-out infinite alternate;
+}
+
+.loader span:nth-child(1) {
+	width: calc(20% + 20% * (5 - 1));
+	height: calc(20% + 20% * (5 - 1));
+	animation-delay: calc(0.2s * (5 - 1));
+}
+
+.loader span:nth-child(2) {
+	width: calc(20% + 20% * (5 - 2));
+	height: calc(20% + 20% * (5 - 2));
+	animation-delay: calc(0.2s * (5 - 2));
+}
+
+.loader span:nth-child(3) {
+	width: calc(20% + 20% * (5 - 3));
+	height: calc(20% + 20% * (5 - 3));
+	animation-delay: calc(0.2s * (5 - 3));
+}
+
+.loader span:nth-child(4) {
+	width: calc(20% + 20% * (5 - 4));
+	height: calc(20% + 20% * (5 - 4));
+	animation-delay: calc(0.2s * (5 - 4));
+}
+
+.loader span:nth-child(5) {
+	width: calc(20% + 20% * (5 - 5));
+	height: calc(20% + 20% * (5 - 5));
+	animation-delay: calc(0.2s * (5 - 5));
+}
+
+@keyframes animate {
+	0% {
+		/* red */
+		background-color: rgba(100%, 0%, 0%, 0.3);
+		transform: rotate(0deg);
+	}
+
+	25% {
+		/* yellow */
+		background-color: rgba(100%, 100%, 0%, 0.3);
+	}
+
+	50% {
+		/* green */
+		background-color: rgba(0%, 100%, 0%, 0.3);
+	}
+
+	75% {
+		/* blue */
+		background-color: rgba(0%, 0%, 100%, 0.3);
+	}
+
+	100% {
+		/* purple */
+		background-color: rgba(0%, 0%, 100%, 0.3);
+		transform: rotate(720deg);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
