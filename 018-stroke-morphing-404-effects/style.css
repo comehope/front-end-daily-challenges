@@ -79,6 +79,7 @@ html, body {
 
 .four-zero-four:hover .four span:nth-child(1) {
 	left: 0;
+	top: 20%;
 }
 
 .four-zero-four:hover .four span:nth-child(2) {
