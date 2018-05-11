@@ -9,7 +9,6 @@ html, body {
 .four-zero-four p {
 	width: 10em;
 	height: 10em;
-	/*border: 1px dashed white;*/
 	display: inline-block;
 	margin: 1em;
 	position: relative;
@@ -32,7 +31,7 @@ html, body {
 .four span:nth-child(2) {
 	width: 100%;
 	height: 20%;
-	bottom: 30%;
+	top: 50%;
 	background-color: turquoise;
 }
 
@@ -71,37 +70,37 @@ html, body {
 	background-color: peachpuff;
 }
 
-.four-zero-four p:hover span {
+.four-zero-four:hover p span {
 	border: 1px solid black;
-	background-color: transparent;
+	background-color: whitesmoke;
 	filter: opacity(1);
 	transition: 0.3s;
 }
 
-.four:hover span:nth-child(1) {
+.four-zero-four:hover .four span:nth-child(1) {
 	left: 0;
 }
 
-.four:hover span:nth-child(2) {
-	bottom: 0;
-}
-
-.four:hover span:nth-child(3) {
-	right: 0;
-}
-
-.zero:hover span:nth-child(1) {
-	left: 0;
-}
-
-.zero:hover span:nth-child(2) {
+.four-zero-four:hover .four span:nth-child(2) {
 	top: 0;
 }
 
-.zero:hover span:nth-child(3) {
+.four-zero-four:hover .four span:nth-child(3) {
 	right: 0;
 }
 
-.zero:hover span:nth-child(4) {
+.four-zero-four:hover .zero span:nth-child(1) {
+	left: 0;
+}
+
+.four-zero-four:hover .zero span:nth-child(2) {
+	top: 0;
+}
+
+.four-zero-four:hover .zero span:nth-child(3) {
+	right: 0;
+}
+
+.four-zero-four:hover .zero span:nth-child(4) {
 	bottom: 0;
 }
