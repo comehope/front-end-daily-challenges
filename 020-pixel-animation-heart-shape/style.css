@@ -3,7 +3,7 @@ html, body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(silver, white);
+	background: linear-gradient(lightpink, white);
 }
 
 .heart {
