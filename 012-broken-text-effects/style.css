@@ -24,12 +24,10 @@ html, body {
 }
 
 .text::before {
-	/*background-color: darkgreen;*/
 	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
 }
 
 .text::after {
-	/*background-color: darkblue;*/
 	clip-path: polygon(60% 0, 100% 0, 100% 100%, 30% 100%);
 }
 
@@ -44,4 +42,3 @@ html, body {
 	transform: rotate(5deg);
 	top: 0.05em;
 }
-
