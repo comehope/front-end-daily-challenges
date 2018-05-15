@@ -1,4 +1,4 @@
-# A text sliding effect UI
+# Stripy rainbow text effects
 
 See demo on Codepen: https://codepen.io/comehope/pen/ELpRxj
 
