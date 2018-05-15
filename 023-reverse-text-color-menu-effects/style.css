@@ -1,0 +1,57 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to right bottom, gold, chocolate);
+}
+
+:root {
+	--x: 5em;
+	--y: 1.5em;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	font-size: 40px;
+	font-family: sans-serif;
+	background-color: white;
+	border: 2px solid black;
+	letter-spacing: 0.1em;
+	width: var(--x);
+	height: var(--y);
+	line-height: var(--y);
+	position: relative;
+	overflow: hidden;
+	margin: 0.5em;
+}
+
+nav ul li span {
+	color: white;
+	mix-blend-mode: difference;
+}
+
+nav ul li::before {
+	content: '';
+	position: absolute;
+	height: var(--y);
+	width: var(--y);
+	background-color: black;
+	border-radius: 50%;
+	top: 0;
+	left: calc(-1 * var(--y) / 2);
+	transition: 0.5s ease-out;
+}
+
+nav ul li:hover::before {
+	--d: calc(var(--x) * 1.2);
+	height: var(--d);
+	width: var(--d);
+	top: calc(-1 * var(--d) / 2 + var(--y) / 2);
+	left: calc(-1 * var(--d) / 2 + var(--x) / 2);
+}
