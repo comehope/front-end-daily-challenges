@@ -1,0 +1,77 @@
+html,
+body,
+.loader {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.loader .face {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    border-top-color: var(--color);
+    border-left-color: var(--color);
+    animation: animate 3s linear infinite;
+}
+
+.loader .face:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    --color: gold;
+    --deg: 0deg;
+}
+
+.loader .face:nth-child(2) {
+    width: 70%;
+    height: 70%;
+    --color: lime;
+    --deg: 180deg;
+    animation-direction: reverse;
+}
+
+.loader .face .circle {
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform: rotate(calc(var(--deg) - 45deg));
+    transform-origin: left;
+}
+
+.loader .face .circle::before {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--color);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--color),
+                0 0 40px var(--color),
+                0 0 60px var(--color),
+                0 0 80px var(--color),
+                0 0 100px var(--color),
+                0 0 0 5px rgba(255, 255, 0, 0.1);
+}
+
+@keyframes animate {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
