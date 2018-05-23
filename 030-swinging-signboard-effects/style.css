@@ -12,6 +12,7 @@ html, body {
 	height: 300px;
 	position: relative;
 	animation: swinging 1.5s ease-in-out infinite alternate;
+	transform-origin: 200px 13px;
 }
 
 .sign {
@@ -72,10 +73,10 @@ html, body {
 
 @keyframes swinging {
 	from {
-		transform: rotate(10deg) translateX(-22px);
+		transform: rotate(10deg);
 	}
 
 	to {
-		transform: rotate(-10deg) translateX(22px);
+		transform: rotate(-10deg);
 	}
 }
