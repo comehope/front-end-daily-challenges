@@ -21,37 +21,30 @@ body,
 	box-sizing: border-box;
 	border: 0.5em solid;
 	border-color: white rgba(100%, 100%, 100%, 0.2);
+	width: calc(20% + 20% * (5 - var(--n)));
+	height: calc(20% + 20% * (5 - var(--n)));
 	animation: animate 5s ease-in-out infinite alternate;
+	animation-delay: calc(0.2s * (5 - var(--n)));
 }
 
 .loader span:nth-child(1) {
-	width: calc(20% + 20% * (5 - 1));
-	height: calc(20% + 20% * (5 - 1));
-	animation-delay: calc(0.2s * (5 - 1));
+	--n: 1;
 }
 
 .loader span:nth-child(2) {
-	width: calc(20% + 20% * (5 - 2));
-	height: calc(20% + 20% * (5 - 2));
-	animation-delay: calc(0.2s * (5 - 2));
+	--n: 2;
 }
 
 .loader span:nth-child(3) {
-	width: calc(20% + 20% * (5 - 3));
-	height: calc(20% + 20% * (5 - 3));
-	animation-delay: calc(0.2s * (5 - 3));
+	--n: 3;
 }
 
 .loader span:nth-child(4) {
-	width: calc(20% + 20% * (5 - 4));
-	height: calc(20% + 20% * (5 - 4));
-	animation-delay: calc(0.2s * (5 - 4));
+	--n: 4;
 }
 
 .loader span:nth-child(5) {
-	width: calc(20% + 20% * (5 - 5));
-	height: calc(20% + 20% * (5 - 5));
-	animation-delay: calc(0.2s * (5 - 5));
+	--n: 5;
 }
 
 @keyframes animate {
