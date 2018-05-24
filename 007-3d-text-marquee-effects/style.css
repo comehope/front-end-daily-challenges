@@ -12,10 +12,10 @@ body {
 }
 
 .box .inner {
-	width: 200px;
-	height: 100px;
-	line-height: 100px;
-	font-size: 2em;
+	width: 400px;
+	height: 200px;
+	line-height: 200px;
+	font-size: 4em;
 	font-family: sans-serif;
 	font-weight: bold;
 	white-space: nowrap;
@@ -25,15 +25,15 @@ body {
 .box .inner:first-child {
 	background-color: indianred;
 	color: darkred;
-	transform-origin: left;
-	transform: perspective(300px) rotateY(-67.3deg);
+	transform-origin: right;
+	transform: perspective(100px) rotateY(-15deg);
 }
 
 .box .inner:last-child {
 	background-color: lightcoral;
 	color: antiquewhite;
-	transform-origin: right;
-	transform: perspective(300px) rotateY(67.3deg);
+	transform-origin: left;
+	transform: perspective(100px) rotateY(15deg);
 }
 
 .box .inner span {
