@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(white, silver);
+}
+
+nav {
+	--h: 3em;
+}
+
+nav:nth-child(1) {
+    --rate: 1.5;
+    --bgcolor: black;
+}
+
+nav:nth-child(2) {
+    --rate: 1.732;
+    --bgcolor: brown;
+}
+
+nav:nth-child(3) {
+    --rate: 2;
+    --bgcolor: green;
+}
+
+nav ul {
+	padding: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	width: calc(var(--h) * var(--rate));
+	height: var(--h);
+	background-color: var(--bgcolor);
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: var(--h);
+	position: relative;
+	margin: 2em;
+}
+
+nav ul li::before,
+nav ul li::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	background-color: var(--bgcolor);
+	z-index: -1;
+	filter: opacity(0);
+	transition: 0.3s;
+}
+
+nav ul li::before{
+	transform: rotate(60deg) translateX(calc(var(--h) * -2));
+}
+
+nav ul li::after{
+	transform: rotate(-60deg) translateX(calc(var(--h) * 2));
+}
+
+nav ul li:hover::before {
+	filter: opacity(1);
+	transform: rotate(60deg) translateX(0);
+}
+
+nav ul li:hover::after {
+	filter: opacity(1);
+	transform: rotate(-60deg) translateX(0);
+}
