@@ -63,6 +63,7 @@ nav ul li::before{
 
 nav ul li::after{
 	transform: rotate(-60deg) translateX(calc(var(--h) * 2));
+	transition-delay: 0.1s;
 }
 
 nav ul li:hover::before {
