@@ -4,7 +4,7 @@ html, body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(to top left, white, dimgray);
+	background: linear-gradient(to bottom left, white, dimgray);
 	font-size: 12px;
 }
 
