@@ -1,0 +1,78 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at center, navy, black);
+}
+
+.heart {
+	width: 14em;
+	height: 11em;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.heart span {
+	width: 1em;
+	height: var(--h);
+	background-color: var(--c);
+	border-radius: 0.5em;
+	position: relative;
+	top: var(--t);
+	animation: beating 5s infinite;
+}
+
+.heart span:nth-child(1),
+.heart span:nth-child(9) {
+	--c: orangered;
+	--h: 3em;
+	--t: 2.2em;
+}
+
+.heart span:nth-child(2),
+.heart span:nth-child(8) {
+	--c: gold;
+	--h: 6em;
+	--t: 0.6em;
+}
+
+.heart span:nth-child(3),
+.heart span:nth-child(7) {
+	--c: limegreen;
+	--h: 8em;
+	--t: 0;
+}
+
+.heart span:nth-child(4),
+.heart span:nth-child(6) {
+	--c: dodgerblue;
+	--h: 9em;
+	--t: 0.8em;
+}
+
+.heart span:nth-child(5) {
+	--c: mediumpurple;
+	--h: 9.4em;
+	--t: 1.6em;
+}
+
+@keyframes beating {
+	0%, 30% {
+		top: var(--t);
+		height: var(--h);
+		background-color: var(--c);
+		filter: blur(0);
+		width: 1em;
+	}
+
+	60%, 70% {
+		top: 25%;
+		height: 50%;
+		background-color: lightblue;
+		filter: blur(5px);
+		width: 0.1em;
+	}
+}
