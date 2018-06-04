@@ -17,7 +17,7 @@ body {
 .equalizer span {
 	width: 1.5em;
 	background: linear-gradient(red, yellow, green);
-	animation: up-and-down 2s linear infinite calc(-1 * 0.4s * (var(--n) - 1));
+	animation: up-and-down 2s linear infinite calc(-1 * 0.4s * var(--n));
 }
 
 .equalizer span:nth-child(1) {
