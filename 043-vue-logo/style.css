@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at center,lightgreen, white);
+}
+
+:root {
+	--outer-w: 49em;
+	--outer-h: 40em;
+	--middle-w: 32em;
+	--middle-h: 26em;
+	--inner-w: 16em;
+	--inner-h: 13em;
+}
+
+.vue {
+	width: var(--outer-w);
+	height: var(--outer-h);
+	font-size: 8px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+/* brand colors from https://brandcolors.net/b/vue-js */
+.vue .outer,
+.vue .middle,
+.vue .inner {
+	position: absolute;
+	border-style: solid;
+	border-color: transparent;
+	border-top-width: var(--h);
+	border-top-color: var(--c);
+	border-left-width: calc(var(--w) / 2);
+	border-right-width: calc(var(--w) / 2);
+	animation: in-and-out 3s linear infinite;
+}
+
+.vue .outer {
+	--h: var(--outer-h);
+	--w: var(--outer-w);
+	--c: #42b883; /* aragon green */
+}
+
+.vue .middle {
+	--h: var(--middle-h);
+	--w: var(--middle-w);
+	--c: #35495e; /* derk denim */
+	animation-delay: 0.1s;
+}
+
+.vue .inner {
+	--h: var(--inner-h);
+	--w: var(--inner-w);
+	--c: white;
+	animation-delay: 0.2s;
+}
+
+@keyframes in-and-out {
+	0%, 5% {
+		top: -100%;
+	}
+
+	15%, 80% {
+		top: 0;
+		filter: opacity(1);
+		transform: scale(1);
+	}
+
+	90%, 100% {
+		top: 100%;
+		filter: opacity(0);
+		transform: scale(0);
+	}
+}
