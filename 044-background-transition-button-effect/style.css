@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to right bottom, dimgray, black);
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+	border: 2px solid transparent;
+	border-left-color: silver;
+	padding-left: 2em;
+	transition: 500ms;
+	margin: 1em 0;
+	text-align: center;
+}
+
+li:hover {
+	border-left-color: white;
+}
+
+li span {
+	color: white;
+	font-size: 30px;
+	font-family: monospace;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	position: relative;
+	transition: 500ms;
+}
+
+li:hover span {
+	color: #333;
+	transition-delay: calc(80ms * var(--n) + 10ms);
+}
+
+li span::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 0%;
+	z-index: -1;
+	transition: 500ms;
+}
+
+li:hover span::before {
+	width: 70%;
+	background-color: white;
+	transform: rotate(-25deg);
+	transition-delay: calc(80ms * var(--n));
+}
+
+li span:nth-child(1) {
+	--n: 1;
+}
+
+li span:nth-child(2) {
+	--n: 2;
+}
+
+li span:nth-child(3) {
+	--n: 3;
+}
+
+li span:nth-child(4) {
+	--n: 4;
+}
+
+li span:nth-child(5) {
+	--n: 5;
+}
+
+li span:nth-child(6) {
+	--n: 6;
+}	
+
+li span:nth-child(7) {
+	--n: 7;
+}
+
+li span:nth-child(8) {
+	--n: 8;
+}
