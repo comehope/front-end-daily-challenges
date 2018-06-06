@@ -53,7 +53,7 @@ body {
 }
 
 @keyframes blinking {
-	0%, 100% {
+	0%, 20%, 100% {
 		transform: scale(0);
 	}
 
