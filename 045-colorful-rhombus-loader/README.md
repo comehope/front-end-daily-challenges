@@ -1,0 +1,7 @@
+# Colorful rhombus loader
+
+See demo on Codepen: https://codepen.io/comehope/pen/eKzjqK
+
+Watch interractive video on Scrimba: https://scrimba.com/p/pEgDAM/c8eyJUE
+
+Read annotated source on Segmentfault(zh-cn): 

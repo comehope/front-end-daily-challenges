@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+.loader {
+	width: 10em;
+	height: 10em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 0.5em;
+	transform: rotate(45deg);
+}
+
+.loader span {
+	background-color: var(--c);
+	animation: blinking 2s linear infinite;
+	animation-delay: var(--d);
+	transform: scale(0);
+}
+
+.loader span:nth-child(7) {
+	--c: tomato;
+	--d: 0s;
+}
+
+.loader span:nth-child(4),
+.loader span:nth-child(8) {
+	--c: gold;
+	--d: 0.2s;
+}
+
+.loader span:nth-child(1),
+.loader span:nth-child(5),
+.loader span:nth-child(9) {
+	--c: limegreen;
+	--d: 0.4s;
+}
+
+.loader span:nth-child(2),
+.loader span:nth-child(6) {
+	--c: gold;
+	--d: 0.6s;
+}
+
+.loader span:nth-child(3) {
+	--c: tomato;
+	--d: 0.8s;
+}
+
+@keyframes blinking {
+	0%, 100% {
+		transform: scale(0);
+	}
+
+	40%, 80% {
+		transform: scale(1);
+	}
+}
