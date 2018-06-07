@@ -3,7 +3,7 @@ html, body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(gray, silver);
+	background: linear-gradient(dimgray, black);
 }
 
 .four-zero-four p {
