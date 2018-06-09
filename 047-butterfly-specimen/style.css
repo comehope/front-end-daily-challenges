@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(gray, lightyellow, gray);
+}
+
+.butterfly {
+	position: relative;
+	width: 10em;
+	height: 10em;
+	font-size: 10px;
+	transform: translateX(1em);
+}
+
+.butterfly::before,
+.butterfly::after {
+	content: '';
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.butterfly::before {
+	width: 24em;
+	height: 18em;
+	background-color: black;
+	top: -2.5em;
+	left: -8em;
+  	border: inset 0.2em silver;
+}
+
+.butterfly::after {
+    width: 40em;
+    height: 30em;
+    background-color: lightyellow;
+    top: -9em;
+    left: -16em;
+    border: 2em solid burlywood;
+    border-radius: 3em;
+    box-shadow: 
+    	0 0.3em 2em 0.4em rgba(0, 0, 0, 0.3),
+    	inset 0.4em 0.4em 0.1em 0.5em rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.butterfly .left,
+.butterfly .right {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+}
+
+.butterfly .right {
+	transform: rotateY(180deg) rotate(-90deg);
+	top: 0.4em;
+	left: 0.4em;
+}
+
+.butterfly span {
+	position: absolute;
+	border-radius: 50%;
+}
+
+/* upper wing */
+.butterfly span:nth-child(1) {
+	width: 5em;
+	height: 7em;
+	background-color: gold;
+}
+
+/* lower wing */
+.butterfly span:nth-child(2) {
+	width: 5.5em;
+	height: 3.5em;
+	background-color: orangered;
+	filter: opacity(0.6);
+	top: 5em;
+	left: -2.5em;
+}
+
+/* antenna */
+.butterfly span:nth-child(3) {
+	width: 6em;
+	height: 6em;
+	border-right: 0.3em solid orangered;
+	top: -0.5em;
+}
