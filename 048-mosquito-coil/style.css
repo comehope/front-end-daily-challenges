@@ -1,0 +1,99 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at center, midnightblue, black);
+}
+
+.coil {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.coil::before,
+.coil::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  top: -0.5em;
+}
+
+.coil::before {
+  left: -9.5em;
+  background: darkred;
+  box-shadow: 0 0 1em white;
+  transform: scale(0.9);
+  animation: blink 1.5s ease-in-out infinite alternate;
+}
+
+.coil::after {
+  left: -1.5em;
+  background: darkgreen;
+}
+
+.coil span {
+	position: absolute;
+	width: calc((var(--n) * 2 - 1) * 1em); /* width = 2n - 1 */
+	height: calc(var(--n) * 1em - 0.5em); /* height = n - 0.5 */
+	border: 1em solid darkgreen;
+}
+
+.coil span:nth-child(odd) {
+	align-self: flex-end;
+	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	border-bottom: none;
+}
+
+.coil span:nth-child(even) {
+	align-self: flex-start;
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	border-top: none;
+	transform: translateX(-1em);
+}
+
+.coil span:nth-child(1) {
+	--n: 1;
+}
+
+.coil span:nth-child(2) {
+	--n: 2;
+}
+
+.coil span:nth-child(3) {
+	--n: 3;
+}
+
+.coil span:nth-child(4) {
+	--n: 4;
+}
+
+.coil span:nth-child(5) {
+	--n: 5;
+}
+
+.coil span:nth-child(6) {
+	--n: 6;
+}
+
+.coil span:nth-child(7) {
+	--n: 7;
+}
+
+.coil span:nth-child(8) {
+	--n: 8;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 0 white;
+  }
+
+  100% {
+    box-shadow: 0 0 1em 0.01em white;
+  }
+}
