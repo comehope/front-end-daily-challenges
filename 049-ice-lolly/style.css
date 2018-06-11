@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: darkslategray;
+}
+
+.ice-lolly {
+	font-size: 10px;
+}
+
+.flavors {
+	width: 19em;
+	height: 26em;
+	border-radius: 8em 8em 1em 1em;
+	position: relative;
+	overflow: hidden;
+}
+
+.flavors::before {
+	content: '';
+	position: absolute;
+	width: 140%;
+	height: 120%;
+	background: linear-gradient(
+		hotpink 0%,
+		hotpink 25%,
+		deepskyblue 25%,
+		deepskyblue 50%,
+		gold 50%,
+		gold 75%,
+		lightgreen 75%,
+		lightgreen 100%);
+	z-index: -1;
+	left: -20%;
+	transform: rotate(-25deg);
+	animation: moving 100s linear infinite;
+	animation-play-state: paused;
+}
+
+.ice-lolly:hover .flavors::before {
+	animation-play-state: running;
+}
+
+@keyframes moving {
+	to {
+		background-position: 0 1000vh;
+	}
+}
+
+.flavors::after {
+	content: '';
+	position: absolute;
+	width: 2em;
+	height: 17em;
+	background-color: rgba(255, 255, 255, 0.5);
+	left: 2em;
+	bottom: 2em;
+	border-radius: 1em;
+}
+
+.stick {
+	position: relative;
+	width: 6em;
+	height: 10em;
+	background-color: sandybrown;
+	left: calc(50% - 6em / 2);
+	border-radius: 0 0 3em 3em;
+}
+
+.stick::after {
+	content: '';
+	position: absolute;
+	width: inherit;
+	height: 3em;
+	background-color: sienna;
+}
