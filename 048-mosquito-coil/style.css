@@ -11,35 +11,38 @@ body {
 	position: relative;
 	display: flex;
 	justify-content: center;
+	transform: translateX(1em);
 }
 
 .coil::before,
 .coil::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  width: 1em;
-  height: 1em;
-  top: -0.5em;
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	width: 1em;
+	height: 1em;
+	top: -0.5em;
 }
 
 .coil::before {
-  left: -9.5em;
-  background: darkred;
-  box-shadow: 0 0 1em white;
-  transform: scale(0.9);
-  animation: blink 1.5s ease-in-out infinite alternate;
+	left: -1.5em;
+	background: darkgreen;
 }
 
 .coil::after {
-  left: -1.5em;
-  background: darkgreen;
+	left: -9.5em;
+	background: darkred;
+	box-shadow: 0 0 1em white;
+	transform: scale(0.9);
+	box-shadow: 0 0 1em white;
+	animation: blink 1.5s ease-in-out infinite alternate;
+	z-index: -1;
 }
 
 .coil span {
 	position: absolute;
 	width: calc((var(--n) * 2 - 1) * 1em); /* width = 2n - 1 */
-	height: calc(var(--n) * 1em - 0.5em); /* height = n - 0.5 */
+	height: calc((var(--n) - 0.5) * 1em); /* height = n - 0.5 */
 	border: 1em solid darkgreen;
 }
 
@@ -50,7 +53,6 @@ body {
 }
 
 .coil span:nth-child(even) {
-	align-self: flex-start;
 	border-radius: 0 0 50% 50% / 0 0 100% 100%;
 	border-top: none;
 	transform: translateX(-1em);
@@ -89,11 +91,7 @@ body {
 }
 
 @keyframes blink {
-  0% {
-    box-shadow: 0 0 0 white;
-  }
-
-  100% {
-    box-shadow: 0 0 1em 0.01em white;
-  }
+	to {
+		box-shadow: 0 0 0 white;
+	}
 }
