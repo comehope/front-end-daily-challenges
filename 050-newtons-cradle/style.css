@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+}
+
+.loader {
+    position: absolute;
+    display: flex;
+    font-size: 10px;
+    justify-content: space-between;
+    width: 12em;
+    border-color: black;
+    border-style: solid;
+    padding: 0 4em 2em 4em;
+    border-width: 0.4em 0.1em 4em 0.1em;
+}
+
+.loader span {
+    position: relative;
+    background-color: black;
+    width: 0.2em;
+    height: 10em;
+    transform-origin: top;
+}
+
+.loader span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    left: -1.5em;
+}
+
+.loader span:first-child {
+    animation: moving-up 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) infinite alternate;
+    --direction: 1;
+}
+
+.loader span:last-child {
+    animation: moving-up 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) infinite alternate-reverse;
+    --direction: -1;
+}
+
+@keyframes moving-up {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(calc(45deg * var(--direction)));
+    }
+}
