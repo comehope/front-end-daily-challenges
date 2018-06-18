@@ -1,0 +1,55 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.code {
+	background-color: silver;
+	padding: 1em 0;
+	font-size: 24px;
+	font-family: monospace;
+	border-radius: 0.5em;
+}
+
+.code p {
+	white-space: pre;
+	padding: 0 1em;
+	margin: 0.5em;
+}
+
+.code p:not(:last-child) {
+	animation: step 2s infinite;
+	animation-delay: var(--d);
+}
+
+.code p:nth-child(2) {
+	--d: 0s;
+}
+
+.code p:nth-child(3) {
+	--d: 0.5s;
+}
+
+.code p:nth-child(4) {
+	--d: 1s;
+}
+
+.code p:nth-child(1),
+.code p:nth-child(5) {
+	--d: 1.5s;
+}
+
+@keyframes step {
+	0%, 25% {
+		color: white;
+		background-color: dodgerblue;
+	}
+
+	26%, 100% {
+		color: black;
+		background-color: transparent;
+	}
+}
