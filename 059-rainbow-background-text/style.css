@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+p {
+	font-size: 20vw;
+	margin: 0;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-image: linear-gradient(
+		to right,
+		orangered,
+		orange,
+		gold,
+		lightgreen,
+		cyan,
+		dodgerblue,
+		mediumpurple,
+		hotpink,
+		orangered);
+	background-size: 110vw;
+	animation: sliding 30s linear infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@keyframes sliding {
+	to {
+		background-position: -2000vw;
+	}
+}
