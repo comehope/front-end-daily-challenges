@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(circle at center, white, skyblue);
+}
+
+.brick {
+	width: 40em;
+	height: 30em;
+	font-size: 10px;
+	position: relative;
+}
+
+.sides > * {
+	position: absolute;
+	background-color: #237fbd;
+}
+
+.sides .front {
+	width: 9em;
+	height: 6.8em;
+	top: 19em;
+	left: 7em;
+	transform-origin: right;
+	transform: skewY(30deg);
+}
+
+.sides .right {
+	width: 18em;
+	height: 6.8em;
+	filter: brightness(0.8);
+	top: 19em;
+	left: calc(7em + 9em);
+	transform-origin: left;
+	transform: skewY(-30deg);
+}
+
+.sides .top {
+	width: 18em;
+	height: 10.4em;
+	filter: brightness(1.2);
+	top: calc(19em - 10.4em);
+	left: calc(7em + 9em);
+	transform-origin: left bottom;
+	transform: rotate(-60deg) skewY(30deg);
+}
+
+.studs span {
+	position: absolute;
+	width: 3.6em;
+	height: 3em;
+	background-color: #237fbd;
+	border-radius: 1.8em / 1em;
+}
+
+.studs span:nth-child(odd) {
+	top: calc(4.6em + (var(--n) - 1) / 2 * 2.6em);
+	left: calc(23.3em - (var(--n) - 1) / 2 * 4.6em);
+}
+
+.studs span:nth-child(even) {
+	top: calc(6.9em + (var(--n) - 2) / 2 * 2.6em);
+	left: calc(27.9em - (var(--n) - 2) / 2 * 4.6em);
+}
+
+.studs span::before {
+	content: '';
+	position: absolute;
+	width: inherit;
+	height: 2em;
+	background-color: #4cb7ff;
+	border-radius: 50%;
+}
+
+.studs span:nth-child(1) {
+	--n: 1;
+}
+
+.studs span:nth-child(3) {
+	--n: 3;
+}
+
+.studs span:nth-child(5) {
+	--n: 5;
+}
+
+.studs span:nth-child(7) {
+	--n: 7;
+}
+
+.studs span:nth-child(2) {
+	--n: 2;
+}
+
+.studs span:nth-child(4) {
+	--n: 4;
+}
+
+.studs span:nth-child(6) {
+	--n: 6;
+}
+
+.studs span:nth-child(8) {
+	--n: 8;
+}
