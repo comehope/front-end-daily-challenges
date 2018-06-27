@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to right bottom, moccasin, teal);
+}
+
+.toaster {
+	width: 30em;
+	height: 30em;
+	background-color: snow;
+	font-size: 10px;
+	position: relative;
+	z-index: 1;
+	border-radius: 50%;
+}
+
+.body {
+	width: 16em;
+	height: 14em;
+	background-color: seagreen;
+	position: absolute;
+	top: 10em;
+	left: 6em;
+	border-radius: 2.5em;
+	border-right: 1.5em solid darkgreen;
+}
+
+.body::before,
+.body::after {
+	content: '';
+	position: absolute;
+	width: 5em;
+	height: 5em;
+	border: 0.6em solid transparent;
+	border-radius: 50%;
+	border-left-color: white;
+}
+
+.body::before {
+	transform: rotate(40deg);
+	top: 1em;
+	left: 1em;
+}
+
+.body::after {
+	bottom: 1em;
+	right: 1em;
+	transform: rotate(210deg);
+}
+
+.button {
+	width: 2.5em;
+	height: 2.5em;
+	background-color: tomato;
+	position: absolute;
+	top: 13em;
+	left: 16em;
+	border-radius: 50%;
+}
+
+.legs::before,
+.legs::after {
+	content: '';
+	position: absolute;
+	width: 1.5em;
+	height: 2em;
+	background: tomato;
+	top: 24em;
+}
+
+.legs::before {
+	left: 9em;
+}
+
+.legs::after {
+	right: 10em;
+}
+
+.handle {
+	width: 4.2em;
+	height: 1.8em;
+	background-color: tomato;
+	position: absolute;
+	top: 12em;
+	right: 2.4em;
+	border-radius: 0 0.6em 0.6em 0;
+	animation: bake 3s infinite alternate;
+}
+
+.toast {
+	width: 9em;
+	height: 6em;
+	background-color: gold;
+	position: absolute;
+	top: 4em;
+	left: 10em;
+	border-radius: 2em 2em 0 0;
+	border-right: 0.6em solid goldenrod;
+	z-index: -1;
+	animation: bake 3s infinite alternate;
+}
+
+@keyframes bake {
+	0%, 20% {
+		transform: translateY(0);
+	}
+
+	80%, 100% {
+		transform: translateY(6em);
+	}
+}
