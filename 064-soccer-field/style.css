@@ -1,0 +1,119 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(sandybrown, maroon);
+}
+
+.container {
+	width: 120em;
+	height: 80em;
+	background-color: green;
+	font-size: 5px;
+	padding: 5em;
+	--line: 0.3em solid white;
+}
+
+.container span {
+	display: block;
+}
+
+.field {
+	width: inherit;
+	height: inherit;
+	border: var(--line);
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.halfway-line {
+	width: calc(120em / 2);
+	height: 80em;
+	border-right: var(--line);
+}
+
+.centre-circle,
+.penalty-arc {
+	width: 20em;
+	height: 20em;
+	border: var(--line);
+	border-radius: 50%;
+	position: absolute;
+	top: calc((80em - 20em) / 2);
+}
+
+.centre-circle {
+	left: calc((120em - 20em - 0.3em) / 2);
+}
+
+.centre-mark,
+.penalty-mark {
+	width: 2em;
+	height: 2em;
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: calc(80em / 2 - 1em);
+}
+
+.centre-mark {
+	left: calc(120em / 2 - 1em + 0.3em / 2);
+}
+
+.penalty-area {
+	width: 18em;
+	height: 44em;
+	border: var(--line);
+	position: absolute;
+	top: calc((80em - 44em) / 2);
+	left: -0.3em;
+	background-color: green;
+}
+
+.penalty-mark {
+	left: calc(12em - 2em / 2);
+}
+
+.penalty-arc {
+	left: calc(12em - 20em / 2);
+	z-index: -1;
+}
+
+.goal-area {
+	width: 6em;
+	height: 20em;
+	border: var(--line);
+	position: absolute;
+	top: calc((80em - 20em) / 2);
+	left: -0.3em;
+}
+
+.corner-arc::before,
+.corner-arc::after {
+	content: '';
+	position: absolute;
+	width: 5em;
+	height: 5em;
+	border: 0.3em solid white;
+	border-radius: 50%;
+	--offset: calc(-5em / 2 - 0.3em);
+	left: var(--offset);
+}
+
+.corner-arc::before {
+	top: var(--offset);
+}
+
+.corner-arc::after {
+	bottom: var(--offset);
+}
+
+.right {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: rotateY(180deg);
+}
