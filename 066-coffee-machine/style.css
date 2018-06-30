@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right bottom, sandybrown, darkred);
+}
+
+.coffee-machine {
+    width: 15em;
+    height: 15em;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 2em solid white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.coffee-machine::before,
+.coffee-machine::after {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    border: 0.3em solid transparent;
+    z-index: 2;
+    border-radius: 50%;
+    border-left-color: white;
+    left: 3.8em;
+}
+
+.coffee-machine::before {
+    top: 1.8em;
+    transform: rotate(40deg);
+}
+
+.coffee-machine::after {
+    bottom: 1.8em;
+    transform: rotate(-40deg);
+}
+
+.body {
+    position: absolute;
+    width: 8em;
+    height: 12em;
+    background-color: sandybrown;
+    border-radius: 1.2em;
+    top: 1.5em;
+    border-right: 0.6em solid peru;
+}
+
+.body::after {
+    content: '';
+    position: absolute;
+    width: 8em;
+    height: 8em;
+    background-color: darkslategray;
+    top: 2em;
+    border-right: 0.6em solid black;
+}
+
+.spout {
+    position: absolute;
+    width: 3em;
+    height: 1em;
+    background-color: white;
+    top: 3.5em;
+    border-radius: 0.5em;
+    border-right: 0.5em solid silver;
+}
+
+.cup {
+    position: absolute;
+    width: 3em;
+    height: 2em;
+    background-color: white;
+    bottom: 3.5em;
+    border-radius: 0 0 1.4em 1.4em;
+    border-right: 0.5em solid silver;
+}
+
+.cup::after {
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    border: 0.3em solid silver;
+    border-radius: 50%;
+    right: -1.2em;
+    top: 0.2em;
+}
+
+.button {
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: tomato;
+    border-radius: 50%;
+    bottom: 2em;
+    right: 4.5em;
+}
+
+.coffee::before,
+.coffee::after {
+    content: '';
+    position: absolute;
+    width: 0.7em;
+    height: 5em;
+    background-color: chocolate;
+    top: 4.5em;
+    left: calc((15em - 0.7em) / 2);
+    animation: 2s linear infinite;
+}
+
+.coffee::before {
+    animation-name: pouring-before;
+    transform-origin: top;
+}
+
+.coffee::after {
+    animation-name: pouring-after;
+    transform-origin: bottom;
+}
+
+@keyframes pouring-before {
+    0%, 20% {
+        transform: scaleY(0);
+    }
+
+    30%, 100% {
+        transform: scaleY(1);
+    }
+
+    70%, 100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes pouring-after {
+    0%, 70% {
+        visibility: hidden;
+        transform: scaleY(1);
+    }
+
+    80%, 100% {
+        transform: scaleY(0);
+    }
+}
