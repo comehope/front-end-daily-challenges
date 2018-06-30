@@ -68,21 +68,13 @@ body {
 
 .pot .handle {
 	width: 17em;
-	height: 1.4em;
-	background-color: black;
+	height: 10em;
 	position: absolute;
 	top: 2.4em;
 	left: 2.6em;
-	border-radius: 1.4em;
-}
-
-.pot .handle::before {
-	content: '';
-	position: absolute;
-	width: 1.4em;
-	height: 10em;
-	background-color: black;
-	left: calc(17em - 1.4em);
+	border: 1.4em solid transparent;
+	border-top-color: black;
+	border-right-color: black;
 	border-radius: 1.4em;
 }
 
