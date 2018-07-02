@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+}
+
+.cards,
+.cards > * {
+    box-sizing: border-box;
+}
+
+.cards {
+    width: 20em;
+    height: 20em;
+    position: relative;
+}
+
+.cards span {
+    position: absolute;
+    width: 10em;
+    height: 3em;
+    background-color: hsl(calc(360deg / 8 * var(--n)), 80%, 70%);
+    top: calc(50% - 3em / 2);
+    border: 0.2em solid dimgray;
+    border-radius: 0.3em 0.8em 0.8em 0.3em;
+    transform-origin: right;
+    animation: rotating 3s linear infinite;
+    animation-delay: calc((var(--n) - 8) * 0.15s);
+}
+
+@keyframes rotating {
+    0%, 35% {
+        transform: rotate(0deg);
+    }
+
+    90%, 100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cards span::before {
+    content: '';
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    background-color: white;
+    right: 0;
+    border-radius: 0 0.6em 0.6em 0;
+    border-left: 0.2em solid silver;
+}
+
+.cards span::after {
+    content: '';
+    position: absolute;
+    width: 0.4em;
+    height: 2em;
+    background-color: silver;
+    left: 6.5em;
+    top: 0.1em;
+    box-shadow: 0.7em 0 0 -0.1em silver;
+}
+
+.cards span:nth-child(1) {
+    --n: 1;
+}
+
+.cards span:nth-child(2) {
+    --n: 2;
+}
+
+.cards span:nth-child(3) {
+    --n: 3;
+}
+
+.cards span:nth-child(4) {
+    --n: 4;
+}
+
+.cards span:nth-child(5) {
+    --n: 5;
+}
+
+.cards span:nth-child(6) {
+    --n: 6;
+}
+
+.cards span:nth-child(7) {
+    --n: 7;
+}
+
+.cards span:nth-child(8) {
+    --n: 8;
+}
