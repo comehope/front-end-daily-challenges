@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(darkgreen 30%, forestgreen);
+    background: radial-gradient(darkgreen, black);
 }
 
 .loader {
