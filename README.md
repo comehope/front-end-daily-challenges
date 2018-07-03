@@ -1,10 +1,10 @@
 # Front-End Daily Challenges
 
-See demo on Codepen: https://codepen.io/comehope/
+See demo on Codepen: https://codepen.io/comehope/pens/public/
 
 Watch interactive screencast on Scrimba: https://scrimba.com/playlist/pEgDAM
 
-Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/blog/codepen
+Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/blog/comehope
 
 ### License
 
