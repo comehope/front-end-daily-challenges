@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+}
+
+.monster {
+    width: 100vw;
+    height: 50vh;
+    background-color: lightcyan;
+    position: relative;
+    overflow: hidden;
+}
+
+.body {
+    position: absolute;
+    width: 32vmin;
+    height: 32vmin;
+    background-color: teal;
+    border-radius: 43% 40% 43% 40%;
+    bottom: calc(-1 * 32vmin / 2 - 4vmin);
+    left: -2vmin;
+    animation:
+        wander 5s linear infinite alternate,
+        wave 3s linear infinite,
+        bounce 1s infinite alternate;
+}
+
+.eyes {
+    width: 24vmin;
+    height: 5vmin;
+    position: absolute;
+    bottom: 2vmin;
+    left: calc(32vmin - 24vmin - 2vmin);
+    animation: wander 5s linear infinite alternate;
+}
+
+.eyes::before,
+.eyes::after {
+    content: '';
+    position: absolute;
+    width: 5vmin;
+    height: 5vmin;
+    border: 1.25vmin solid white;
+    box-sizing: border-box;
+    border-radius: 50%;
+    animation: blink 3s linear infinite;
+}
+
+.eyes::before {
+    left: 4vmin;
+}
+
+.eyes::after {
+    right: 4vmin;
+}
+
+@keyframes bounce {
+    to {
+        bottom: calc(-1 * 32vmin / 2 - 2vmin);
+    }
+}
+
+@keyframes wave {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wander {
+    to {
+        left: calc(100vw - 32vmin + 2vmin);
+    }
+}
+
+@keyframes blink {
+    4%, 10%, 34%, 40% {
+        transform: scaleY(1);
+    }
+
+    7%, 37% {
+        transform: scaleY(0);
+    }
+}
