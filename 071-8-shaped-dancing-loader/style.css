@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: goldenrod;
+}
+
+.loader {
+    width: 8em;
+    height: 8em;
+    font-size: 30px;
+    position: relative;
+}
+
+.loader span {
+    position: absolute;
+    top: 4em;
+    width: 1em;
+    height: 1em;
+    background-color: #222;
+    border-radius: 50%;
+    transform-origin: 4em top;
+    animation: dance 1s linear infinite;
+    animation-delay: calc((var(--n) - 5) * 0.1s);
+}
+
+@keyframes dance {
+    to {
+        transform: rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+.loader span:nth-child(1) {
+    --n: 1;
+}
+
+.loader span:nth-child(2) {
+    --n: 2;
+}
+
+.loader span:nth-child(3) {
+    --n: 3;
+}
+
+.loader span:nth-child(4) {
+    --n: 4;
+}
+
+.loader span:nth-child(5) {
+    --n: 5;
+}
