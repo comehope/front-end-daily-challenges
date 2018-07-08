@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --bc: teal;
+    background-color: var(--bc);
+}
+
+.fox *::before,
+.fox *::after {
+    content: '';
+    position: absolute;
+}
+
+.fox {
+    --c: chocolate;
+    width: 7em;
+    height: 9em;
+    font-size: 30px;
+    position: relative;
+    color: var(--c);
+    transition: 1s;
+}
+
+.fox:hover {
+    --c: lightblue;
+}
+
+.fox .head {
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    background-color: currentColor;
+    border-radius: 50%;
+    right: 0;
+}
+
+.fox .faces::before,
+.fox .faces::after {
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    border-radius: 0 100%;
+    top: 3em;
+}
+
+.fox .faces::after,
+.fox .ears::after {
+    right: 0;
+    transform: rotate(-90deg);
+}
+
+.fox .eyes::before,
+.fox .eyes::after {
+    border: 0.3em solid;
+    border-color: black black transparent transparent;
+    border-radius: 50%;
+    top: 4.5em;
+}
+
+.fox .eyes::before {
+    left: 1em;
+}
+
+.fox .eyes::after {
+    right: 1em;
+    transform: rotate(-90deg);
+}
+
+.fox .ears::before,
+.fox .ears::after {
+    width: 3em;
+    height: 3em;
+    background-color: currentColor;
+    filter: brightness(1.25);
+    border-radius: 0 100% 0 0;
+    z-index: -1;
+}
+
+.fox .nose{
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    border-radius: 50%;
+    top: calc(6em - 1em / 2);
+    right: calc((6em - 1em) / 2);
+    transform: scale(0.9);
+}
+
+.fox .tail{
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    background-color: currentColor;
+    border-radius: 50%;
+    bottom: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.fox .tail::before {
+    width: calc(7em / 2);
+    height: calc(7em / 2);
+    background-color: var(--bc);
+    border-radius: 100% 0 0 0;
+}
+
+.fox .tail::after {
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 0 0 100% 0;
+    bottom: calc(7em / 2 - 1em);
+}
