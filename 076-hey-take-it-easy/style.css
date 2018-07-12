@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: seagreen;
+}
+
+.desk {
+    width: 70em;
+    height: 70em;
+    font-size: 5px;
+    color: cornsilk;
+    background-color: currentColor;
+    box-shadow: 0 0 0 6em;
+    border-radius: 1em;
+    position: relative;
+    --b: 1em solid darkslategray;
+}
+
+.desk * {
+    position: absolute;
+    border: var(--b);
+    box-sizing: border-box;
+    transition: 1s;
+}
+
+.desk *::before,
+.desk *::after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+}
+
+/* paper */
+
+.paper {
+    width: 24em;
+    height: 30em;
+    color: skyblue;
+    background-color: currentColor;
+    border-radius: 0 0 0 3em;
+    top: 14em;
+    left: 4em;
+}
+
+.paper::before {
+    width: 4em;
+    height: 32em;
+    background-color: currentColor;
+    border: var(--b);
+    bottom: 1.6em;
+    left: -1em;
+    border-radius: 3em 0;
+    filter: saturate(150%) brightness(0.9);
+}
+
+.paper::after {
+    width: 4em;
+    height: 5em;
+    background-color: currentColor;
+    border: var(--b);
+    bottom: -1em;
+    left: -1em;
+    border-radius: 2.5em 0 0 2.5em;
+    border-right: none;
+}
+
+/* ruler */
+
+.ruler {
+    width: 6em;
+    height: 24em;
+    background: linear-gradient(
+        to right,
+        peru 30%, 
+        sandybrown 30%
+    );
+    top: 8em;
+    left: 14em;
+    transform: rotate(25deg);
+}
+
+.ruler::before,
+.ruler::after {
+    height: calc(100% - 3em);
+    background-image: linear-gradient(darkslategray 1em, transparent 0);
+    background-size: 4em 4em;
+}
+
+.ruler::before {
+    width: 2em;
+    top: 1em;
+}
+
+.ruler::after {
+    width: 1em;
+    top: 3em;
+}
+
+/* calendar */
+
+.calendar {
+    width: 28em;
+    height: 28em;
+    background: linear-gradient(coral 30%, white 30%);
+    border-radius: 2em;
+    top: 14em;
+    right: 4em;
+    transform: rotate(15deg);
+}
+
+.calendar::before {
+    width: 3em;
+    height: 4em;
+    color: sandybrown;
+    background-color: currentColor;
+    top: -2em;
+    left: 4em;
+    border-radius: 100% 100% 50% 50%;
+    box-shadow:
+        0 0, 0 0 0 1em darkslategray,
+        15em 0, 15em 0 0 1em darkslategray;
+}
+
+.calendar::after {
+    width: 3em;
+    height: 3em;
+    color: silver;
+    background-color: currentColor;
+    top: 10em;
+    left: 4em;
+    border-radius: 0.4em;
+    box-shadow:
+        0 0, 5em 0, 10em 0, 15em 0,
+        0 5em, 5em 5em, 10em 5em, 15em 5em,
+        0 10em, 5em 10em, 10em 10em, 15em 10em;
+}
+
+/* notebook */
+
+.notebook {
+    width: 26em;
+    height: 34em;
+    background: linear-gradient(
+        to right,
+        tomato 12%,
+        coral 12%, coral 60%,
+        darkslategray 60%, darkslategray 64%,
+        sandybrown 64%, sandybrown 78%,
+        darkslategray 78%, darkslategray 82%,
+        coral 82%
+    );
+    border-radius: 3em;
+    bottom: 8em;
+    left: 20em;
+}
+
+.notebook::before {
+    width: inherit;
+    height: 5em;
+    background-color: white;
+    border: var(--b);
+    bottom: -1em;
+    left: -1em;
+    border-radius: 3em 0;
+}
+
+.notebook::after {
+    width: 4em;
+    height: 5em;
+    background-color: coral;
+    border: var(--b);
+    bottom: -3em;
+    left: 4em;
+    border-top: none;
+    border-radius: 0 0 1em 1em;
+}
+
+/* pencil */
+
+.pencil {
+    width: 6em;
+    height: 12em;
+    background: linear-gradient(
+        coral 20%,
+        darkslategray 20%, darkslategray 25%,
+        sandybrown 25%
+    );
+    border-radius: 0.8em;
+    bottom: 14em;
+    right: 13em;
+    transform: rotate(-35deg);
+}
+
+.pencil::before {
+    border: 3em solid transparent;
+    border-top-color: darkslategray;
+    bottom: -6.5em;
+    left: -1em;
+}
+
+.pencil::after {
+    border: 2em solid transparent;
+    border-top-color: sandybrown;
+    bottom: -4.5em;
+    left: 0;
+}
+
+/* words */
+
+.desk p {
+    color: darkslategray;
+    font-size: 6em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    border: none;
+    bottom: 2em;
+    right: 1em;
+    transform: rotate(-35deg) scale(0);
+}
+
+/* transition effects */
+
+.desk:hover .paper {
+    top: 0;
+    left: 0;
+}
+
+.desk:hover .ruler {
+    top: 0;
+    left: 50%;
+    transform: rotate(0deg);
+}
+
+.desk:hover .calendar {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+}
+
+.desk:hover .notebook {
+    bottom: 0;
+    left: 0;
+}
+
+.desk:hover .pencil {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.desk:hover p {
+    transform: rotate(-35deg) scale(1);
+}
