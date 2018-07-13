@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.flag {
+    width: 10em;
+    height: 15em;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    transform: perspective(500px) rotateY(-20deg);
+}
+
+.flag span {
+    width: 0.25em;
+    height: inherit;
+    background-color: ghostwhite;
+    animation: wave 1.5s ease-in-out infinite alternate;
+    animation-delay: calc(var(--n) * -0.1s);
+}
+
+@keyframes wave {
+    to {
+        transform: translateX(2em);
+        background-color: deepskyblue;
+    }
+}
+
+.flag span:nth-child(1) {
+    --n: 1;
+}
+
+.flag span:nth-child(2) {
+    --n: 2;
+}
+
+.flag span:nth-child(3) {
+    --n: 3;
+}
+
+.flag span:nth-child(4) {
+    --n: 4;
+}
+
+.flag span:nth-child(5) {
+    --n: 5;
+}
+
+.flag span:nth-child(6) {
+    --n: 6;
+}
+
+.flag span:nth-child(7) {
+    --n: 7;
+}
+
+.flag span:nth-child(8) {
+    --n: 8;
+}
+
+.flag span:nth-child(9) {
+    --n: 9;
+}
+
+.flag span:nth-child(10) {
+    --n: 10;
+}
+
+.flag span:nth-child(11) {
+    --n: 11;
+}
+
+.flag span:nth-child(12) {
+    --n: 12;
+}
+
+.flag span:nth-child(13) {
+    --n: 13;
+}
+
+.flag span:nth-child(14) {
+    --n: 14;
+}
+
+.flag span:nth-child(15) {
+    --n: 15;
+}
