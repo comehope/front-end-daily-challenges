@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, darkred, black);
+}
+
+.mcdonalds {
+    width: 36em;
+    height: 30em;
+    font-size: 5px;
+    color: red;
+    background-color: currentColor;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 10em;
+}
+
+.mcdonalds::before {
+    content: '';
+    position: absolute;
+    width: 20em;
+    height: calc(30em * 2);
+    box-sizing: border-box;
+    border: solid yellow;
+    border-width: 2.2em 4.4em;
+    border-radius: 50%;
+    filter: drop-shadow(16em 0 0 yellow);
+}
+
+.mcdonalds::after {
+    content: '';
+    position: absolute;
+    width: 6em;
+    height: 1.5em;
+    background-color: currentColor;
+    left: calc((36em - 6em) / 2);
+    bottom: 0;
+}
