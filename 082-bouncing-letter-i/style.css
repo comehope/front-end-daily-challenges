@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.loader {
+    width: 5em;
+    height: 13em;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ball */
+.loader::before {
+    content: '';
+    width: 5em;
+    height: 5em;
+    background-color: orangered;
+    border-radius: 50%;
+    animation: ball-jumping 1s ease-in-out infinite;
+}
+
+@keyframes ball-jumping {
+    20%, 80% {
+        transform: translateY(-2em);
+    }
+
+    50% {
+        transform: translateY(calc((8em - 5em) / 2));
+    }
+}
+
+/* rectangle */
+.loader::after {
+    content: '';
+    width: 5em;
+    height: 8em;
+    background-color: orange;
+    border-radius: 0.5em;
+    animation: rect-rotating 1s ease-in-out infinite;
+}
+
+@keyframes rect-rotating {
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
