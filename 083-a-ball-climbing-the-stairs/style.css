@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.loader {
+    width: 7em;
+    height: 5em;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+
+/* balls */
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    bottom: 1em;
+    animation: climbing 5s infinite;
+    visibility: hidden;
+    background-color: white;
+}
+
+.loader::before {
+    left: 0;
+    --direction: 1;
+}
+
+.loader::after {
+    left: 6em;
+    animation-delay: 2.5s;
+    --direction: -1;
+}
+
+@keyframes climbing {
+    0% {
+        bottom: 1em;
+        visibility: visible;
+        left: calc(3em - 2 * 1.5em * var(--direction));
+    }
+
+    7% {
+        bottom: calc(2em + 0.3em);
+    }
+
+    10% {
+        bottom: 2em;
+        left: calc(3em - 1 * 1.5em * var(--direction));
+    }
+
+    17% {
+        bottom: calc(3em + 0.3em);
+    }
+
+    20% {
+        bottom: 3em;
+        left: calc(3em - 0 * 1.5em * var(--direction));
+    }
+
+    27% {
+        bottom: calc(4em + 0.3em);
+    }
+
+    30% {
+        bottom: 4em;
+        left: calc(3em + 1 * 1.5em * var(--direction));
+    }
+
+    37% {
+        bottom: calc(5em + 0.3em);
+    }
+
+    40% {
+        bottom: 5em;
+        left: calc(3em + 2 * 1.5em * var(--direction));
+    }
+
+    50% {
+        bottom: 1em;
+        left: calc(3em + 2 * 1.5em * var(--direction));
+    }
+
+    50%, 100% {
+        visibility: hidden;
+    }
+}
+
+.loader span {
+    width: 1em;
+    height: calc(var(--n) * 1em);
+    background-color: white;
+    animation: sort 5s infinite;
+    border-radius: 0.1em;
+}
+
+@keyframes sort {
+    0%, 40%, 100% {
+        height: calc(var(--n) * 1em);
+    }
+
+    50%, 90% {
+        height: calc(5em - (var(--n) - 1) * 1em);
+    }
+}
+
+.loader span:nth-child(1) {
+    --n: 1;
+}
+
+.loader span:nth-child(2) {
+    --n: 2;
+}
+
+.loader span:nth-child(3) {
+    --n: 3;
+}
+
+.loader span:nth-child(4) {
+    --n: 4;
+}
+
+.loader span:nth-child(5) {
+    --n: 5;
+}
