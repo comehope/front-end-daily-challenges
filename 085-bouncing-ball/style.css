@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#666, #333);
+}
+
+.box {
+    width: 30em;
+    height: 20em;
+    font-size: 10px;
+    background-color: steelblue;
+    border: 0.5em solid #222;
+    position: relative;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background-color: silver;
+    border-radius: 50%;
+    box-shadow: inset -0.3em -0.3em 0.5em rgba(0, 0, 0, 0.6);
+    animation: 
+        moveX 2s linear infinite alternate,
+        moveY 2.5s linear infinite alternate;
+}
+
+@keyframes moveX {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: calc(30em - 2em);
+    }
+}
+
+@keyframes moveY {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: calc(20em - 2em);
+    }
+}
