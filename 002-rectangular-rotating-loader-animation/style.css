@@ -10,10 +10,16 @@ html, body {
 	width: 150px;
 	height: 150px;
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .loader span {
 	position: absolute;
+	--diameter: calc(40% + (var(--n) - 1) * 30%);
+	width: var(--diameter);
+	height: var(--diameter);
 	box-sizing: border-box;
 	border: 10px solid dimgray;
 	border-radius: 2px;
@@ -21,26 +27,18 @@ html, body {
 }
 
 .loader span:nth-child(1) {
-	width: 100%;
-	height: 100%;
-	animation-duration: 4s;
-	z-index: 3;
+	--n: 1;
+	animation-duration: 1s;
 }
 
 .loader span:nth-child(2) {
-	width: 70%;
-	height: 70%;
-	margin: 15%;
+	--n: 2;
 	animation-duration: 2s;
-	z-index: 2;
 }
 
 .loader span:nth-child(3) {
-	width: 40%;
-	height: 40%;
-	margin: 30%;
-	animation-duration: 1s;
-	z-index: 1;
+	--n: 3;
+	animation-duration: 4s;
 }
 
 .loader span::before,
@@ -63,11 +61,7 @@ html, body {
 }
 
 @keyframes rotating {
-	from {
-		transform: rotateY(0deg);
-	}
-
 	to {
-		transform: rotateY(360deg);
+		transform: rotateY(1turn);
 	}
 }
