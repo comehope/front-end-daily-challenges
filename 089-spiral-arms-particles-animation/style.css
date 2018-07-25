@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    width: 70vmin;
+    height: 70vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --particles: calc(var(--particles-per-circle) * var(--circles));
+}
+
+.container div {
+    position: absolute;
+    width: 10vmin;
+    height: 10vmin;
+    transform: rotate(calc(var(--n) / var(--particles-per-circle) * -360deg));
+}
+
+.container div span {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    animation: 
+        move 2s linear infinite,
+        change-color 2s linear infinite;
+    animation-delay: calc(var(--n) / var(--particles) * -2s);
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0) scale(0);
+    }
+
+    70% {
+        transform: translateX(210%) scale(0.55);
+    }
+
+    to {
+        transform: translateX(300%) scale(0);
+    }
+}
+
+@keyframes change-color {
+    0%, 100% {
+        background-color: hsl(calc(0 / 100 * 360deg), 80%, 55%);
+    }
+
+    10% {
+        background-color: hsl(calc(10 / 100 * 360deg), 80%, 55%);
+    }
+
+    20% {
+        background-color: hsl(calc(20 / 100 * 360deg), 80%, 55%);
+    }
+
+    30% {
+        background-color: hsl(calc(30 / 100 * 360deg), 80%, 55%);
+    }
+
+    40% {
+        background-color: hsl(calc(40 / 100 * 360deg), 80%, 55%);
+    }
+
+    50% {
+        background-color: hsl(calc(50 / 100 * 360deg), 80%, 55%);
+    }
+
+    60% {
+        background-color: hsl(calc(60 / 100 * 360deg), 80%, 55%);
+    }
+
+    70% {
+        background-color: hsl(calc(70 / 100 * 360deg), 80%, 55%);
+    }
+
+    80% {
+        background-color: hsl(calc(80 / 100 * 360deg), 80%, 55%);
+    }
+
+    90% {
+        background-color: hsl(calc(90 / 100 * 360deg), 80%, 55%);
+    }
+}
