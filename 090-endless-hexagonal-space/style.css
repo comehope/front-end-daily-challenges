@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, gold, black);
+}
+
+.container {
+    width: 20em;
+    height: 20em;
+    font-size: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.hexagons {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: twist 0.5s linear infinite;
+}
+
+@keyframes twist {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    to {
+        transform: rotate(calc(6deg * -2)) scale(1.25);
+    }
+}
+
+.hexagons span {
+    position: absolute;
+    width: calc(20em / 1.732);
+    height: inherit;
+    background-color: currentColor;
+    transform: scale(var(--scale)) rotate(calc(var(--n) * 6deg));
+}
+
+.hexagons span:before,
+.hexagons span:after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: currentColor;
+}
+
+.hexagons span:before {
+    transform: rotate(60deg);
+}
+
+.hexagons span:after {
+    transform: rotate(-60deg);
+}
+
+.hexagons span:nth-child(odd) {
+    color: gold;
+}
+
+.hexagons span:nth-child(even) {
+    color: #222;
+}
