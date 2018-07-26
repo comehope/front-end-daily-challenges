@@ -28,6 +28,7 @@ body {
     width: inherit;
     height: inherit;
     border-radius: 50%;
+    background-color: orangered;
     animation: 
         move 2s linear infinite,
         change-color 2s linear infinite;
@@ -48,44 +49,8 @@ body {
     }
 }
 
-@keyframes change-color {
-    0%, 100% {
-        background-color: hsl(calc(0 / 100 * 360deg), 80%, 55%);
-    }
-
-    10% {
-        background-color: hsl(calc(10 / 100 * 360deg), 80%, 55%);
-    }
-
-    20% {
-        background-color: hsl(calc(20 / 100 * 360deg), 80%, 55%);
-    }
-
-    30% {
-        background-color: hsl(calc(30 / 100 * 360deg), 80%, 55%);
-    }
-
-    40% {
-        background-color: hsl(calc(40 / 100 * 360deg), 80%, 55%);
-    }
-
-    50% {
-        background-color: hsl(calc(50 / 100 * 360deg), 80%, 55%);
-    }
-
-    60% {
-        background-color: hsl(calc(60 / 100 * 360deg), 80%, 55%);
-    }
-
-    70% {
-        background-color: hsl(calc(70 / 100 * 360deg), 80%, 55%);
-    }
-
-    80% {
-        background-color: hsl(calc(80 / 100 * 360deg), 80%, 55%);
-    }
-
-    90% {
-        background-color: hsl(calc(90 / 100 * 360deg), 80%, 55%);
+@keyframes change-color2 {
+    to {
+        filter: hue-rotate(1turn);
     }
 }
