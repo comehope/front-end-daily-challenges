@@ -49,7 +49,7 @@ body {
     }
 }
 
-@keyframes change-color2 {
+@keyframes change-color {
     to {
         filter: hue-rotate(1turn);
     }
