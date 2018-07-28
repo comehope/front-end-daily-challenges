@@ -1,10 +1,11 @@
-html,
 body {
-	height: 100%;
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: black;
+	overflow: hidden;
 }
 
 .penrose {
@@ -53,29 +54,8 @@ body {
 }
 
 @keyframes rotating {
-	0% {
-		color: red;
-		transform: rotate(0deg);
-	}
-
-	20% {
-		color: yellow;
-	}
-
-	40% {
-		color: lime;
-	}
-
-	60% {
-		color: blue;
-	}
-
-	80% {
-		color: fuchsia;
-	}
-
-	100% {
-		color: red;
-		transform: rotate(720deg);
+	to {
+		transform: rotate(2turn);
+		filter: hue-rotate(360deg);
 	}
 }
