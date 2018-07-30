@@ -26,28 +26,8 @@ body {
 }
 
 @keyframes change-color {
-	0% {
-		color: dodgerblue;
-	}
-
-	20% {
-		color: gold;
-	}
-
-	40% {
-		color: hotpink;
-	}
-
-	60% {
-		color: lightgreen;
-	}
-
-	80% {
-		color: mediumpurple;
-	}
-
-	100% {
-		color: dodgerblue;
+	to {
+		filter: hue-rotate(1turn);
 	}
 }
 
