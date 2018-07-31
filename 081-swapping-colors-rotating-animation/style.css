@@ -10,12 +10,8 @@ body {
 
 .container {
     width: 30em;
-    height: 30em;
-    /* border: 1px dashed white; */
     font-size: 12px;
-    --deg: calc(var(--percent) / 100 * 360deg);
-    /* color: lime; */
-    color: hsl(var(--deg), 100%, 50%);
+    color: lime; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,44 +19,8 @@ body {
 }
 
 @keyframes change-color {
-    0%, 100% {
-        --percent: 0;
-    }
-
-    10% {
-        --percent: 10;
-    }
-
-    20% {
-        --percent: 20;
-    }
-
-    30% {
-        --percent: 30;
-    }
-
-    40% {
-        --percent: 40;
-    }
-
-    50% {
-        --percent: 50;
-    }
-
-    60% {
-        --percent: 60;
-    }
-
-    70% {
-        --percent: 70;
-    }
-
-    80% {
-        --percent: 80;
-    }
-
-    90% {
-        --percent: 90;
+    to {
+        filter: hue-rotate(1turn);
     }
 }
 
