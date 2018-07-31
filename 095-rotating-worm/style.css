@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    overflow: hidden;
+}
+
+.worm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.worm span {
+    position: absolute;
+    --diameter: calc(100vmin - var(--n) * 90vmin / var(--particles));
+    width: var(--diameter);
+    height: var(--diameter);
+    border-radius: 50%;
+    border: 3px solid;
+    background-color: hsl(336, 100%, calc((19 + var(--n) * 3) * 1%));
+    border-color: hsl(336, 100%, calc((36 + var(--n) * 1) * 1%));
+    box-shadow: 0 0 33px rgba(0, 0, 0, 0.3);
+    animation: rotating 4s infinite cubic-bezier(0.6, -0.5, 0.3, 1.5);
+    animation-delay: calc(1s - var(--n) * 100ms);
+}
+
+@keyframes rotating {
+    from {
+        transform-origin: 0%;
+    }
+
+    to {
+        transform: rotate(1turn);
+        transform-origin: 0% 50%;
+        filter: hue-rotate(5deg);
+    }
+}
