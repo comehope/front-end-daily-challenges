@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, sienna, maroon);
+}
+
+.loader {
+    width: 6em;
+    height: 1em;
+    font-size: 20px;
+    position: relative;
+    --duration: 2s;
+    --dots: 5;
+}
+
+.loader span {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    top: 0;
+    left: 5em;
+    animation: 
+        walk linear infinite,
+        jump linear infinite,
+        squash linear infinite;
+    animation-duration: var(--duration);
+    animation-delay: calc(var(--n) * var(--duration) / var(--dots) * -1);
+}
+
+@keyframes walk {
+    0%, 95%, 100% {
+        left: 5em;
+    }
+
+    80%, 85% {
+        left: 0;
+    }
+}
+
+@keyframes jump {
+    80%, 100% {
+        top: 0;
+    }
+
+    85%, 95% {
+        top: -1em;
+    }
+}
+
+@keyframes squash {
+    80%, 100% {
+        width: 1em;
+        height: 1em;
+    }
+
+    90% {
+        width: 1.5em;
+        height: 0.8em;
+    }
+}
+
+.loader span:nth-child(1) {
+    --n: 1;
+}
+
+.loader span:nth-child(2) {
+    --n: 2;
+}
+
+.loader span:nth-child(3) {
+    --n: 3;
+}
+
+.loader span:nth-child(4) {
+    --n: 4;
+}
+
+.loader span:nth-child(5) {
+    --n: 5;
+}
