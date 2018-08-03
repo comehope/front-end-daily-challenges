@@ -1,30 +1,17 @@
-html,
-body,
-.circle {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: black;
 }
 
-.circle,
-.circle::before,
-.circle::after {
-	border-width: 0.4em;
-	border-style: solid;
-	border-radius: 50%;
-	border-left-color: transparent;
-	border-right-color: transparent;
-	animation: animate 4s ease-in-out infinite alternate;
-}
-
 .circle {
-	width: 10em;
-	height: 10em;
 	font-size: 20px;
-	border-top-color: red;
-	border-bottom-color: blue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: relative;
 }
 
@@ -34,28 +21,42 @@ body,
 	position: absolute;
 }
 
+.circle,
+.circle::before,
+.circle::after {
+	--diameter: calc(10em - (var(--n) - 1) * 30%);
+	width: var(--diameter);
+	height: var(--diameter);
+	border: 0.4em solid;
+	border-radius: 50%;
+	border-color: var(--top-color) transparent var(--bottom-color) transparent;
+	animation: animate ease-in-out infinite alternate;
+	animation-duration: var(--duration);
+}
+
+.circle {
+	--n: 1;
+	--top-color: red;
+	--bottom-color: blue;
+	--duration: 4s;
+}
+
 .circle::before {
-	width: 70%;
-	height: 70%;
-	border-top-color: orange;
-	border-bottom-color: cyan;
-	animation-duration: 8s;
+	--n: 2;
+	--top-color: orange;
+	--bottom-color: cyan;
+	--duration: 8s;
 }
 
 .circle::after {
-	width: 40%;
-	height: 40%;
-	border-top-color: yellow;
-	border-bottom-color: limegreen;
-	animation-duration: 16s;
+	--n: 3;
+	--top-color: yellow;
+	--bottom-color: limegreen;
+	--duration: 16s;
 }
 
 @keyframes animate {
-	from {
-		transform: rotate(0deg);
-	}
-
 	to {
-		transform: rotate(1440deg);
+		transform: rotate(4turn);
 	}
 }
