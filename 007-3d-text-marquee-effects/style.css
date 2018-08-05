@@ -12,10 +12,10 @@ body {
 }
 
 .box .inner {
-	width: 400px;
-	height: 200px;
-	line-height: 200px;
-	font-size: 4em;
+	width: 7em;
+	height: 3em;
+	line-height: 3em;
+	font-size: 70px;
 	font-family: sans-serif;
 	font-weight: bold;
 	white-space: nowrap;
@@ -26,14 +26,14 @@ body {
 	background-color: indianred;
 	color: darkred;
 	transform-origin: right;
-	transform: perspective(100px) rotateY(-15deg);
+	transform: perspective(1.5em) rotateY(-15deg);
 }
 
 .box .inner:last-child {
 	background-color: lightcoral;
 	color: antiquewhite;
 	transform-origin: left;
-	transform: perspective(100px) rotateY(15deg);
+	transform: perspective(1.5em) rotateY(15deg);
 }
 
 .box .inner span {
