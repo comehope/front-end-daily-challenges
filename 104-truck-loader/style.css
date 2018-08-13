@@ -1,0 +1,200 @@
+body {
+    margin: 10%;
+    padding-top: 30vh;
+}
+
+.truck {
+    width: 15em;
+    height: 5em;
+    font-size: 10px;
+    background-color: #444;
+    border-radius: 0.4em;
+    position: relative;
+    animation: 
+        put-put 2s infinite,
+        move 5s infinite;
+}
+
+@keyframes put-put {
+    0% {
+        margin-top: 0;
+        height: 5em;
+    }
+
+    5% {
+        margin-top: -0.2em;
+        height: 5.2em;
+    }
+
+    20% {
+        margin-top: -0.1em;
+        height: 5em;
+    }
+
+    35% {
+        margin-top: 0.1em;
+        height: 4.9em;
+    }
+
+    40% {
+        margin-top: -0.1em;
+        height: 5.1em;
+    }
+
+    60% {
+        margin-top: 0.1em;
+        height: 4.9em;
+    }
+
+    75% {
+        margin-top: 0;
+        height: 5em;
+    }
+
+    80% {
+        margin-top: -0.4em;
+        height: 5.2em;
+    }
+
+    100% {
+        margin-top: 0.1em;
+        height: 4.9em;
+    }
+}
+
+@keyframes move {
+    0% {
+        margin-left: 90%;
+    }
+
+    50% {
+        margin-left: 45%;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+
+    0%, 100% {
+        filter: opacity(0);
+    }
+
+    10%, 90% {
+        filter: opacity(1);
+    }
+}
+
+.truck::before,
+.truck::after,
+.cab::after {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 2em;
+    height: 2em;
+    background-color: #444;
+    border: 0.1em solid white;
+    border-radius: 50%;
+    bottom: -1em;
+}
+
+.truck::before {
+    left: 0.6em;
+}
+
+.truck::after {
+    right: 0.6em;
+}
+
+.cab {
+    position: absolute;
+    width: 3.3em;
+    height: 2.5em;
+    background-color: #333;
+    left: -3.5em;
+    bottom: 0;
+    border-radius: 40% 0 0.4em 0.4em;
+}
+
+.cab::before {
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 1.5em;
+    background-color: #333;
+    top: -1.5em;
+    right: 0;
+    border-radius: 100% 0 0 0;
+}
+
+.cab::after {
+    left: 0.5em;
+}
+
+.smoke,
+.smoke::before,
+.smoke::after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: #333;
+    right: -0.1em;
+    bottom: -0.5em;
+    border-radius: 50%;
+}
+
+.smoke {
+    animation:
+        drift 2s infinite,
+        smoke-1 2s infinite;
+}
+
+.smoke::before {
+    animation: 
+        drift 3s infinite,
+        smoke-2 3s infinite;
+}
+
+.smoke::after {
+    animation: 
+        drift 4s infinite,
+        smoke-3 4s infinite;
+}
+
+@keyframes drift {
+    0%, 100% {
+        filter: opacity(0);
+    }
+
+    15% {
+        filter: opacity(0.9);
+    }
+}
+
+@keyframes smoke-1 {
+    to {
+        width: 3em;
+        height: 3em;
+        right: -3em;
+        bottom: 0.5em;
+    }
+}
+
+@keyframes smoke-2 {
+    to {
+        width: 2.5em;
+        height: 2.5em;
+        right: -6em;
+        bottom: 0.8em;
+    }
+}
+
+@keyframes smoke-3 {
+    to {
+        width: 3.5em;
+        height: 3.5em;
+        right: -4em;
+        bottom: 0.2em;
+    }
+}
