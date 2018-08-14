@@ -1,0 +1,63 @@
+body {
+    position: fixed;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    animation: 
+        3s move infinite ease-in-out alternate,
+        3s zoom infinite ease-in-out alternate;
+}
+
+@keyframes zoom {
+    to {
+        transform: scale(10);
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    width: 200vmax;
+    height: 200vmax;
+    background-color: steelblue;
+    color: turquoise;
+    background-image: 
+        linear-gradient(
+            45deg, 
+            currentColor 25%, 
+            transparent 25%, transparent 75%, 
+            currentColor 75%),
+        linear-gradient(
+            45deg, 
+            currentColor 25%, 
+            transparent 25%, transparent 75%, 
+            currentColor 75%);
+    background-position: 0 0, 5vmax 5vmax;
+    background-size: 10vmax 10vmax;
+    top: 50%;
+    left: 50%;
+    animation: 
+        9s move infinite ease-in-out alternate,
+        9s -1.5s rotating infinite ease-in-out alternate;
+}
+
+@keyframes move {
+    from {
+        left: -40%;
+        top: -40%;
+    }
+
+    to {
+        left: -60%;
+        top: -60%;
+    }
+}
+
+@keyframes rotating {
+    to {
+        transform: rotate(180deg);
+        filter: hue-rotate(1turn);
+    }
+}
