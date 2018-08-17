@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-top: 15vmin;
+    overflow: hidden;
+}
+
+.circles {
+    width: 60vmin;
+    height: 60vmin;
+    position: relative;
+    animation: zoom 5s linear infinite;
+}
+
+@keyframes zoom {
+    to {
+        transform: scale(0.5) translateY(-50%);
+    }
+}
+
+.circles span {
+    position: absolute;
+    box-sizing: border-box;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border-radius: 50%;
+    left: 25%;
+    transform-origin: bottom center;
+    --deg: calc(1turn / var(--particles) * (var(--n) - 1));
+    animation: rotating 5s ease-in-out infinite;
+    mix-blend-mode: difference;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(var(--deg)) translateY(0);
+    }
+
+    100% {
+        transform: rotate(var(--deg)) translateY(100%) scale(2);
+    }
+}
