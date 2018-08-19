@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: papayawhip;
+}
+
+.duck {
+    width: 10em;
+    height: 10em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    transform: rotate(-45deg);
+}
+
+.duck span {
+    background-color: seagreen;
+}
+
+.duck span:nth-child(1) {
+    border-top-left-radius: 100%;
+}
+
+.duck span:nth-child(2) {
+    border-top-right-radius: 100%;
+    background-image: radial-gradient(black 0.5em, transparent 0.5em);
+}
+
+.duck span:nth-child(3) {
+    border-bottom-right-radius: 100%;
+}
+
+.duck span:nth-child(4) {
+    border-bottom-left-radius: 100%;
+    background-color: coral;
+}
