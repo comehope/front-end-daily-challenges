@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightyellow;
+}
+
+.loader {
+    width: 30em;
+    height: 3em;
+    font-size: 10px;
+    position: relative;
+}
+
+.loader::before,
+.loader::after {
+    content: 'loading';
+    position: absolute;
+    width: 50%;
+    height: inherit;
+    border-radius: 1em;
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    line-height: 1em;
+    animation: 5s move ease-in-out infinite;
+    mix-blend-mode: multiply;
+}
+
+.loader::before {
+    left: 0;
+    background-color: dodgerblue;
+    --direction: 1;
+}
+
+.loader::after {
+    right: 0;
+    background-color: hotpink;
+    --direction: -1;
+}
+
+@keyframes move {
+    50% {
+        transform: translateX(calc(100% * var(--direction)));
+    }
+}
