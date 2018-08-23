@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.pi {
+    width: 30em;
+    height: 30em;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 0.2em;
+}
+
+.pi span {
+    --c: hsl(calc(var(--d) * 360 / 10), 40%, 40%);
+    color: var(--c);
+    font-size: 1.3em;
+    background-color: var(--c);
+    font-family: sans-serif;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.pi span.show,
+.pi span:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 1em yellow;
+}
