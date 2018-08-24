@@ -107,3 +107,12 @@ body {
     bottom: 0.5em;
     box-shadow: 1em 0 0 0.1em;
 }
+
+p {
+    position: absolute;
+    bottom: 1em;
+    text-align: center;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: #333;
+}
