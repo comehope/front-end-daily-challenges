@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.red * {
+    position: absolute;
+}
+
+.red *::before,
+.red *::after {
+    content: '';
+    position: absolute;
+}
+
+.red {
+    width: 12em;
+    height: 11em;
+    font-size: 16px;
+    position: relative;
+    --border: 0.2em solid #6a0306;
+}
+
+.head {
+    width: inherit;
+    height: inherit;
+    background-color: #dc002d;
+    border-radius: 45% 55% 45% 45% / 55% 60% 40% 45%;
+    border: var(--border);
+    overflow: hidden;
+    box-shadow: 
+      inset 0.5em -0.5em 0.3em 0.2em rgba(0, 0, 0, 0.2),
+      inset -1em 0.8em 1.5em -0.5em rgba(237, 178, 144, 0.7);
+}
+
+.head::before {
+    width: inherit;
+    height: inherit;
+    background-color: #e3c4ab;
+    border-radius: inherit;
+    top: 65%;
+    left: 25%;
+}
+
+.eyes::before,
+.eyes::after {
+    width: 2.4em;
+    height: 2.6em;
+    background: 
+        radial-gradient(
+            circle at calc(var(--eyeball-left) + 6%) 48%,
+            white 0.1em,
+            transparent 0.1em
+        ),
+        radial-gradient(
+            circle at var(--eyeball-left) 48%,
+            black 0.5em,
+            transparent 0.5em
+        ),
+        white;
+    border-radius: 50%;
+    border: var(--border);
+}
+
+.eyes::before {
+    top: 3.7em;
+    left: 5.5em;
+    z-index: 1;
+    --eyeball-left: 65%;
+    box-shadow: -0.2em 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.2);
+}
+
+.eyes::after {
+    top: 3.8em;
+    left: 7.8em;
+    --eyeball-left: 41%;
+    box-shadow: 0.2em 0.2em 0.4em 0.3em rgba(0, 0, 0, 0.1);
+}
+
+.eyebrows::before,
+.eyebrows::after {
+    height: 1.1em;
+    background-color: black;
+    top: 3.6em;
+    z-index: 2;
+}
+
+.eyebrows::before {
+    left: 5em;
+    transform: skewY(12deg);
+    width: 3.4em;
+}
+
+.eyebrows::after {
+    left: 8.2em;
+    transform: skewY(-15deg);
+    width: 3.1em;
+}
+
+.mouth {
+    width: 2.8em;
+    height: 2.8em;
+    background-color: #fca90d;
+    top: 6em;
+    left: 7em;
+    z-index: 3;
+    border-radius: 20% 0 20% 10%;
+    transform: rotate(34deg) skewX(-15deg);
+    border: 0.1em solid black;
+    box-shadow: 
+      inset 0.2em -0.4em 1em rgba(0, 0, 0, 0.4),
+      inset 0 0.5em 0.5em rgba(255, 255, 255, 0.3);
+}
+
+.mouth::before {
+    width: 3.4em;
+    height: 4em;
+    border: 0.2em solid;
+    top: -1.6em;
+    left: -1.8em;
+    border-radius: 0 0 40% 0;
+    transform: rotate(42deg);
+    border-color: transparent black transparent transparent;
+}
+
+.hair {
+    width: 1.2em;
+    height: 3em;
+    background-color: #dc002d;
+    border-radius: 50%;
+    border: var(--border);
+    top: -1.8em;
+    left: 2.8em;
+    transform: rotate(-70deg);
+    border-bottom-color: transparent;
+}
+
+.hair::before {
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    border-radius: inherit;
+    border: inherit;
+    top: 1em;
+    left: 0.8em;
+    transform: rotate(20deg);
+}
+
+.hair::after {
+    width: 3em;
+    height: 2em;
+    background-color: #dc002d;
+    border-radius: 50%;
+    top: 2.3em;
+    left: -1.5em;
+    transform: rotate(70deg);
+}
+
+.tail {
+    width: 3em;
+    height: 1em;
+    background-color: black;
+    top: 40%;
+    left: -1.8em;
+    z-index: -1;
+    transform: rotate(15deg);
+}
+
+.tail::before,
+.tail::after {
+    width: inherit;
+    height: 70%;
+    background-color: black;
+    left: 0.6em;
+}
+
+.tail::before {
+    transform: rotate(25deg);
+    top: -0.4em;
+}
+
+.tail::after {
+    transform: rotate(-20deg);
+    top: 0.8em;
+}
