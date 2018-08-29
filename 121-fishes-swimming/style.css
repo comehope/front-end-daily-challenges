@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    overflow: hidden;
+}
+
+.fish {
+    position: absolute;
+    --r: calc(var(--size) * 1vw);
+    width: calc(var(--r) + var(--r) / 3);
+    height: calc(var(--r) * 2);
+    right: calc((var(--r) + var(--r) / 3) * -1);
+    top: calc(var(--top) * 1px - var(--r));
+    color: hsl(var(--color), 50%, 50%);
+    transform-origin: left;
+     animation: 
+        run calc(var(--duration) * 1s) linear forwards,
+        shake 0.3s linear infinite; 
+}
+
+@keyframes run {
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes shake {
+    50% {
+        transform: rotateY(-30deg);
+    }
+
+    100% {
+        transform: rotateY(30deg);
+    }
+}
+
+.fish .body {
+    position: absolute;
+    border: var(--r) solid transparent;
+    border-right-color: currentColor;
+    border-left-style: none;
+}
+
+.fish .eye {
+    position: absolute;
+    --r1: calc(var(--r) / 4);
+    width: var(--r1);
+    height: var(--r1);
+    background-color: #111;
+    top: 35%;
+    left: 30%;
+    border-radius: 50%;
+}
+
+.fish .fin {
+    position: absolute;
+    --r2: calc(var(--r) / 2);
+    border-bottom: var(--r2) solid;
+    border-left: var(--r2) solid transparent;
+    filter: brightness(2.5);
+    left: calc(var(--r) - var(--r2));
+}
+
+.fish .tail {
+    position: absolute;
+    --r3: calc(var(--r) / 3);
+    border: var(--r3) solid transparent;
+    border-right-color: currentColor;
+    border-left-style: none;
+    right: 0;
+    top: calc(var(--r) - var(--r3));
+}
