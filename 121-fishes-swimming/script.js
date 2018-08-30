@@ -13,5 +13,14 @@ function buildFish(e) {
     fish.append('span').attr('class', 'tail');
 }
 
+function buildRipple(e) {
+    d3.select('body')
+        .append('div')
+        .attr('class', 'ripple')
+        .style('--left', e.clientX)
+        .style('--top', e.clientY);
+};
+
 window.addEventListener('click', buildFish);
+window.addEventListener("click", buildRipple);
 d3.range(3).forEach(buildFish);

@@ -72,3 +72,26 @@ body {
     right: 0;
     top: calc(var(--r) - var(--r3));
 }
+
+.ripple {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    filter: opacity(0);
+    left: calc(var(--left) * 1px);
+    top: calc(var(--top) * 1px);
+    animation: rippling 2s ease-out;
+}
+
+@keyframes rippling {
+    from {
+        transform: scale(0);
+        filter: opacity(1);
+    }
+    to {
+        transform: scale(100);
+        filter: opacity(0);
+    }
+}
