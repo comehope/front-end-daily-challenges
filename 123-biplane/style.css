@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: deepskyblue;
+}
+
+.plane {
+    width: 28em;
+    height: 13em;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: black;
+    animation: 
+        plane-rotating 10s infinite,
+        fly 5s infinite;
+}
+
+@keyframes plane-rotating {
+    10%, 30%, 50% {
+        transform: rotate(0deg);
+    }
+    
+    20% {
+        transform: rotate(-4deg);
+    }
+    
+    80% {
+        transform: rotate(8deg);
+    }
+    
+    100% {
+        transform: rotate(-1turn);
+    }
+}
+
+@keyframes fly {
+    10%, 50%, 100% {
+        top: 0;
+    }
+    
+    25% {
+        top: 1em;
+    }
+    
+    75% {
+        top: -1em;
+    }
+}
+
+.plane * {
+    position: absolute;
+}
+
+.plane *::before,
+.plane *::after {
+    content: '';
+    position: absolute;
+}
+
+.wings {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+.wings::before {
+    width: inherit;
+    height: 0.5em;
+    background-color: currentColor;
+}
+
+.wings::after {
+    top: 4em;
+    width: 90%;
+    height: 0.4em;
+    background-color: currentColor;
+}
+
+.fans {
+    width: 11em;
+    height: 11em;
+    background: radial-gradient(
+        black 2.5em,
+        transparent 2.5em
+    );
+}
+
+.fans span {
+    width: inherit;
+    height: inherit;
+    animation: fans-rotating 0.8s linear infinite;
+    animation-delay: calc(var(--n) * 0.1s);
+}
+
+@keyframes fans-rotating {
+    to {
+        transform: rotate(-1turn);
+    }
+}
+
+.fans span::before {
+    width: inherit;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    transform-origin: bottom;
+    transform: rotate(calc((var(--n) - 1) * 90deg));
+}
+
+.fans span:nth-child(1) {
+    --n: 1;
+}
+
+.fans span:nth-child(2) {
+    --n: 2;
+}
+
+.fans span:nth-child(3) {
+    --n: 3;
+}
+
+.fans span:nth-child(4) {
+    --n: 4;
+}
+
+.wheels {
+    width: 16em;
+    height: 2em;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wheels span {
+    position: static;
+    width: 1em;
+    height: inherit;
+    background-color: currentColor;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.wheels span::before {
+    width: 0.2em;
+    height: 8em;
+    background-color: currentColor;
+    transform-origin: bottom;
+    bottom: 1em;
+    z-index: -1;
+}
+
+.wheels .left::before {
+    transform: rotate(45deg);
+}
+
+.wheels .right::before {
+    transform: rotate(-45deg);
+}
