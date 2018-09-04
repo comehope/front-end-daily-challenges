@@ -16,65 +16,52 @@ html, body {
 	position: relative;
 }
 
-.rainbow span::before,
-.rainbow span::after {
-	content: attr(data-text);
+.rainbow span {
 	position: absolute;
 	top: 0;
 	left: 0;
+	color: hsl(calc((345 - var(--n) * 45) * 1deg), 80%, 65%);
 	overflow: hidden;
-	animation: animate 0.8s infinite alternate;
 	filter: opacity(0);
 	z-index: var(--n);
 	height: calc(100% - 10% * var(--n));
+	animation: animate 0.8s infinite alternate;
 	animation-delay: calc(0.8s - 0.1s * var(--n));
 }
 
-.rainbow span:nth-child(1)::before {
-	color: orchid;
+.rainbow span:nth-child(1) {
 	--n: 1;
 }
 
-.rainbow span:nth-child(1)::after {
-	color: mediumpurple;
+.rainbow span:nth-child(2) {
 	--n: 2;
 }
 
-.rainbow span:nth-child(2)::before {
-	color: deepskyblue;
+.rainbow span:nth-child(3) {
 	--n: 3;
 }
 
-.rainbow span:nth-child(2)::after {
-	color: cyan;
+.rainbow span:nth-child(4) {
 	--n: 4;
 }
 
-.rainbow span:nth-child(3)::before {
-	color: mediumspringgreen;
+.rainbow span:nth-child(5) {
 	--n: 5;
 }
 
-.rainbow span:nth-child(3)::after {
-	color: yellow;
+.rainbow span:nth-child(6) {
 	--n: 6;
 }
 
-.rainbow span:nth-child(4)::before {
-	color: gold;
+.rainbow span:nth-child(7) {
 	--n: 7;
 }
 
-.rainbow span:nth-child(4)::after {
-	color: tomato;
+.rainbow span:nth-child(8) {
 	--n: 8;
 }
 
 @keyframes animate {
-	from {
-		filter: opacity(0);
-	}
-
 	to {
 		filter: opacity(1);
 	}
