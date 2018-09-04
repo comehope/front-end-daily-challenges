@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    width: 17em;
+    height: 17em;
+    font-size: 16px;
+    position: relative;
+}
+
+.container div {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(calc(var(--n) * 40deg));
+}
+
+.container div span {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: hsl(calc(var(--n) * 80), 100%, 70%);
+    --duration: 2s;
+    animation: 
+        move var(--duration) cubic-bezier(0.6, -0.3, 0.7, 0) infinite,
+        morph var(--duration) ease-in-out infinite;
+    animation-delay: calc(var(--duration) / 9 * var(--n) * -1);
+}
+
+@keyframes move {
+    0%, 100% {
+        left: calc(10% - 0.5em);
+    }
+
+    50% {
+        left: calc(90% - 0.5em);
+    }
+}
+
+@keyframes morph {
+    0%, 50%, 100% {
+        transform: scale(0.75, 1);
+    }
+
+    25%, 75% {
+        transform: scale(1.5, 0.5);
+    }
+}
+
+.container div:nth-child(1) { --n: 1; }
+.container div:nth-child(2) { --n: 2; }
+.container div:nth-child(3) { --n: 3; }
+.container div:nth-child(4) { --n: 4; }
+.container div:nth-child(5) { --n: 5; }
+.container div:nth-child(6) { --n: 6; }
+.container div:nth-child(7) { --n: 7; }
+.container div:nth-child(8) { --n: 8; }
+.container div:nth-child(9) { --n: 9; }
