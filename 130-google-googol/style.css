@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Product+Sans');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'product sans';
+}
+
+:root {
+    --blue: #4285f4;
+    --red: #ea4335;
+    --yellow: #fbbc05;
+    --green: #34a853;
+}
+
+.logo {
+    margin-top: -10vh;
+}
+
+.logo::before {
+    content: 'google_logo';
+    font-size: 10vw;
+
+    background-image: linear-gradient(
+        to right,
+        var(--blue) 26.5%, 
+        var(--red) 26.5%, var(--red) 43.5%, 
+        var(--yellow) 43.5%, var(--yellow) 61.5%,
+        var(--blue) 61.5%, var(--blue) 78.5%, 
+        var(--green) 78.5%, var(--green) 84.5%, 
+        var(--red) 84.5%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.desc {
+    font-size: 1.5vw;
+    color: dimgray;
+    margin-top: 2em;
+}
+
+.zeros {
+    font-size: 3vw;
+    font-weight: bold;
+    margin-top: 0.2em;
+    
+    letter-spacing: 0.1em;
+
+    width: 25.5em;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.zeros span {
+    color: var(--c);
+}
