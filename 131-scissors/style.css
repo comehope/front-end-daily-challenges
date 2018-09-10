@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scissors {
+    width: 21em;
+    height: 7em;
+    position: relative;
+}
+
+.half {
+    position: absolute;
+    width: inherit;
+    height: 4em;
+    transform-origin: 45% bottom;
+    transform: rotate(calc(15deg * var(--direction))) scaleY(var(--direction));
+}
+
+.half:nth-child(1) {
+    --direction: 1;
+    top: 0;
+}
+
+.half:nth-child(2) {
+    --direction: -1;
+    top: -1em;
+}
+
+.scissors:hover .half {
+    animation: cut 2s ease-out;
+}
+
+@keyframes cut {
+    20%, 60% {
+        transform: rotate(calc(30deg * var(--direction))) scaleY(var(--direction));
+    }
+
+    40%, 80% {
+        transform: rotate(calc(5deg * var(--direction))) scaleY(var(--direction));
+    }
+}
+
+.handle {
+    position: absolute;
+    box-sizing: border-box;
+    width: 8em;
+    height: inherit;
+    border: 1em solid #333;
+    border-radius: 2em;
+}
+
+.blade {
+    position: absolute;
+    width: 15em;
+    height: 1em;
+    background-color: silver;
+    top: 3em;
+    left: 6em;
+    border-radius: 0 0 1em 0;
+    z-index: -1;
+}
+
+.blade::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 1.8em 1em 1.8em;
+    border-color: transparent transparent silver transparent;
+    top: -1em;
+    left: 0.2em;
+}
+
+.joint {
+    position: absolute;
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #333;
+    border-radius: 50%;
+    top: calc(50% - 0.7em / 2);
+    left: 45%;
+}
