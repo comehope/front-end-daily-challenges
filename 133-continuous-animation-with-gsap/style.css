@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightyellow;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 60vmin;
+    height: 60vmin;
+    background: radial-gradient(
+        transparent 25%,
+        gold 25%, gold 50%,
+        tomato 50%
+    );
+    border-radius: 50%;
+}
+
+body::before {
+    left: -30vmin;
+    bottom: -30vmin;
+}
+
+body::after {
+    right: -30vmin;
+    top: -30vmin;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, tomato, gold);
+    border-radius: 3%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.container div {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(calc((var(--n) - 1) * 36deg));
+}
+
+.container div span {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+.container div:nth-child(1) { --n: 1; }
+.container div:nth-child(2) { --n: 2; }
+.container div:nth-child(3) { --n: 3; }
+.container div:nth-child(4) { --n: 4; }
+.container div:nth-child(5) { --n: 5; }
+.container div:nth-child(6) { --n: 6; }
+.container div:nth-child(7) { --n: 7; }
+.container div:nth-child(8) { --n: 8; }
+.container div:nth-child(9) { --n: 9; }
+.container div:nth-child(10) { --n: 10; }
