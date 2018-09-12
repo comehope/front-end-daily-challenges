@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.sapling {
+    width: 5em;
+    height: 17.5em;
+    font-size: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+}
+
+.branch {
+    position: absolute;
+    width: 0.2em;
+    height: inherit;
+    background-color: burlywood;
+    border-radius: 25%;
+    transform-origin: bottom;
+}
+
+.leaves {
+    position: absolute;
+    width: inherit;
+    height: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.leaves span {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: limegreen;
+}
+
+.leaves span:nth-child(odd) {
+    align-self: flex-start;
+    border-top-right-radius: 3em;
+    border-bottom-left-radius: 3em;
+    transform-origin: right bottom;
+}
+
+.leaves span:nth-child(even) {
+    align-self: flex-end;
+    border-top-left-radius: 3em;
+    border-bottom-right-radius: 3em;
+    transform-origin: left bottom;
+}
