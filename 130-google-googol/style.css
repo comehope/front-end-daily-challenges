@@ -7,7 +7,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     font-family: 'product sans';
 }
 
@@ -25,7 +24,6 @@ body {
 .logo::before {
     content: 'google_logo';
     font-size: 10vw;
-
     background-image: linear-gradient(
         to right,
         var(--blue) 26.5%, 
@@ -49,9 +47,7 @@ body {
     font-size: 3vw;
     font-weight: bold;
     margin-top: 0.2em;
-    
     letter-spacing: 0.1em;
-
     width: 25.5em;
     word-wrap: break-word;
     text-align: center;
