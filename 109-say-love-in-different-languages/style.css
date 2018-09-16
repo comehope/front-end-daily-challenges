@@ -25,6 +25,7 @@ body {
         x-move 10s ease-in-out infinite alternate,
         y-move 20s linear infinite;
     animation-delay: calc(20s / var(--particles) * var(--n) * -1);
+    user-select: none;
 }
 
 .love span:first-child {
