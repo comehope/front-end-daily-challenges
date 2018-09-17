@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    width: 30em;
+    height: 30em;
+    font-size: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    transform: rotate(-135deg);
+}
+
+.container span {
+    position: relative;
+}
+
+.container span::before,
+.container span::after 
+{
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    border-style: none solid solid none;
+    animation: 
+        animate-border-width 1.6s linear infinite,
+        animate-border-color 1.6s linear infinite,
+        animate-scale 1.6s linear infinite;
+}
+
+.container span::after {
+    animation-delay: -0.8s;
+}
+
+@keyframes animate-border-width {
+    0%, 100%{
+        border-width: 0.1em;
+    }
+
+    25% {
+        border-width: 1.5em;
+    }
+}
+
+@keyframes animate-border-color {
+    0%, 25% {
+        border-color: tomato;
+    }
+
+    50%, 75% {
+        border-color: gold;
+    }
+
+    100% {
+        border-color: black;
+    }
+}
+
+@keyframes animate-scale {
+    from {
+        width: 1%;
+        height: 1%;
+    }
+
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
