@@ -6,7 +6,7 @@ d3.select('.loader')
     .data(d3.range(COUNT).map(d => d + 1))
     .enter()
     .append('span')
-    .style('background-color', (d) => d % 2 !== 0
+    .style('background-color', (d) => d % 2 === 1
         ? `hsl(${d * HUE_DEG}, 100%, 65%)`
         : 'black');
 
