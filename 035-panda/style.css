@@ -12,10 +12,7 @@ body {
 	height: 16em;
 	background-color: white;
 	border: 0.5em solid #333;
-	border-top-left-radius: 11em;
-	border-top-right-radius: 11em;
-	border-bottom-left-radius: 11em 6em;
-	border-bottom-right-radius: 11em 6em;
+	border-radius: 11em 11em 11em 11em / 11em 11em 6em 6em;
 	position: relative;
 	background-image: 
 		radial-gradient(ellipse at 50% 60%, #333 1.2em, transparent 1.2em),
@@ -26,21 +23,17 @@ body {
 
 .panda::before,
 .panda::after {
-  content: '';
-  position: absolute;
-  width: 7em;
-  height: 4em;
-  top: 5.5em;
-}
-
-.panda::before {
 	content: '';
 	position: absolute;
 	width: 7em;
 	height: 4em;
 	background-color: #333;
-	border-radius: 50% 50% 45% 42%;
+	top: 5.5em;
+}
+
+.panda::before {
 	left: 2.9em;
+	border-radius: 50% 50% 45% 42%;
 	transform: rotate(-45deg);
 	box-shadow: 1em -7.2em 0 -0.4em #333;
 	background-image: 
@@ -51,19 +44,14 @@ body {
 }
 
 .panda::after {
-	content: '';
-	position: absolute;
-	width: 7em;
-	height: 4em;
 	left: 11.1em;
-	background-color: #333;
+	border-radius: 50% 50% 42% 45%;
+	transform: rotate(45deg);
 	box-shadow: -1em -7.2em 0 -0.4em #333;
 	background-image: 
 		radial-gradient(circle at 2.4em 1.5em, white 0.3em, transparent 0.3em), 
 		radial-gradient(circle at 2.4em 2em, #333 0.7em, transparent 0.7em), 
 		radial-gradient(circle at 2.5em 2em, white 1em, transparent 1em);
-	border-radius: 50% 50% 42% 45%;
-	transform: rotate(45deg);
 	animation: after-animate 1s ease-in-out infinite alternate -1s;
 }
 
