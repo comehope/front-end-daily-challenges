@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(lightblue, skyblue);
+}
+
+.wall {
+    width: 60em;
+    height: 40em;
+    font-size: 10px;
+    border: 1em solid rgba(255, 255, 255, 0.5);
+    border-radius: 2em;
+    display: grid;
+    grid-template-columns: 0 4fr 1fr;
+    overflow: hidden;
+}
+
+h1 {
+    position: relative;
+    width: 20em;
+    margin: 1em;
+    color: white;
+    font-family: sans-serif;
+}
+
+.back,
+.side {
+    display: flex;
+    align-items: center;
+}
+
+.back {
+    background: linear-gradient(to right, #555, #ddd);
+    justify-content: flex-end;
+}
+
+.side {
+    background: 
+        radial-gradient(
+            at 0% 50%,
+            rgba(0, 0, 0, 0.2) 25%,
+            rgba(0, 0, 0, 0) 90%
+        ),
+        linear-gradient(to right, #ddd, #ccc);
+    perspective: 1000px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    --max-price: 1449;
+    display: flex;
+    flex-direction: column;
+}
+
+.back ul {
+    width: 75%;
+    align-items: flex-end;
+}
+
+.side ul {
+    width: 100%;
+    transform-origin: left;
+    transform: rotateY(-75deg) scaleX(4);
+}
+
+ul li {
+    height: 5em;
+    background: var(--c);
+    animation: show 1s linear forwards;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+@keyframes show {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+ul li.xs-max {
+    --c: tomato;
+    --high-price: 1449;
+    --low-price: 1099;
+    --c2: orangered;
+    z-index: 5;
+}
+
+ul li.xs {
+    --c: coral;
+    --high-price: 1349;
+    --low-price: 999;
+    --c2: tomato;
+    z-index: 4;
+}
+
+ul li.xr {
+    --c: lightsalmon;
+    --high-price: 899;
+    --low-price: 749;
+    --c2: coral;
+    z-index: 3;
+}
+
+ul li.x {
+    --c: deepskyblue;
+    --high-price: 1149;
+    --low-price: 999;
+    --c2: dodgerblue;
+    z-index: 2;
+}
+
+.back ul li {
+    width: calc(var(--high-price) / var(--max-price) * 100%);
+    --percent: calc(var(--low-price) / var(--high-price) * 100%);
+    background: linear-gradient(
+        to left,
+        var(--c) var(--percent),
+        var(--c2) var(--percent)
+    );
+    position: relative;
+    filter: drop-shadow(0 1em 1em rgba(0, 0, 0, 0.3));
+    animation-delay: 1s;
+}
+
+.back ul li::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: translateX(-3em);
+    border-right: 3em solid var(--c2);
+    border-top: 2.5em solid transparent;
+    border-bottom: 2.5em solid transparent;
+}
+
+.back ul li span {
+    position: absolute;
+    width: 95%;
+    text-align: right;
+    font-size: 1.25em;
+    line-height: 4em;
+    color: white;
+    font-family: sans-serif;
+}
+
+.side ul li {
+    padding-right: 30%;
+    text-align: right;
+    color: white;
+    font-family: sans-serif;
+    line-height: 5em;
+}
