@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: teal;
+}
+
+.stamp {
+    width: 40.5em;
+    height: 73em;
+    font-size: 6px;
+    padding: 5em;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.stamp::before,
+.stamp::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, teal 50%, transparent 50%),
+        radial-gradient(circle, teal 50%, transparent 50%);
+    background-size: 3.5em 3.5em;
+}
+
+.stamp::before {
+    background-repeat: repeat-y;
+    top: 1.5em;
+    background-position: -4.5% 0, 104.5% 0;
+}
+
+.stamp::after {
+    background-repeat: repeat-x;
+    left: 1.5em;
+    background-position: 0 -2.5%, 0 102.5%;
+}
+
+.puppy {
+    display: grid;
+    grid-template-columns: 10em 22.5em 8em;
+    grid-template-rows: 21em 12.5em 3.75em 22.5em;
+    background-color: tan;
+    padding: 2em;
+    margin-top: -2em;
+}
+
+.head {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+    background-color: bisque;
+    border-bottom-left-radius: calc(12.5em + 3.75em);
+    border-bottom-right-radius: calc(12.5em + 3.75em);
+    position: relative;
+    overflow: hidden;
+}
+
+.head::before {
+    content: '';
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    background-color: sienna;
+    border-bottom-right-radius: 100%;
+}
+
+.eyes {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+    height: 10.5em;
+    width: 21em;
+    background-color: sienna;
+    justify-self: end;
+    border-radius: 0 0 10.5em 10.5em;
+    background-image: radial-gradient(
+        circle at 37% 33%,
+        black 1.4em,
+        transparent 1.4em
+    );
+}
+
+.ear {
+    grid-column: 2;
+    grid-row: 1;
+    width: 10.5em;
+    background-color: sienna;
+    justify-self: end;
+    border-radius: 21em 0 0 21em;
+}
+
+.tongue {
+    grid-column: 1;
+    grid-row: 3;
+    width: 5.5em;
+    height: 5.5em;
+    background-color: indianred;
+    border-bottom-left-radius: 100%;
+}
+
+.body {
+    grid-column: 2;
+    grid-row: 4;
+    background-color: sienna;
+    border-top-left-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.body::after {
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    box-shadow: 2em 0 4em rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    border-radius: 11.25em 11.25em 0 0;
+}
+
+.tail {
+    grid-column: 1;
+    grid-row: 4;
+    height: 17.5em;
+    width: 8.75em;
+    background-color: bisque;
+    justify-self: end;
+    align-self: end;
+    border-radius: 17.5em 0 0 17.5em;
+}
+
+.foot {
+    grid-column: 3;
+    grid-row: 4;
+    height: 4em;
+    background-color: bisque;
+    align-self: end;
+    border-radius: 4em 4em 0 0;
+}
+
+.text {
+    position: relative;
+    width: calc(100% + 2em * 2);
+    height: 6em;
+    font-family: sans-serif;
+}
+
+.text .title {
+    position: absolute;
+    font-size: 6em;
+    font-weight: bold;
+    color: sienna;
+}
+
+.text .author {
+    position: absolute;
+    font-size: 3em;
+    bottom: -1.2em;
+    color: dimgray;
+}
+
+.text .face-value {
+    position: absolute;
+    font-size: 14em;
+    right: 0;
+    line-height: 0.9em;
+    color: darkcyan;
+}
