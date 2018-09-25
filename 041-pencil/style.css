@@ -9,10 +9,10 @@ body {
 
 .pencil {
 	position: absolute;
-	width: 50em;li
+	width: 50em;
 	height: 3.5em;
 	font-size: 12px;
-	filter: drop-shadow(5px 10px 3px gray);
+	filter: drop-shadow(0.4em 0.8em 0.3em gray);
 }
 
 .pencil .barrel {
@@ -26,7 +26,7 @@ body {
 	line-height: 1.5em;
 	text-align: center;
 	text-transform: uppercase;
-	letter-spacing: 0.1em;	
+	letter-spacing: 0.1em;
 }
 
 .pencil .taper::before,
@@ -36,14 +36,15 @@ body {
 	left: -4em;
 	border-style: solid;
 	border-width: calc(3.5em / 2) 4em;
+	border-color: transparent;
 }
 
 .pencil .taper::before {
-	border-color: transparent burlywood transparent transparent;
+	border-right-color: burlywood;
 }
 
 .pencil .taper::after {
-	border-color: transparent black transparent transparent;
+	border-right-color: black;
 	transform: scale(0.3);
 }
 
@@ -55,8 +56,7 @@ body {
 	background-color: lightpink;
 	border-top: 1em solid pink;
 	border-bottom: 1em solid lightcoral;
-	border-top-right-radius: 0.5em;
-	border-bottom-right-radius: 0.5em;
+	border-radius: 0 0.5em 0.5em 0;
 }
 
 .pencil .eraser::before {
