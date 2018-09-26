@@ -27,7 +27,6 @@ body {
     height: 10px;
     background-color: white;
     margin: 15px 0;
-    animation: rotate-h 4s linear infinite;
 }
 
 .container .vertical span {
@@ -35,49 +34,4 @@ body {
     height: 40px;
     background-color: white;
     margin: 0 15px;
-    animation: rotate-v 4s linear infinite;
-}
-
-@keyframes rotate-h {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(45deg);
-    }
-
-    50% {
-        transform: rotate(45deg) translateX(-15px);
-    }
-
-    75% {
-        transform: rotate(0deg) scaleX(0.5) scaleY(2);
-    }
-
-    100% {
-        transform: rotate(90deg);
-    }
-}
-
-@keyframes rotate-v {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(45deg);
-    }
-
-    50% {
-        transform: rotate(45deg) translateX(10px);
-    }
-
-    75% {
-        transform: rotate(45deg) scaleX(2) scaleY(0.5);
-    }
-
-    100% {
-        transform: rotate(90deg);
-    }
 }
