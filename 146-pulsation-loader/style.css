@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#eee 70%, pink);
+}
+
+.loader {
+    width: 6em;
+    height: 6em;
+    padding: 3em;
+    font-size: 10px;
+    background-color: pink;
+    border-radius: 50%;
+    border: 0.8em solid hotpink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: loader-animate 1.5s infinite ease-in-out;
+}
+
+@keyframes loader-animate {
+    45%, 55% {
+        transform: scale(1.05);
+    }
+}
+
+.loader span {
+    width: 0.5em;
+    height: 50%;
+    background-color: deeppink;
+    transform: scaleY(0.05) translateX(-0.5em);
+    animation: span-animate 1.5s infinite ease-in-out;
+    animation-delay: calc(var(--n) * 0.05s);
+}
+
+@keyframes span-animate {
+    0%, 100% {
+        transform: scaleY(0.05) translateX(-0.5em);
+    }
+    15% {
+        transform: scaleY(1.2) translateX(1em);
+    }
+    90%, 100% {
+        background-color: hotpink;
+    }
+}
+
+.loader span:nth-child(1) { --n: 1; }
+.loader span:nth-child(2) { --n: 2; }
+.loader span:nth-child(3) { --n: 3; }
+.loader span:nth-child(4) { --n: 4; }
+.loader span:nth-child(5) { --n: 5; }
+.loader span:nth-child(6) { --n: 6; }
+.loader span:nth-child(7) { --n: 7; }
+.loader span:nth-child(8) { --n: 8; }
+.loader span:nth-child(9) { --n: 9; }
+.loader span:nth-child(10) { --n: 10; }
