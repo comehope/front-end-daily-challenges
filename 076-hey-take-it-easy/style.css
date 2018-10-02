@@ -85,7 +85,7 @@ body {
 .ruler::before,
 .ruler::after {
     height: calc(100% - 3em);
-    background-image: linear-gradient(darkslategray 1em, transparent 0);
+    background-image: linear-gradient(darkslategray 1em, transparent 1em);
     background-size: 4em 4em;
 }
 
