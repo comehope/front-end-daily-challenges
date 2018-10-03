@@ -42,7 +42,7 @@ body {
 	background: linear-gradient(
 		45deg,
 		rgba(0, 0, 0, 0) 50%,
-		rgba(0, 192, 0, 1) 100%);
+		rgba(0, 192, 0, 1) 100%
 		);
 	border-radius: 100% 0 0 0;
 	top: calc(1.5em / 2);
@@ -53,6 +53,6 @@ body {
 
 @keyframes scanning {
 	to {
-		transform: rotate(360deg);
+		transform: rotate(1turn);
 	}
 }

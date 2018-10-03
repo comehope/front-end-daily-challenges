@@ -28,7 +28,7 @@ body {
 
 @keyframes dance {
     to {
-        transform: rotateX(360deg) rotateZ(360deg);
+        transform: rotateX(1turn) rotateZ(1turn);
     }
 }
 

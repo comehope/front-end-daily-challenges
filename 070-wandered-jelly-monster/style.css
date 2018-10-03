@@ -63,7 +63,7 @@ body {
 
 @keyframes wave {
     to {
-        transform: rotate(360deg);
+        transform: rotate(1turn);
     }
 }
 

@@ -57,7 +57,7 @@ body {
 
 @keyframes run {
     to {
-        transform: rotate(calc((var(--n) - 1) * 30deg + 360deg));
+        transform: rotate(calc((var(--n) - 1) * 30deg + 1turn));
     }
 }
 
