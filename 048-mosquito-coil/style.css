@@ -32,7 +32,6 @@ body {
 .coil::after {
 	left: -9.5em;
 	background: darkred;
-	box-shadow: 0 0 1em white;
 	transform: scale(0.9);
 	box-shadow: 0 0 1em white;
 	animation: blink 1.5s ease-in-out infinite alternate;
