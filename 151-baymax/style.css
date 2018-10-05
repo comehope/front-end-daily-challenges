@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(176, 0, 0, 0.75);
+}
+
+.baymax {
+    width: 30em;
+    height: 41em;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.head {
+    position: absolute;
+    width: 9em;
+    height: 6em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 -1.5em 3em rgba(0, 0, 0, 0.2),
+        0 0.5em 1.5em rgba(0, 0, 0, 0.2);
+}
+
+.head .eyes {
+    position: absolute;
+    width: 4.8em;
+    height: 0.1em;
+    background-color: #222;
+    top: 2.3em;
+    left: calc((9em - 4.8em) / 2);
+}
+
+.head .eyes::before,
+.head .eyes::after {
+    content: '';
+    position: absolute;
+    width: 0.8em;
+    height: 0.9em;
+    background-color: #222;
+    border-radius: 50%;
+    top: -0.3em;
+}
+
+.head .eyes::after {
+    right: 0;
+}
+
+.body {
+    position: absolute;
+    width: inherit;
+}
+
+.body .chest {
+    position: absolute;
+    width: 19em;
+    height: 26em;
+    background-color: white;
+    top: 4em;
+    left: calc((100% - 19em) / 2);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.body .chest .button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 50%;
+    top: 4em;
+    right: 4em;
+    box-shadow: 
+        inset 0 -0.5em 0.8em rgba(0, 0, 0, 0.15),
+        0.2em 0.3em 0.2em rgba(0, 0, 0, 0.05);
+    filter: opacity(0.75);
+}
+
+.body .belly {
+    position: absolute;
+    width: 24em;
+    height: 31em;
+    background-color: white;
+    top: 5.5em;
+    left: calc((100% - 24em) / 2);
+    border-radius: 50%;
+    z-index: -2;
+    box-shadow: 
+        inset 0 -2.5em 4em rgba(0, 0, 0, 0.15),
+        0 0.5em 1.5em rgba(0, 0, 0, 0.25);
+}
+
+.body .arm {
+    position: absolute;
+    top: 7.5em;
+}
+
+.body .arm::before,
+.body .arm::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    transform-origin: top;
+    z-index: -3;
+}
+
+.body .arm::before {
+    width: 9em;
+    height: 20em;
+    left: 7em;
+    transform: rotate(30deg);
+}
+
+.body .arm::after {
+    width: 8em;
+    height: 15em;
+    top: 9.5em;
+    transform: rotate(-5deg);
+    left: -0.8em;
+    box-shadow: inset 0.4em -1em 1em rgba(0, 0, 0, 0.2);
+}
+
+.body .arm .fingers::before,
+.body .arm .fingers::after {
+    content: '';
+    position: absolute;
+    width: 1.8em;
+    height: 4em;
+    background-color: white;
+    border-radius: 50%;
+    transform-origin: top;
+}
+
+.body .arm .fingers::before {
+    top: 22em;
+    left: 2em;
+    transform: rotate(-25deg);
+    box-shadow: inset 0.2em -0.4em 0.4em rgba(0, 0, 0, 0.4);
+}
+
+.body .arm .fingers::after {
+    top: 21.5em;
+    left: 4.8em;
+    transform: rotate(-5deg);
+    box-shadow: inset -0.2em -0.4em 0.8em rgba(0, 0, 0, 0.3);
+    z-index: -3;
+}
+
+.body .arm.left {
+    transform: scaleX(-1);
+    right: 0;
+    z-index: -3;
+}
+
+.leg {
+    position: absolute;
+    width: 5em;
+    height: 16em;
+    bottom: 0;
+    background-color: white;
+    border-bottom-right-radius: 1.5em;
+    left: 10em;
+    box-shadow: inset -0.7em -0.6em 0.7em rgba(0, 0, 0, 0.1);
+    z-index: -3;
+}
+
+.leg::before {
+    content: '';
+    position: absolute;
+    width: 2.5em;
+    height: inherit;
+    background-color: white;
+    left: -2.5em;
+    border-bottom-left-radius: 100%;
+    box-shadow: inset 0.7em 1.5em 0.7em rgba(0, 0, 0, 0.4);
+}
+
+.leg.left {
+    transform-origin: right;
+    transform: scaleX(-1);
+}
