@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-image: 
+        radial-gradient(
+            circle at 1vmin 1vmin,
+            white 1vmin,
+            transparent 1vmin
+        ),
+        linear-gradient(
+            to bottom,
+            #555 2vmin,
+            transparent 2vmin
+        ),
+        linear-gradient(
+            to right,
+            #555 2vmin,
+            transparent 2vmin
+        );
+    background-size: 10vmin 10vmin;
+    background-position: 5vmin 5vmin;
+}
