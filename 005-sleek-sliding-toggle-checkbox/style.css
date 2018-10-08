@@ -1,35 +1,50 @@
-html,
-body,
-.checkbox,
-.checkbox .inner,
-.checkbox .inner .toggle {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: darkseagreen;
+}
+
+:root {
+    --font-size: 40px;
+}
+
+.toggle {
+    position: absolute;
+    width: 10em;
+	height: 5em;
+	font-size: var(--font-size); 
+    margin: 0;
+    filter: opacity(0);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.toggle ~ .switch {
+	position: absolute;
+	width: 10em;
+	height: 5em;
+	font-size: var(--font-size); 
+	background: linear-gradient(silver, whitesmoke);
+	border-radius: 2.5em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-body {
-	background-color: darkseagreen;
-}
-
-.checkbox {
-	width: 10em;
-	height: 5em;
-	background: linear-gradient(silver, whitesmoke);
-	border-radius: 2.5em;
-	font-size: 40px;
-}
-
-.checkbox .inner {
+.toggle ~ .switch .inner {
 	width: 8em;
 	height: 3.5em;
 	background: linear-gradient(dimgray, silver);
 	border-radius: 2em;
 	box-shadow: inset 0 0 1.5em rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
 }
 
-.checkbox .inner .toggle {
+.toggle ~ .switch .inner .disc {
 	width: 3.5em;
 	height: 3.5em;
 	background: linear-gradient(to top, silver, whitesmoke);
@@ -37,10 +52,13 @@ body {
 	box-shadow: 0 0.4em 0.6em rgba(0, 0, 0, 0.2);
 	position: relative;
 	left: -30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	transition: 0.5s;
 }
 
-.checkbox .inner .toggle::before {
+.toggle ~ .switch .inner .disc::before {
 	content: 'OFF';
 	position: absolute;
 	width: 80%;
@@ -53,15 +71,15 @@ body {
 	color: gray;
 }
 
-.checkbox .inner.active {
+.toggle:checked ~ .switch .inner {
 	background: linear-gradient(green, limegreen);
 }
 
-.checkbox .inner.active .toggle {
+.toggle:checked ~ .switch .inner .disc {
 	left: 30%;
 }
 
-.checkbox .inner.active .toggle::before {
+.toggle:checked ~ .switch .inner .disc::before {
 	content: 'ON';
 	color: limegreen;
 }
