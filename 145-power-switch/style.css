@@ -5,7 +5,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #eee;
-    font-size: var(--font-size);
 }
 
 :root {
@@ -14,9 +13,9 @@ body {
 
 .toggle {
     position: absolute;
-    font-size: var(--font-size); 
     width: 5em;
     height: 8em;
+    font-size: var(--font-size);
     margin: 0;
     filter: opacity(0);
     cursor: pointer;
@@ -27,6 +26,7 @@ body {
     position: absolute;
     width: 5em;
     height: 8em;
+    font-size: var(--font-size);
     background: linear-gradient(#d2d4d6, white);
     border-radius: 1.2em;
     box-shadow: 
