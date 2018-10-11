@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightyellow;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 20em;
+    height: 20em;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoji {
+    position: relative;
+    box-sizing: border-box;
+    width: 10em;
+    height: 10em;
+    background-color: pink;
+    border-radius: 50% 50% 75% 50%;
+}
+
+.emoji .eye {
+    position: absolute;
+    box-sizing: border-box;
+    width: 3em;
+    height: 3em;
+    border: 0.1em solid gray;
+    border-radius: 50%;
+    top: 3em;
+    --top: 1em;
+    --left: calc((100% - 1em) / 2);
+}
+
+.emoji .eye.left {
+    left: 1em;
+}
+
+.emoji .eye.right {
+    right: 1em;
+}
+
+.emoji .eye.left::before,
+.emoji .eye.right::before {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: #222;
+    border-radius: 50%;
+    top: var(--top);
+    left: var(--left);
+    transition: 0.3s;
+}
+
+.emoji .mouth {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    border: 0.1em solid;
+    bottom: 1em;
+    left: 40%;
+    border-radius: 50%;
+    border-color: transparent gray gray transparent;
+    transform: rotate(20deg);
+}
+
+.emoji.top .eye {
+    --top: 0;
+}
+
+.emoji.bottom .eye {
+    --top: 1.8em;
+}
+
+.emoji.left .eye {
+    --left: 0;
+}
+
+.emoji.right .eye {
+    --left: 1.8em;
+}
+
+.tip {
+    position: absolute;
+    cursor: pointer;
+    font-size: 4.5em;
+    color: silver;
+    font-weight: 100;
+}
+
+.tip.top {
+    top: -15%;
+}
+
+.tip.bottom {
+    bottom: -15%;
+}
+
+.tip.left {
+    left: -15%;
+}
+
+.tip.right {
+    right: -15%;
+}
+
+.tip::before {
+    content: attr(data-tip);
+    position: absolute;
+    font-size: 0.3em;
+    font-family: sans-serif;
+    width: 10em;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+}
+
+.tip.top::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 0.6em));
+}
+
+.tip.bottom::before {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, calc(100% + 0.6em));
+}
+
+.tip.left::before {
+    left: 0;
+    top: 50%;
+    transform: translate(calc(-100% - 0.6em), -50%);
+}
+
+.tip.right::before {
+    right: 0;
+    top: 50%;
+    transform: translate(calc(100% + 0.6em), -50%);
+}
+
+.tip::after {
+    content: '';
+    position: absolute;
+    font-size: 0.3em;
+    width: 0;
+    height: 0;
+    color: #222;
+    border: 0.6em solid transparent;
+}
+
+.tip.top::after {
+    border-bottom-width: 0;
+    border-top-color: currentColor;
+    top: -0.6em;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tip.bottom::after {
+    border-top-width: 0;
+    border-bottom-color: currentColor;
+    bottom: -0.6em;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tip.left::after {
+    border-right-width: 0;
+    border-left-color: currentColor;
+    left: -0.6em;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.tip.right::after {
+    border-left-width: 0;
+    border-right-color: currentColor;
+    right: -0.6em;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.tip::before,
+.tip::after {
+    visibility: hidden;
+    filter: opacity(0);
+    transition: 0.3s;
+}
+
+.tip:hover::before,
+.tip:hover::after {
+    visibility: visible;
+    filter: opacity(1);
+}
