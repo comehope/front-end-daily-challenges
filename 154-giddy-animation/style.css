@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+.container span {
+    font-size: 25px;
+    width: 1em;
+    height: 1em;
+    color: lime;
+    background-color: currentColor;
+    transform: scale(0);
+    animation: spin 5s linear infinite;
+    animation-delay: calc(var(--delay) * 1s);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    5%, 15% {
+        transform: rotate(90deg) scale(0);
+        background: white;
+    }
+
+    17.5% {
+        transform: rotate(180deg) scale(1);
+        background-color: currentColor;
+    }
+
+    20%, 100% {
+        transform: rotate(90deg) scale(0);
+    }
+}
