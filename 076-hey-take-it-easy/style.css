@@ -34,7 +34,6 @@ body {
 }
 
 /* paper */
-
 .paper {
     width: 24em;
     height: 30em;
@@ -68,39 +67,41 @@ body {
 }
 
 /* ruler */
-
 .ruler {
     width: 6em;
-    height: 24em;
+    height: 25em;
     background: linear-gradient(
         to right,
         peru 30%, 
         sandybrown 30%
     );
-    top: 8em;
-    left: 14em;
+    top: 7em;
+    left: 15em;
     transform: rotate(25deg);
 }
 
 .ruler::before,
 .ruler::after {
-    height: calc(100% - 3em);
-    background-image: linear-gradient(darkslategray 1em, transparent 1em);
-    background-size: 4em 4em;
+    width: inherit;
+    height: inherit;
+    background-image:
+        linear-gradient(
+            transparent 1em,
+            darkslategray 1em, darkslategray 2em,
+            transparent 2em);
+    background-repeat: repeat-y;
 }
 
 .ruler::before {
-    width: 2em;
-    top: 1em;
+    background-size: 2em 4em;
 }
 
 .ruler::after {
-    width: 1em;
-    top: 3em;
+    background-size: 1em 4em;
+    top: 2em;
 }
 
 /* calendar */
-
 .calendar {
     width: 28em;
     height: 28em;
@@ -139,7 +140,6 @@ body {
 }
 
 /* notebook */
-
 .notebook {
     width: 26em;
     height: 34em;
@@ -179,7 +179,6 @@ body {
 }
 
 /* pencil */
-
 .pencil {
     width: 6em;
     height: 12em;
@@ -203,13 +202,12 @@ body {
 
 .pencil::after {
     border: 2em solid transparent;
-    border-top-color: sandybrown;
+    border-top-color: coral;
     bottom: -4.5em;
     left: 0;
 }
 
 /* words */
-
 .desk p {
     color: darkslategray;
     font-size: 6em;
@@ -222,8 +220,7 @@ body {
     transform: rotate(-35deg) scale(0);
 }
 
-/* transition effects */
-
+/* hover effects */
 .desk:hover .paper {
     top: 0;
     left: 0;
@@ -231,7 +228,7 @@ body {
 
 .desk:hover .ruler {
     top: 0;
-    left: 50%;
+    left: 45%;
     transform: rotate(0deg);
 }
 
