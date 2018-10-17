@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100vmin;
+    height: 100vmin;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5vmin solid gray;
+}
+
+.container span {
+    width: inherit;
+    height: 10vmin;
+    background: 
+        linear-gradient(
+            gray, gray 0.5vmin,
+            transparent 0.5vmin
+        ),
+        repeating-linear-gradient(
+            to right,
+            black, black 10vmin,
+            transparent 10vmin, transparent 20vmin
+        )
+}
+
+.container span:nth-child(odd) {
+    animation: move 5s linear infinite;
+}
+
+.container span:nth-child(even) {
+    animation: move 5s linear infinite reverse;
+}
+
+@keyframes move {
+    0%, 55%, 100% {
+        background-position: 0 0;
+    }
+
+    5%, 50% {
+        background-position: 5vmin 0;
+    }
+}
