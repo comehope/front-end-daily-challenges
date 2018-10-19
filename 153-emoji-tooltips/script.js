@@ -1,7 +1,6 @@
 const $ = (className) => document.getElementsByClassName(className)[0]
 const EVENTS = ['mouseover', 'mouseout']
-// const DIRECTIONS = ['top', 'bottom', 'left', 'right']
-const DIRECTIONS = ['top', 'left']
+const DIRECTIONS = ['top', 'bottom', 'left', 'right']
 
 DIRECTIONS.forEach(direction => 
     EVENTS.forEach((e) => 
