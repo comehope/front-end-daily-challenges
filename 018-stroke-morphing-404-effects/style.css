@@ -1,20 +1,25 @@
-html, body {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: linear-gradient(dimgray, black);
 }
 
-.four-zero-four p {
+.error {
+	display: flex;
+	width: 33em;
+	justify-content: space-between;
+}
+
+.error > * {
 	width: 10em;
 	height: 10em;
-	display: inline-block;
-	margin: 1em;
 	position: relative;
 }
 
-.four-zero-four p span {
+.error span {
 	position: absolute;
 	box-sizing: border-box;
 	filter: opacity(0.8);
@@ -70,35 +75,35 @@ html, body {
 	background-color: peachpuff;
 }
 
-.four-zero-four:hover p span {
+.error:hover span {
 	background-color: whitesmoke;
 }
 
-.four-zero-four:hover .four span:nth-child(1) {
+.error:hover .four span:nth-child(1) {
 	left: 0;
 	top: 20%;
 }
 
-.four-zero-four:hover .four span:nth-child(2) {
+.error:hover .four span:nth-child(2) {
 	top: 0;
 }
 
-.four-zero-four:hover .four span:nth-child(3) {
+.error:hover .four span:nth-child(3) {
 	right: 0;
 }
 
-.four-zero-four:hover .zero span:nth-child(1) {
+.error:hover .zero span:nth-child(1) {
 	left: 0;
 }
 
-.four-zero-four:hover .zero span:nth-child(2) {
+.error:hover .zero span:nth-child(2) {
 	top: 0;
 }
 
-.four-zero-four:hover .zero span:nth-child(3) {
+.error:hover .zero span:nth-child(3) {
 	right: 0;
 }
 
-.four-zero-four:hover .zero span:nth-child(4) {
+.error:hover .zero span:nth-child(4) {
 	bottom: 0;
 }
