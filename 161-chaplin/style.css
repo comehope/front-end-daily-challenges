@@ -26,6 +26,8 @@ body {
     background-color: currentColor;
     border-radius: 2.3em 2.3em 0 0;
     top: 1.4em;
+    display: flex;
+    justify-content: center;
 }
 
 .hat::before {
@@ -36,7 +38,6 @@ body {
     background-color: currentColor;
     border-radius: 0.4em;
     top: calc(100% + 0.4em);
-    left: calc((100% - 10em) / 2);
 }
 
 .beard {
