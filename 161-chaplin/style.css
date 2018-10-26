@@ -17,6 +17,11 @@ body {
     align-items: center;
     position: relative;
     color: #555;
+    transition: 1s linear;
+}
+
+.chaplin:hover {
+    box-shadow: 0 0 4em 1em rgba(0, 0, 0, 0.2);
 }
 
 .hat {
@@ -99,4 +104,15 @@ body {
 
 .quote span:nth-child(2) {
     font-size: 1.6em;
+}
+
+.quote span:nth-child(1),
+.quote span:nth-child(3) {
+    filter: opacity(0);
+    transition: 1s ease-in;
+}
+
+.chaplin:hover .quote span:nth-child(1),
+.chaplin:hover .quote span:nth-child(3) {
+    filter: opacity(1);
 }
