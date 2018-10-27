@@ -7,7 +7,8 @@ let loop = {
 
 Array.from($('buttons').children).forEach(element => 
     element.addEventListener('click', function(e) {
+        $('device').classList.remove(devices[0])
         loop[e.target.className]()
-        $('device').className = 'device ' + devices[0]
+        $('device').classList.add(devices[0])
     })
 )
