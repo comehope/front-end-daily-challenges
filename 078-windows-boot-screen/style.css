@@ -31,7 +31,7 @@ body {
 }
 
 .logo .ms::after {
-    content: '\00a9';
+    content: attr(data-copyright);
     font-size: 0.625em;
     vertical-align: top;
     position: relative;
@@ -46,7 +46,7 @@ body {
 }
 
 .logo .win::after {
-    content: 'XP';
+    content: attr(data-version);
     font-size: 0.5em;
     vertical-align: top;
     position: relative;
