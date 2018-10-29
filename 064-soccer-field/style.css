@@ -4,15 +4,16 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: radial-gradient(sandybrown, maroon);
+	background-color: #f2f3ee;
 }
 
 .container {
 	width: 120em;
 	height: 80em;
-	background-color: green;
+	background: linear-gradient(to right, #76a665 4em, #4a772f 4em);
+	background-size: 8em;
 	font-size: 5px;
-	padding: 5em;
+	padding: 4em;
 	--line: 0.3em solid white;
 }
 
@@ -70,7 +71,6 @@ body {
 	position: absolute;
 	top: calc((80em - 44em) / 2);
 	left: -0.3em;
-	background-color: green;
 }
 
 .penalty-mark {
