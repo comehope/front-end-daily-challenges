@@ -11,29 +11,39 @@ body,
 .box {
 	width: 300px;
 	height: 300px;
-	background: linear-gradient(
-		-45deg,
-		white 0%,
-		white 25%,
-		hotpink 25%,
-		hotpink 50%,
-		white 50%,
-		white 75%,
-		hotpink 75%,
-		hotpink 100%);
-	background-size: 10%;
 	box-sizing: border-box;
 	padding: 15px;
-	animation: animate 2s linear infinite;
+	position: relative;
+	overflow: hidden;
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	width: 150%;
+	height: 150%;
+	background: repeating-linear-gradient(
+			white 0%,
+			white 7.5px,
+			hotpink 7.5px,
+			hotpink 15px,
+			white 15px,
+			white 22.5px,
+			hotpink 22.5px,
+			hotpink 30px);
+	transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+	animation: animate 20s linear infinite;
 }
 
 .box .content {
+	position: relative;
 	background-color: white;
 	flex-direction: column;
 	box-sizing: border-box;
 	padding: 30px;
 	text-align: center;
 	font-family: sans-serif;
+	z-index: 2;
 }
 
 .box,
@@ -58,6 +68,6 @@ body,
 	}
 
 	to {
-		background-position: 10%;
+		background-position: 0 450px;
 	}
 }
