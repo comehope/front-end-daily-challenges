@@ -18,8 +18,7 @@ html, body {
 	width: 10em;
 	height: 9em;
 	background-color: white;
-	border-bottom-left-radius: 1.5em;
-	border-bottom-right-radius: 1.5em;
+	border-radius: 0 0 1.5em 1.5em;
 	position: relative;
 }
 
@@ -51,8 +50,7 @@ html, body {
 	width: 16em;
 	height: 1em;
 	background-color: white;
-	border-bottom-left-radius: 50%;
-	border-bottom-right-radius: 50%;
+	border-radius: 0 0 50% 50%;
 	position: absolute;
 	bottom: -1px;
 }
