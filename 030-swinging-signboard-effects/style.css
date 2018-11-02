@@ -35,10 +35,9 @@ html, body {
 .strings {
 	width: 150px;
 	height: 150px;
-	border: 5px solid brown;
+	border: 5px brown;
 	position: absolute;
-	border-right: none;
-	border-bottom: none;
+	border-style: solid none none solid;
 	transform: rotate(45deg);
 	top: 38px;
 	left: 122px;
