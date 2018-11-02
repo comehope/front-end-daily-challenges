@@ -24,21 +24,19 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border: 0.2em solid transparent;
+	border-width: 0.2em;
 	box-sizing: border-box;
 	color: orangered;
 	animation: rotating 10s infinite;
 }
 
 .warning::before {
-	border-top-color: currentColor;
-	border-right-color: currentColor;
+	border-style: solid solid none none;
 	z-index: -1;
 }
 
 .warning::after {
-	border-bottom-color: currentColor;
-	border-left-color: currentColor;
+	border-style: none none solid solid;
 	box-shadow: 0.3em 0.3em 0.3em rgba(20%, 20%, 20%, 0.8);
 }
 
