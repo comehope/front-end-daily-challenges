@@ -8,12 +8,8 @@ body {
 }
 
 :root {
-	--outer-w: 49em;
+	--outer-w: 50em;
 	--outer-h: 40em;
-	--middle-w: 32em;
-	--middle-h: 26em;
-	--inner-w: 16em;
-	--inner-h: 13em;
 }
 
 .vue {
@@ -32,31 +28,28 @@ body {
 .vue .inner {
 	position: absolute;
 	border-style: solid;
-	border-color: transparent;
-	border-top-width: var(--h);
-	border-top-color: var(--c);
-	border-left-width: calc(var(--w) / 2);
-	border-right-width: calc(var(--w) / 2);
+	border-color: currentColor transparent transparent transparent;
+	border-width: var(--h) var(--w) 0 var(--w);
 	animation: in-and-out 3s linear infinite;
 }
 
 .vue .outer {
 	--h: var(--outer-h);
-	--w: var(--outer-w);
-	--c: #42b883; /* aragon green */
+	--w: calc(var(--outer-w) / 2);
+	color: #42b883; /* aragon green */
 }
 
 .vue .middle {
-	--h: var(--middle-h);
-	--w: var(--middle-w);
-	--c: #35495e; /* derk denim */
+	--h: calc(var(--outer-h) * 0.65);
+	--w: calc(var(--outer-w) / 2 * 0.65);
+	color: #35495e; /* derk denim */
 	animation-delay: 0.1s;
 }
 
 .vue .inner {
-	--h: var(--inner-h);
-	--w: var(--inner-w);
-	--c: white;
+	--h: calc(var(--outer-h) * 0.65 * 0.5);
+	--w: calc(var(--outer-w) / 2 * 0.65 * 0.5);
+	color: white;
 	animation-delay: 0.2s;
 }
 
