@@ -22,65 +22,61 @@ body {
 
 .icon span {
     position: absolute;
-    width: 22.5%;
-    height: 37.5%;
-    border-radius: 50% / 30%;
+    width: 2.25em;
+    height: 3.75em;
+    border-radius: 1.125em;
     transform-origin: center 105%;
     transform: rotate(calc((var(--n) - 1) * 45deg));
-    background-color: var(--c);
+    background-color: currentColor;
     mix-blend-mode: multiply;
 }
 
 .icon:hover span {
-    animation: rotating 2s ease-in-out forwards;
+    animation: rotating 2s cubic-bezier(0.75, -0.5, 0.25, 1.5) reverse forwards;
 }
 
 @keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-
     to {
-        transform: rotate(calc((var(--n) - 1) * 45deg));
+        transform: rotate(0deg);
     }
 }
 
 .icon span:nth-child(1) {
     --n: 9;
-    --c: rgba(243, 156, 18, 0.7);
+    color: rgba(243, 156, 18, 0.7);
 }
 
 .icon span:nth-child(2) {
     --n: 2;
-    --c: rgba(241, 196, 15, 0.7);
+    color: rgba(241, 196, 15, 0.7);
 }
 
 .icon span:nth-child(3) {
     --n: 3;
-    --c: rgba(46, 204, 113, 0.7);
+    color: rgba(46, 204, 113, 0.7);
 }
 
 .icon span:nth-child(4) {
     --n: 4;
-    --c: rgba(27, 188, 155, 0.7);
+    color: rgba(27, 188, 155, 0.7);
 }
 
 .icon span:nth-child(5) {
     --n: 5;
-    --c: rgba(65, 131, 215, 0.7);
+    color: rgba(65, 131, 215, 0.7);
 }
 
 .icon span:nth-child(6) {
     --n: 6;
-    --c: rgba(102, 51, 153, 0.7);
+    color: rgba(102, 51, 153, 0.7);
 }
 
 .icon span:nth-child(7) {
     --n: 7;
-    --c: rgba(155, 89, 182, 0.7);
+    color: rgba(155, 89, 182, 0.7);
 }
 
 .icon span:nth-child(8) {
     --n: 8;
-    --c: rgba(242, 38, 19, 0.7);
+    color: rgba(242, 38, 19, 0.7);
 }
