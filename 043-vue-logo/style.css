@@ -7,17 +7,9 @@ body {
 	background: radial-gradient(circle at center,lightgreen, white);
 }
 
-:root {
-	--outer-w: 50em;
-	--outer-h: 40em;
-}
-
 .vue {
-	width: var(--outer-w);
-	height: var(--outer-h);
-	font-size: 8px;
-	display: flex;
-	justify-content: center;
+	width: 25em;
+	height: 20em;
 	position: relative;
 	overflow: hidden;
 }
@@ -29,27 +21,25 @@ body {
 	position: absolute;
 	border-style: solid;
 	border-color: currentColor transparent transparent transparent;
-	border-width: var(--h) var(--w) 0 var(--w);
+	border-width: 20em 12.5em 0 12.5em;
 	animation: in-and-out 3s linear infinite;
 }
 
 .vue .outer {
-	--h: var(--outer-h);
-	--w: calc(var(--outer-w) / 2);
 	color: #42b883; /* aragon green */
 }
 
 .vue .middle {
-	--h: calc(var(--outer-h) * 0.65);
-	--w: calc(var(--outer-w) / 2 * 0.65);
 	color: #35495e; /* derk denim */
+	transform-origin: top;
+	transform: scale(0.65);
 	animation-delay: 0.1s;
 }
 
 .vue .inner {
-	--h: calc(var(--outer-h) * 0.65 * 0.5);
-	--w: calc(var(--outer-w) / 2 * 0.65 * 0.5);
 	color: white;
+	transform-origin: top;
+	transform: scale(calc(0.65 * 0.5));
 	animation-delay: 0.2s;
 }
 
@@ -61,12 +51,10 @@ body {
 	15%, 80% {
 		top: 0;
 		filter: opacity(1);
-		transform: scale(1);
 	}
 
 	90%, 100% {
 		top: 100%;
 		filter: opacity(0);
-		transform: scale(0);
 	}
 }
