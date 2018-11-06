@@ -8,30 +8,28 @@ body {
 }
 
 .loader {
-	width: 10em;
+	box-sizing: border-box;
+	width: 9em;
 	height: 3em;
-	border: 0.3em solid silver;
-	border-radius: 3em;
 	font-size: 30px;
-	border-left-color: hotpink;
-	border-right-color: dodgerblue;
+	border: 0.3em solid;
+	border-color: silver dodgerblue silver hotpink;
+	border-radius: 1.5em;
 	position: relative;
 	animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
 	to {
-		transform: rotate(360deg);
+		transform: rotate(1turn);
 	}
 }
 
 .loader::before {
 	content: '';
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 3em;
-	height: 3em;
+	width: calc(3em - 0.3em * 2);
+	height: calc(3em - 0.3em * 2);
 	border-radius: 50%;
 	background-color: dodgerblue;
 	animation:
@@ -40,8 +38,12 @@ body {
 }
 
 @keyframes shift {
+	0%, 100% {
+		left: 0;
+	}
+
 	50% {
-		left: 7em;
+		left: calc(9em - 3em);
 	}
 }
 
@@ -54,4 +56,3 @@ body {
 		background-color: hotpink;
 	}
 }
-
