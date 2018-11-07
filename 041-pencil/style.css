@@ -8,17 +8,38 @@ body {
 }
 
 .pencil {
-	position: absolute;
+	display: flex;
 	width: 50em;
 	height: 3.5em;
 	font-size: 12px;
 	filter: drop-shadow(0.4em 0.8em 0.3em gray);
 }
 
-.pencil .barrel {
+.pencil .taper {
+	width: 4em;
+}
+
+.pencil .taper::before,
+.pencil .taper::after {
+	content: '';
 	position: absolute;
+	border-style: solid;
+	border-width: calc(3.5em / 2) 4em calc(3.5em / 2) 0;
+	border-color: transparent;
+}
+
+.pencil .taper::before {
+	border-right-color: burlywood;
+}
+
+.pencil .taper::after {
+	border-right-color: black;
+	transform-origin: left;
+	transform: scale(0.3);
+}
+
+.pencil .barrel {
 	width: 40em;
-	left: 4em;
 	background-color: green;
 	border-top: 1em solid forestgreen;
 	border-bottom: 1em solid darkgreen;
@@ -29,30 +50,9 @@ body {
 	letter-spacing: 0.1em;
 }
 
-.pencil .taper::before,
-.pencil .taper::after {
-	content: '';
-	position: absolute;
-	left: -4em;
-	border-style: solid;
-	border-width: calc(3.5em / 2) 4em;
-	border-color: transparent;
-}
-
-.pencil .taper::before {
-	border-right-color: burlywood;
-}
-
-.pencil .taper::after {
-	border-right-color: black;
-	transform: scale(0.3);
-}
-
 .pencil .eraser {
-	position: absolute;
-	right: 0;
+	position: relative;
 	width: 6em;
-	height: 1.5em;
 	background-color: lightpink;
 	border-top: 1em solid pink;
 	border-bottom: 1em solid lightcoral;
@@ -63,7 +63,6 @@ body {
 	content: '';
 	position: absolute;
 	top: -1em;
-	left: 0;
 	width: 1.5em; 
 	height: 1.5em;
 	background-color: silver;
