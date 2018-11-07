@@ -9,56 +9,57 @@ body {
 }
 
 .spacecraft {
-    width: 7em;
-    height: 11em;
-    font-size: 16px;
-    background: 
-        radial-gradient(
-            circle at 3.5em 5em,
-            transparent 1.5em,
-            lightslategray 1.5em, lightslategray 2em,
-            transparent 2em
-        ),
-        radial-gradient(
-            circle at 3.3em 5.2em,
-            deepskyblue 1.4em,
-            transparent 1.6em
-        ),
-        radial-gradient(
-            circle at 3.5em 5em,
-            white 1.5em,
-            transparent 1.5em
-        ),
-        linear-gradient(whitesmoke, darkgray);
-    border-radius: 50% / 70% 70% 5% 5%;
+    width: 11em;
+    height: 15em;
     position: relative;
 }
 
-.spacecraft::before {
+.body {
+    position: absolute;
+    width: 7em;
+    height: 11em;
+    left: 2em;
+    background: linear-gradient(whitesmoke, darkgray);
+    border-radius: 50% / 70% 70% 5% 5%;
+    z-index: 1;
+}
+
+.body::before {
     content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 4em;
+    height: 4em;
+    background-color: deepskyblue;
+    border-radius: 50%;
+    border: 0.5em solid lightslategray;
+    box-shadow: inset -0.2em 0.2em white;
+    top: 3em;
+    left: 1.5em;
+}
+
+.engine {
     position: absolute;
     width: 6em;
     height: 2em;
     background-color: #444;
     border-radius: 20%;
     top: 10em;
-    left: 0.5em;
-    z-index: -1;
+    left: 2.5em;
 }
 
-.spacecraft::after {
+.engine::before {
     content: '';
     position: absolute;
     box-sizing: border-box;
     width: 4em;
     height: 4em;
     background: gold;
-    top: 10em;
-    left: 1.5em;
     border-radius: 80% 0 50% 45% / 50% 0 80% 45%;
     transform: rotate(135deg);
     border: 0.5em solid orange;
-    z-index: -2;
+    left: 1em;
+    z-index: -1;
     animation: flame-spout 0.3s infinite;
 }
 
@@ -83,12 +84,12 @@ body {
 }
 
 .fins::before {
-    left: -2em;
+    left: 0;
     border-radius: 3em 0 50% 100%;
 }
 
 .fins::after {
-    right: -2em;
+    right: 0;
     border-radius: 0 3em 100% 50%;
 }
 
