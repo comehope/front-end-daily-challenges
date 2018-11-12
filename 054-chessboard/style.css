@@ -25,12 +25,13 @@ li {
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
-	vertical-align: middle;
+	line-height: 1.5em;
+	font-weight: bold;
 }
 
 ul:nth-child(odd) li:nth-child(even),
 ul:nth-child(even) li:nth-child(odd) {
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 ul:nth-child(-n+2) {
