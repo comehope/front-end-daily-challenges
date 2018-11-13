@@ -42,14 +42,16 @@ body {
     width: 3em;
     height: 3em;
     background-color: white;
-    border-radius: 0 100%;
     top: 3em;
 }
 
-.fox .faces::after,
-.fox .ears::after {
+.fox .faces::before {
+    border-radius: 0 100%;
+}
+
+.fox .faces::after {
     right: 0;
-    transform: rotate(-90deg);
+    border-radius: 100% 0;
 }
 
 .fox .eyes::before,
@@ -75,8 +77,16 @@ body {
     height: 3em;
     background-color: currentColor;
     filter: brightness(1.25);
-    border-radius: 0 100% 0 0;
     z-index: -1;
+}
+
+.fox .ears::before {
+    border-radius: 0 100% 0 0;
+}
+
+.fox .ears::after {
+    right: 0;
+    border-radius: 100% 0 0 0;
 }
 
 .fox .nose{
