@@ -47,15 +47,5 @@ body {
     border-radius: 50%;
     top: 100%;
     left: -0.75em;
-}
-
-.pendulums span::after {
-    content: '';
-    position: absolute;
-    width: 2em;
-    height: 0.3em;
-    background-color: rgba(0, 0, 0, 0.2);
-    top: 120%;
-    left: -1em;
-    filter: blur(0.4em);
+    box-shadow: -1em 4em 1em rgba(0, 0, 0, 0.1);
 }
