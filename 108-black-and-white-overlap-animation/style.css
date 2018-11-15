@@ -5,7 +5,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: black;
-    margin-top: 15vmin;
     overflow: hidden;
 }
 
@@ -13,6 +12,7 @@ body {
     width: 60vmin;
     height: 60vmin;
     position: relative;
+    margin-top: 20vmin;
     animation: zoom 5s linear infinite;
 }
 
@@ -24,7 +24,6 @@ body {
 
 .circles span {
     position: absolute;
-    box-sizing: border-box;
     width: 50%;
     height: 50%;
     background-color: white;
@@ -37,15 +36,7 @@ body {
 }
 
 @keyframes rotating {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(var(--deg)) translateY(0);
-    }
-
-    100% {
-        transform: rotate(var(--deg)) translateY(100%) scale(2);
-    }
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(var(--deg)) translateY(0); }
+    100% { transform: rotate(var(--deg)) translateY(100%) scale(2); }
 }
