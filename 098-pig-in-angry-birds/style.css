@@ -7,8 +7,6 @@ body {
     background-color: skyblue;
 }
 
-.pig::before,
-.pig::after,
 .pig *::before,
 .pig *::after {
     content: '';
@@ -28,8 +26,8 @@ body {
         inset 0.5em -0.5em 0.8em 0.2em rgba(0, 0, 0, 0.2);
 }
 
-.pig::before,
-.pig::after {
+.eyebrows::before,
+.eyebrows::after {
     width: 1.4em;
     height: 1em;
     border-top: 0.5em solid #0f2d00;
@@ -37,12 +35,12 @@ body {
     border-radius: 50% 50% 0 0 / 40% 40% 0 0;
 }
 
-.pig::before {
+.eyebrows::before {
     left: 1.2em;
     transform: rotate(-20deg);
 }
 
-.pig::after {
+.eyebrows::after {
     right: 1em;
     transform: rotate(25deg);
 }
