@@ -16,8 +16,7 @@ body {
     position: relative;
 }
 
-.box::before {
-    content: '';
+.ball {
     position: absolute;
     width: 2em;
     height: 2em;
