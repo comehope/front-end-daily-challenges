@@ -7,10 +7,19 @@ body {
     background-image: linear-gradient(#555, #222);
 }
 
+.container {
+    width: 15em;
+    height: 11.5em;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .wheel {
     width: 9em;
     height: 9em;
-    font-size: 25px;
     border: 0.4em solid #777;
     border-radius: 50%;
     box-shadow: 0 0 0 0.5em #111;
@@ -20,12 +29,9 @@ body {
     position: relative;
 }
 
-.wheel::before {
-    content: '';
-    position: absolute;
-    width: 15em;
+.road {
+    width: inherit;
     height: 0.2em;
-    top: 11em;
     background-image: linear-gradient(
             to right,
             silver 0, silver 4em,
@@ -36,10 +42,10 @@ body {
             transparent 14em, transparent 15em
         );
     background-position: 15em;
-    animation: run2 6s linear infinite;
+    animation: road-run 6s linear infinite;
 }
 
-@keyframes run2 {
+@keyframes road-run {
     to {
         background-position: -15em;
     }
@@ -52,35 +58,18 @@ body {
     border: 0.1em solid;
     border-color: #ccc transparent;
     transform: rotate(calc((var(--n) - 1) * 30deg));
-    animation: run 4s linear infinite;
+    animation: wheel-run 4s linear infinite;
 }
 
-@keyframes run {
+@keyframes wheel-run {
     to {
         transform: rotate(calc((var(--n) - 1) * 30deg + 1turn));
     }
 }
 
-.wheel span:nth-child(1) {
-    --n: 1;
-}
-
-.wheel span:nth-child(2) {
-    --n: 2;
-}
-
-.wheel span:nth-child(3) {
-    --n: 3;
-}
-
-.wheel span:nth-child(4) {
-    --n: 4;
-}
-
-.wheel span:nth-child(5) {
-    --n: 5;
-}
-
-.wheel span:nth-child(6) {
-    --n: 6;
-}
+.wheel span:nth-child(1) { --n: 1 }
+.wheel span:nth-child(2) { --n: 2 }
+.wheel span:nth-child(3) { --n: 3 }
+.wheel span:nth-child(4) { --n: 4 }
+.wheel span:nth-child(5) { --n: 5 }
+.wheel span:nth-child(6) { --n: 6 }
