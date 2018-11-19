@@ -7,42 +7,37 @@ body {
 	background: linear-gradient(gray, lightyellow, gray);
 }
 
-.butterfly {
-	position: relative;
-	width: 10em;
-	height: 10em;
+.frame {
+	width: 40em;
+	height: 30em;
 	font-size: 10px;
-	transform: translateX(1em);
-}
-
-.butterfly::before,
-.butterfly::after {
-	content: '';
-	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: lightyellow;
 	box-sizing: border-box;
-}
-
-.butterfly::before {
-	width: 24em;
-	height: 18em;
-	background-color: black;
-	top: -2.5em;
-	left: -8em;
-  	border: inset 0.2em silver;
-}
-
-.butterfly::after {
-    width: 40em;
-    height: 30em;
-    background-color: lightyellow;
-    top: -9em;
-    left: -16em;
-    border: 2em solid burlywood;
+	border: 2em solid burlywood;
     border-radius: 3em;
     box-shadow: 
     	0 0.3em 2em 0.4em rgba(0, 0, 0, 0.3),
-    	inset 0.4em 0.4em 0.1em 0.5em rgba(0, 0, 0, 0.4);
-    z-index: -1;
+		inset 0.4em 0.4em 0.1em 0.5em rgba(0, 0, 0, 0.4);
+	position: relative;
+}
+
+.frame::before {
+	content: '';
+	position: absolute;
+	width: 24em;
+	height: 18em;
+	background-color: black;
+  	border: inset 0.2em silver;
+}
+
+.butterfly {
+	position: absolute;
+	width: 10em;
+	height: 10em;
+	transform: translateX(1em) translateY(-1em);
 }
 
 .butterfly .left,
