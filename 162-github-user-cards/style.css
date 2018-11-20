@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #383838;
+}
+
+.app {
+    width: 320px;
+    height: 630px;
+    font-family: sans-serif;
+    position: relative;
+    overflow: hidden; 
+}
+
+/* form */
+
+.form {
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 8px;
+    display: flex;
+}
+
+input {
+    border: none;
+
+    font-size: 14px;
+    outline: none;
+    border-radius: inherit;
+    padding: 0 8px;
+}
+  
+#username {
+    flex-grow: 1;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #42454e;
+}
+  
+#search {
+    margin-left: 8px;
+
+    background-color: rgba(0, 97, 145, 0.75);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#search:hover {
+    background-color: rgba(0, 97, 145, 0.45);
+}
+
+#search:active {
+    transform: scale(0.98);
+    background-color: rgba(0, 97, 145, 0.75);
+}
+
+/* profile card */
+
+.profile {
+    width: 320px;
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    --avatar: url(https://avatars3.githubusercontent.com/u/583231?v=4);
+    border-radius: 5px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.profile::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 20px * 2);
+    height: calc(100% + 20px * 2);
+    background-image: var(--avatar);
+    background-size: cover;
+    z-index: -1;
+    margin: -20px;
+    filter: blur(10px);
+}
+
+.header {
+    height: 380px;
+    background-color: rgba(0, 97, 145, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    background-image: var(--avatar);
+    margin: 70px 0 0 0;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 0.8em rgba(0, 0, 0, 0.2),
+        0 0 0 1em rgba(161, 220, 255, 0.35);
+}
+
+.name {
+    margin: 50px 0 0 0;
+    color: white;
+    font-size: 28px;
+    font-weight: normal;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.location {
+    margin: 5px 0 0 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: normal;
+}
+
+.footer {
+    height: 180px;
+    background-color: rgba(0, 97, 145, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 40px 0 0 0;
+}
+
+.details li {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 0 6px;
+}
+
+.details li span {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.details li:not(:first-child) {
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.to-github {
+    margin: 30px 0 0 0;
+    display: block;
+    width: 200px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.to-github:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <div class="form">
+            <input placeholder="Who are you looking for?" id="username">
+            <input type="button" value="Search" id="search">
+        </div>
+        <div class="profile"></div>
+    </div>
+    <script type="text/x-tmpl" id="template">
+        <div class="header">
+            <div class="avatar"></div>
+            <h2 class="name">{%= o.name %}</h2>
+            <h3 class="location">{%= o.location %}</h3>
+        </div>
+        <div class="footer">
+            <ul class="details">
+                <li>Repositories<span>{%= o.public_repos %}</span></li>
+                <li>Followers<br><span>{%= o.followers %}</span></li>
+                <li>Following<br><span>{%= o.following %}</span></li>
+            </ul>
+            <a href="{%= o.html_url %}" class="to-github">go to github</a>
+        </div>
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
