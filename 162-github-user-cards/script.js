@@ -6,8 +6,14 @@ function render(container, data) {
 function getData(username) {
     let apiUrl = `https://api.github.com/users/${username}`
     fetch(apiUrl)
-        .then(response => response.json())
+        .then(function(response) {
+            if(response.status != 200) {
+                throw new Error(response.statusText)
+            }
+            return response.json()
+        })
         .then(update)
+        .catch(alert)
 }
 
 function update(data) {
@@ -57,6 +63,24 @@ function update(data) {
         current.remove()
         next.animate(animationIn.keyframes, animationIn.options)
     }
+}
+
+function alert(error) {
+    let keyframes = [
+        {left: '100%', offset: 0},
+        {left: '50%', offset: 0.2},
+        {left: '50%', offset: 0.8},
+        {left: '100%', offset: 1},
+    ]
+
+    let options = {
+        duration: 2000,
+        fill: 'forwards',
+    }
+
+    let element = document.getElementsByClassName('alert')[0]
+    element.innerText = error.message
+    element.animate(keyframes, options)
 }
 
 let mockData = {

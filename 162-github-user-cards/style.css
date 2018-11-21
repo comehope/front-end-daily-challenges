@@ -168,3 +168,18 @@ input {
 .to-github:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
+
+/* alert box */
+
+.alert {
+    position: absolute;
+    top: 70px;
+    width: 50%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 5px;
+    left: 100%;
+}
