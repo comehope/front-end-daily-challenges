@@ -4,6 +4,9 @@ function render(container, data) {
 }
 
 function getData(username) {
+    username = username.replace(/[ ]/g, '')
+    if (username == '') return;
+    
     let apiUrl = `https://api.github.com/users/${username}`
     fetch(apiUrl)
         .then(function(response) {
@@ -96,7 +99,10 @@ let mockData = {
 window.onload = update(mockData)
 
 document.getElementById('search').addEventListener('click', () => {
-    let username = document.getElementById('username').value.replace(/[ ]/g, '')
-    if (username == '') return;
-    getData(username)
+    getData(document.getElementById('username').value)
+})
+
+document.getElementById('username').addEventListener('keypress', (e) => {
+    if (e.charCode != 13) return;
+    getData(document.getElementById('username').value)
 })
