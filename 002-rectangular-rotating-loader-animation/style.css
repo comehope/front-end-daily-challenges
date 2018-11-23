@@ -7,8 +7,9 @@ html, body {
 }
 
 .loader {
-	width: 150px;
-	height: 150px;
+	width: 15em;
+	height: 15em;
+	font-size: 10px;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -21,8 +22,8 @@ html, body {
 	width: var(--diameter);
 	height: var(--diameter);
 	box-sizing: border-box;
-	border: 10px solid dimgray;
-	border-radius: 2px;
+	border: 1em solid dimgray;
+	border-radius: 0.2em;
 	animation: rotating linear infinite;
 }
 
@@ -45,19 +46,19 @@ html, body {
 .loader span::after {
 	content: '';
 	position: absolute;
-	width: 10px;
+	width: 1em;
 	height: 50%;
 	background-color: gold;
 }
 
 .loader span::before {
-	top: -10px;
-	left: -10px;
+	top: -1em;
+	left: -1em;
 }
 
 .loader span::after {
-	bottom: -10px;
-	right: -10px;
+	bottom: -1em;
+	right: -1em;
 }
 
 @keyframes rotating {
