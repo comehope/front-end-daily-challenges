@@ -1,5 +1,6 @@
-html, body {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -9,15 +10,15 @@ html, body {
 .battery {
 	width: 6em;
 	height: 3em;
+	font-size: 30px;
 	color: midnightblue;
 	border: 0.5em solid currentColor;
 	border-radius: 0.2em;
-	font-size: 2em;
 	position: relative;
 	background-image: linear-gradient(to right, whitesmoke, whitesmoke);
 	background-repeat: no-repeat;
 	background-size: 30% 80%;
-	background-position: top 0.3em left 0.3em;
+	background-position: 0.3em 0.3em;
 	animation: charge 5s steps(8) infinite;
 }
 
