@@ -4,13 +4,13 @@ html, body {
 	align-items: center;
 	justify-content: center;
 	background-color: black;
-	color: silver;
 }
 
 .box {
 	width: 9em;
 	height: 3em;
 	font-size: 30px;
+	color: silver;
 	font-family: sans-serif;
 	text-align: center;
 	line-height: 3em;
@@ -27,52 +27,36 @@ html, body {
 .box::after {
 	content: '';
 	position: absolute;
-	width: 3em;
-	height: 3em;
-	border: 1px solid red;
-	border-radius: 50%;
-	left: 3em;
-	filter: opacity(0);
-}
-
-.box span:not(:first-child) {
-	position: absolute;
-	background-color: red;
-	filter: opacity(0);
-}
-
-.box span.top,
-.box span.bottom {
-	width: 1px;
-	height: 3em;
-	left: 50%;
-}
-
-.box span.top {
-	top: -3em;
-}
-
-.box span.bottom {
-	bottom: -3em;
-}
-
-.box span.left,
-.box span.right {
-	width: 3em;
-	height: 1px;
-	top: 50%;
-}
-
-.box span.left {
+	width: 9em;
+	height: 9em;
 	left: 0;
+	top: -3em;
+	background-image: 
+		radial-gradient(
+			circle at center,
+			transparent 0, transparent 1.5em,
+			red 1.5em, red calc(1.5em + 1px),
+			transparent calc(1.5em + 1px)
+		),
+		linear-gradient(
+			to right,
+			red 3em,
+			transparent 3em, transparent 6em,
+			red 6em
+		),
+		linear-gradient(
+			to bottom,
+			red 3em,
+			transparent 3em, transparent 6em,
+			red 6em
+		);
+	background-repeat: no-repeat, repeat-x, repeat-y;
+	background-size: 100% 100%, 100% 1px, 1px 100%;
+	background-position: 0 0, 0 4.5em, 4.5em 0;
+	filter: opacity(0);
 }
 
-.box span.right {
-	right: 0;
-}
-
-.box:hover::after,
-.box:hover span:not(:first-child) {
+.box:hover::after {
 	animation: aim 1s linear infinite alternate;
 }
 
