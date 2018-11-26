@@ -1,10 +1,13 @@
-html, body {
-	width: 100%;
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: linear-gradient(to bottom left, white, dimgray);
+}
+
+:root {
 	font-size: 12px;
 }
 
@@ -38,17 +41,20 @@ html, body {
 }
 
 .book::before,
-.book span::before {
+.book p::before {
 	content: '';
 	position: absolute;
 	width: 1.5rem;
 	height: 100%;
-	background: linear-gradient(navy, deeppink, tomato);
 	top: 0;
 	left: -1.5rem;
 	transform-origin: right;
 	transform: skewY(45deg);
 	filter: brightness(0.6);
+}
+
+.book::before {
+	background: linear-gradient(navy, deeppink, tomato);
 }
 
 .book::after {
@@ -64,50 +70,37 @@ html, body {
 	filter: brightness(0.9);
 }
 
-.book span {
+.book p {
+	position: absolute;
+	width: inherit;
+	height: 8rem;
+	top: 3rem;
+	box-sizing: border-box;
+	padding-top: 2rem;
 	color: whitesmoke;
 	font-size: 2.2rem;
 	font-family: sans-serif;
-	display: block;
 	text-align: center;
-	height: 8rem;
-	margin-top: 5rem;
-	padding-top: 2rem;
-	box-sizing: border-box;
 	text-shadow: -2px 2px 10px rgba(0, 0, 0, 0.3);
-	position: absolute;
-	width: 100%;
 }
 
-.book.html span,
-.book.html span::before {
-	background: orange;
+.book p::before {
+	background-color: inherit;
 }
 
-.book.css span,
-.book.css span::before {
-	background: royalblue;
-}
-
-.book.js span,
-.book.js span::before {
-	background: gold;
-}
-
-.book span::after {
+.book span {
 	display: block;
 	font-size: 1rem;
 }
 
-.book.html span:after {
-	content: '<devolopment />';
+.book.html p {
+	background-color: orange;
 }
 
-.book.css span::after {
-	content: '.devolopment::';
+.book.css p {
+	background-color: royalblue;
 }
 
-.book.js span::after {
-	content: '{ devolopment }';
+.book.js p {
+	background-color: gold;
 }
-
