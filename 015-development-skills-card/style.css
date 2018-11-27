@@ -1,5 +1,6 @@
-html, body {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -11,7 +12,7 @@ html, body {
 	background: linear-gradient(#333, dimgray);
 	color: white;
 	box-sizing: border-box;
-	padding: 20px;
+	padding: 20px 0;
 	font-family: sans-serif;
 	letter-spacing: 0.1em;
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -22,25 +23,25 @@ html, body {
 	text-align: center;
 }
 
-.card .skill {
+.card p {
 	height: 50px;
+	margin: 0;
+	padding: 10px 20px;
+	transition: 0.3s;
 }
 
-.card .skill:hover {
+.card p:hover {
 	background-color: #333;
 }
 
-.card .skill span {
+.card p span {
 	display: block;
-}
-
-.card .skill .level {
 	text-align: right;
 	transform: translateY(-1em);
 	position: relative;
 }
 
-.card .skill .level::after {
+.card p span::after {
 	content: '';
 	position: absolute;
 	top: 1.2em;
@@ -52,25 +53,11 @@ html, body {
 	background-image: linear-gradient(to right, mediumspringgreen, mediumspringgreen);
 	background-repeat: no-repeat;
 	background-position: top 1px left 1px;
+	background-size: var(--level) 1em;
 }
 
-.card .skill.html .level::after {
-	background-size: 90% 1em;
-}
-
-.card .skill.css .level::after {
-	background-size: 95% 1em;
-}
-
-.card .skill.javascript .level::after {
-	background-size: 80% 1em;
-}
-
-.card .skill.svg .level::after {
-	background-size: 60% 1em;
-}
-
-.card .skill.canvas .level::after {
-	background-size: 75% 1em;
-}
-
+.card p.html { --level: 90%; }
+.card p.css { --level: 95%; }
+.card p.javascript { --level: 80%; }
+.card p.svg { --level: 60%; }
+.card p.canvas { --level: 75%; }
