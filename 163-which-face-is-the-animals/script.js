@@ -19,14 +19,60 @@ const dom = {
     slider: document.querySelector('.slider'),
 }
 
+const animation = {
+    frameOut: () => {
+        return new Promise(resolve => {
+            new TimelineMax()
+                .to(dom.bingo, 0, {visibility: 'hidden'})
+                .to(dom.slider, 1, {scale: 0}, 't1')
+                .staggerTo(dom.faces, 1, {scale: 0}, 0.25, 't1')
+                .to(dom.wholeBody, 1, {scale: 0}, 't1')
+                .timeScale(5)
+                .eventCallback('onComplete', resolve)
+        })
+    },
+    frameIn: () => {
+        return new Promise(resolve => {
+            new TimelineMax()
+                .to(dom.slider, 0, {left: '0px'})
+                .to(dom.wholeBody, 2, {scale: 1, delay: 1})
+                .staggerTo(dom.faces, 1, {scale: 1}, 0.25)
+                .to(dom.slider, 1, {scale: 1})
+                .timeScale(5)
+                .eventCallback('onComplete', resolve)
+        })
+    },
+    moveSlider: (position) => {
+        return new Promise(resolve => {
+            new TimelineMax()
+                .to(dom.slider, 1, {scale: 0.3})
+                .to(dom.slider, 1, {left: (25 + 60) * position + 'px'})
+                .to(dom.slider, 1, {scale: 1})
+                .timeScale(5)
+                .eventCallback('onComplete', resolve)
+        })
+    },
+    showBingo: () => {
+        return new Promise(resolve => {
+            new TimelineMax()
+                .to(dom.bingo, 0, {visibility: 'visible'})
+                .to(dom.bingo, 1, {rotation: -5})
+                .to(dom.bingo, 1, {rotation: 5})
+                .to(dom.bingo, 1, {rotation: 0})
+                .timeScale(8)
+                .eventCallback('onComplete', resolve)
+        })
+    },
+}
+
 let options = []
 let answer = {}
 let canSelect = false
 
-function newGame() {
-    dom.bingo.style.visibility = 'hidden'
+async function newGame() {
+    await animation.frameOut()
     shuffle()
-    dom.slider.style.left = '0px'
+    await animation.frameIn()
     canSelect = true
 }
 
@@ -40,14 +86,15 @@ function shuffle() {
     dom.wholeBody.innerText = answer[1]
 }
 
-function select(e) {
+async function select(e) {
     if (!canSelect) return;
+
     let position = _.findIndex(options, x => x[0] == e.target.innerText)
-    dom.slider.style.left = (25 + 60) * position + 'px'
+    await animation.moveSlider(position)
     
     if (animals[e.target.innerText] == answer[1]) {
         canSelect = false
-        dom.bingo.style.visibility = 'visible'
+        await animation.showBingo()
     }
 }
 
