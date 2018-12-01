@@ -18,6 +18,10 @@ body {
     animation: animate 3s ease-in-out infinite;
 }
 
+.buddha > * {
+    position: absolute;
+}
+
 @keyframes animate {
     50% {
         transform: translateY(-2em);
@@ -39,8 +43,7 @@ body {
     filter: brightness(0.9);
     box-shadow: 
 		5.8em 2em 0 -4.8em, /* ear right*/
-		-5.8em 2em 0 -4.8em, /* ear left*/
-        0 8.6em 0 -4.5em; /* hand */
+		-5.8em 2em 0 -4.8em; /* ear left*/
 }
 
 .eyes::before,
@@ -64,7 +67,6 @@ body {
 }
 
 .mouth {
-    position: absolute;
     width: 1.5em;
     height: 0.5em;
     border: 0.5em solid tomato;
@@ -74,7 +76,6 @@ body {
 }
 
 .body {
-    position: absolute;
     width: 10em;
     height: 8em;
     background-color: coral;
@@ -83,8 +84,16 @@ body {
     z-index: -1;
 }
 
+.hand {
+    width: 3.5em;
+    height: 3.5em;
+    background-color: peachpuff;
+    border-radius: 50%;
+    top: 13em;
+    filter: brightness(0.9);
+}
+
 .legs {
-    position: absolute;
     width: inherit;
     height: 5em;
     background-color: coral;
@@ -94,7 +103,6 @@ body {
 }
 
 .shadow {
-    position: absolute;
     width: inherit;
     height: 5em;
     background-color: rgba(0, 0, 0, 0.2);
