@@ -22,6 +22,7 @@ body {
         ), /* eye */
         currentColor;
     border-radius: 70% 90% 60% 50%;
+    position: relative;
     box-shadow: -0.2em 1em 0 -0.75em #333;
     z-index: 1;
     animation: hop 1s linear infinite;
