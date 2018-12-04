@@ -53,15 +53,22 @@ body {
     margin-top: -2em;
 }
 
-.head {
+.head,
+.eye {
     grid-column: 4;
     grid-row: 2;
+}
+
+.head {
     background-color: burlywood;
-    border-top-left-radius: 100%;
+    border-radius: 100% 0 0 0;
+}
+
+.eye {
     position: relative;
 }
 
-.head::before {
+.eye::before {
     content: '';
     position: absolute;
     width: 2.8em;
@@ -77,20 +84,27 @@ body {
     grid-row: 2;
     height: 4.5em;
     background-color: darkorange;
-    border-bottom-right-radius: 100%;
+    border-radius: 0 0 100% 0;
+}
+
+.body,
+.swing {
+    grid-column: 2 / 5;
+    grid-row: 3;
+    width: 102%;
+    border-radius: 0 0 15em 15em;
 }
 
 .body {
-    grid-column: 2 / 5;
-    grid-row: 3;
-    width: 30em;
     background-color: saddlebrown;
-    border-radius: 0 0 15em 15em;
+}
+
+.swing {
     position: relative;
     overflow: hidden;
 }
 
-.body::before {
+.swing::before {
     content: '';
     position: absolute;
     width: 20em;
@@ -106,7 +120,7 @@ body {
     height: 22.5em;
     background-color: burlywood;
     align-self: end;
-    border-top-left-radius: 100%;
+    border-radius: 100% 0 0 0;
 }
 
 .leg {
@@ -114,7 +128,7 @@ body {
     grid-row: 4;
     width: 8em;
     background-color: burlywood;
-    border-bottom-right-radius: 100%;
+    border-radius: 0 0 100% 0;
 }
 
 .foot {
@@ -122,7 +136,7 @@ body {
     grid-row: 5;
     width: 5.5em;
     background-color: darkorange;
-    border-top-right-radius: 100%;
+    border-radius: 0 100% 0 0;
 }
 
 .sun {
