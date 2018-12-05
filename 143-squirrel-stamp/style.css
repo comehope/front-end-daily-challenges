@@ -57,7 +57,7 @@ body {
     grid-column: 1;
     grid-row: 3;
     background-color: chocolate;
-    border-bottom-left-radius: 100%;
+    border-radius: 0 0 0 100%;
     background-image: radial-gradient(
         circle at 58% 22%,
         black 1.4em,
@@ -70,19 +70,26 @@ body {
     grid-row: 2;
     width: 5em;
     background-color: bisque;
-    border-bottom-right-radius: 100%;
+    border-radius: 0 0 100% 0;
+}
+
+.body,
+.leg {
+    grid-column: 2 / 4;
+    grid-row: 4;
+    border-radius: 0 100% 0 0;
 }
 
 .body {
-    grid-column: 2 / 4;
-    grid-row: 4;
     background-color: chocolate;
-    border-top-right-radius: 100%;
+}
+
+.leg {
     position: relative;
     overflow: hidden;
 }
 
-.body::before {
+.leg::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -90,8 +97,7 @@ body {
     box-shadow: 2em -2em 4em rgba(0, 0, 0, 0.3);
     bottom: 0;
     --w: calc((7em + 15.5em) / 2);
-    border-top-left-radius: var(--w);
-    border-top-right-radius: var(--w);
+    border-radius: var(--w) var(--w) 0 0;
 }
 
 .foot {
