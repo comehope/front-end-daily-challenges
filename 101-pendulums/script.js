@@ -1,8 +1,9 @@
-const COUNT = 15;
+const COUNT_OF_PARTICLES = 15;
 
-d3.select('.pendulums')
-    .selectAll('span')
-    .data(d3.range(COUNT))
-    .enter()
-    .append('span')
-    .style('--n', (d) => d + 1);
+let particles = new Array(COUNT_OF_PARTICLES).fill('')
+
+particles.forEach((x, i) => {
+    let span = document.createElement('span')
+    span.style.setProperty('--n', i + 1)
+    document.querySelector('.pendulums').append(span)
+})
