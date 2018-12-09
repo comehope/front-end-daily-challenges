@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: silver;
+    overflow: hidden;
+}
+
+.app {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    color: sienna;
+}
+
+.game {
+    transition: 0.3s;
+}
+
+.game.stop {
+    filter: blur(10px);
+}
+
+.game .message {
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+
+.game .message span {
+    font-weight: bold;
+}
+
+.game .digits {
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    border: 10px solid sienna;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.game .digits span {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    background-color: blanchedalmond;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 2.5em;
+    color: sienna;
+    position: relative;
+}
+
+.game .digits span.wrong {
+    border: 2px solid crimson;
+}
+
+.game .digits span.correct {
+    background-color: chocolate;
+    color: gold;
+}
+
+.select-level,
+.game-over {
+    box-sizing: border-box;
+    width: 240px;
+    height: 240px;
+    border: 10px solid rgba(160, 82, 45, 0.8);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 0.3em rgba(255, 235, 205, 0.8),
+        0 0 1em 0.5em rgba(160, 82, 45, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 40px;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.select-level .levels {
+    margin-top: 60px;
+    width: 190px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.select-level input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.select-level label {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(160, 82, 45, 0.8);
+    border-radius: 50%;
+    color: blanchedalmond;
+    text-align: center;
+    line-height: 56px;
+    cursor: pointer;
+}
+
+.select-level input[type=radio]:checked + label {
+    background-color: sienna;
+}
+
+.select-level .play,
+.game-over .again {
+    width: 120px;
+    height: 30px;
+    background-color: sienna;
+    color: blanchedalmond;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.select-level .play {
+    margin-top: 30px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.select-level .play:hover,
+.game-over .again:hover {
+    background-color: saddlebrown;
+}
+
+.select-level .play:active,
+.game-over .again:active {
+    transform: translate(2px, 2px);
+}
+
+.game-over h2 {
+    margin-top: 40px;
+    color: sienna;
+}
+
+.game-over p {
+    margin: 3px;
+    font-size: 20px;
+    color: sienna;
+}
+
+.game-over .again {
+    margin-top: 10px;
+}
