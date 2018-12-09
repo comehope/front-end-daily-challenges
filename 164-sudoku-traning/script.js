@@ -37,7 +37,7 @@ const render = {
         }
     },
     updateTime: (value) => {
-        dom.time.innerText = value
+        dom.time.innerText = value.toString()
     },
     updateScore: (value) => {
         dom.score.innerText = value.toString()
@@ -55,7 +55,7 @@ const render = {
     },
 }
 
-let answerCount, digits, round
+let answerCount, digits, round, score, timer, canPress
 
 window.onload = init
 
@@ -69,6 +69,9 @@ function init() {
 
 function newGame() {
     round = 0
+    score = 0
+    timer = new Timer(render.updateTime)
+    canPress = false
 
     dom.game.classList.add('stop')
     dom.selectLevel.style.visibility = 'visible'
@@ -76,12 +79,16 @@ function newGame() {
 
 function startGame() {
     render.updateRound(1)
-    
+    render.updateScore(0)
+    render.updateTime('00:00')
+
     dom.game.classList.remove('stop')
     dom.selectLevel.style.visibility = 'hidden'
 
     answerCount = ANSWER_COUNT[dom.level().value.toUpperCase()]
     newRound()
+    timer.start()
+    canPress = true
 }
 
 function newRound() {
@@ -99,6 +106,8 @@ function newRound() {
 }
 
 function gameOver() {
+    canPress = false
+    timer.stop()
     render.updateFinal()
     
     dom.game.classList.add('stop')
@@ -113,6 +122,7 @@ function playAgain() {
 }
 
 function pressKey(e) {
+    if (!canPress) return;
     if (!ALL_DIGITS.includes(e.key)) return;
 
     let digit = _.find(digits, x => (x.text == e.key))
@@ -120,6 +130,9 @@ function pressKey(e) {
 
     digit.isPressed = true
     render.updateDigitStatus(digit.text, digit.isAnwser)
+
+    score += digit.isAnwser ? SCORE_RULE.CORRECT : SCORE_RULE.WRONG
+    render.updateScore(score)
 
     let hasPressedAllAnswerDigits = (_.filter(digits, (x) => (x.isAnwser && x.isPressed)).length == answerCount)
     if (!hasPressedAllAnswerDigits) return;
