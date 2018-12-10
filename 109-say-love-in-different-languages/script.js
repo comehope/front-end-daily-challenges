@@ -12,12 +12,15 @@ const words = [
     'kjærlighet', 'munay', 'jecel', 'Kärlek', 'soymek', 
     'Mahal', 'ярату', 'محبت', 'sopp', 'uthando', 
     'ความรัก', 'Aşk', 'Tình yêu', 'ליבע'];
+const dom = {
+    love: document.querySelector('.love')
+}
 
-d3.select('.love')
-    .style('--particles', words.length)
-    .selectAll('span')
-    .data(words)
-    .enter()
-    .append('span')
-    .style('--n', (d, i) => i + 1)
-    .text((d) => d);
+dom.love.style.setProperty('--particles', words.length)
+
+words.forEach((word, i) => {
+    let span = document.createElement('span')
+    span.style.setProperty('--n', i + 1)
+    span.innerText = word
+    dom.love.appendChild(span)
+})
