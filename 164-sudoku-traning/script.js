@@ -21,7 +21,7 @@ const dom = {
 
 const render = {
     initDigits: (texts) => {
-        allTexts = texts.concat(_.fill(Array(ALL_DIGITS.length - texts.length), ''))
+        let allTexts = texts.concat(new Array(ALL_DIGITS.length - texts.length).fill(''))
         _.shuffle(dom.digits).forEach((digit, i) => {
             digit.innerText = allTexts[i]
             digit.className = ''
