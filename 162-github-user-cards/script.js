@@ -1,5 +1,6 @@
 function render(container, data) {
-    container.innerHTML = tmpl('template', data)
+    const template = document.querySelector('#template').innerHTML
+    container.innerHTML = _.template(template)(data)
     container.style.setProperty('--avatar', `url(${data.avatar_url})`)
 }
 

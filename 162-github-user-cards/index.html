@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
 </head>
 <body>
     <div class="app">
@@ -20,16 +20,16 @@
     <script type="text/x-tmpl" id="template">
         <div class="header">
             <div class="avatar"></div>
-            <h2 class="name">{%= o.name %}</h2>
-            <h3 class="location">{%= o.location %}</h3>
+            <h2 class="name"><%= name %></h2>
+            <h3 class="location"><%= location %></h3>
         </div>
         <div class="footer">
             <ul class="details">
-                <li>Repositories<span>{%= o.public_repos %}</span></li>
-                <li>Followers<br><span>{%= o.followers %}</span></li>
-                <li>Following<br><span>{%= o.following %}</span></li>
+                <li>Repositories<span><%= public_repos %></span></li>
+                <li>Followers<br><span><%= followers %></span></li>
+                <li>Following<br><span><%= following %></span></li>
             </ul>
-            <a href="{%= o.html_url %}" class="to-github">go to github</a>
+            <a href="<%= html_url %>" class="to-github">go to github</a>
         </div>
     </script>
     <script src="script.js"></script>
