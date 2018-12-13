@@ -1,13 +1,15 @@
-const COLUMNS = 6;
+const COLUMNS_COUNT = 6
+const SPANS_COUNT = 4
+const dom = {
+    container: document.querySelector('.container')
+}
 
-d3.select('.container')
-    .style('--columns', COLUMNS)
-    .selectAll('div')
-    .data(d3.range(COLUMNS * COLUMNS))
-    .enter()
-    .append('div')
-    .attr('class', 'square')
-    .selectAll('span')
-    .data(d3.range(4))
-    .enter()
-    .append('span');
+dom.container.style.setProperty('--columns', COLUMNS_COUNT)
+Array(COLUMNS_COUNT * COLUMNS_COUNT).fill('').forEach(x => {
+    let div = document.createElement('div')
+    div.classList.add('square')
+    Array(SPANS_COUNT).fill('').forEach(y => {
+        div.appendChild(document.createElement('span'))
+    })
+    dom.container.appendChild(div)
+})
