@@ -23,7 +23,8 @@ body {
     transform: rotate(calc(var(--n) / var(--particles-per-circle) * -360deg));
 }
 
-.container div span {
+.container div::before {
+    content: '';
     position: absolute;
     width: inherit;
     height: inherit;
