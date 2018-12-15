@@ -1,9 +1,9 @@
-const COUNT_OF_PARTICLES = 12;
+const COUNT_OF_PARTICLES = 12
+let container = document.querySelector('.worm')
 
-d3.select('.worm')
-    .style('--particles', COUNT_OF_PARTICLES)
-    .selectAll('span')
-    .data(d3.range(COUNT_OF_PARTICLES))
-    .enter()
-    .append('span')
-    .style('--n', (d) => d + 1);
+container.style.setProperty('--particles', COUNT_OF_PARTICLES)
+Array(COUNT_OF_PARTICLES).fill('').forEach((x, i) => {
+    let span = document.createElement('span')
+    span.style.setProperty('--n', i + 1)
+    container.appendChild(span)
+})
