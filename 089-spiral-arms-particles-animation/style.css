@@ -13,17 +13,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    --particles-per-circle: 14;
+    --circles: 4;
     --particles: calc(var(--particles-per-circle) * var(--circles));
 }
 
-.container div {
+.container span {
     position: absolute;
     width: 10vmin;
     height: 10vmin;
     transform: rotate(calc(var(--n) / var(--particles-per-circle) * -360deg));
 }
 
-.container div::before {
+.container span::before {
     content: '';
     position: absolute;
     width: inherit;
@@ -55,3 +57,60 @@ body {
         filter: hue-rotate(1turn);
     }
 }
+
+.container span:nth-child(1) { --n: 1; }
+.container span:nth-child(2) { --n: 2; }
+.container span:nth-child(3) { --n: 3; }
+.container span:nth-child(4) { --n: 4; }
+.container span:nth-child(5) { --n: 5; }
+.container span:nth-child(6) { --n: 6; }
+.container span:nth-child(7) { --n: 7; }
+.container span:nth-child(8) { --n: 8; }
+.container span:nth-child(9) { --n: 9; }
+.container span:nth-child(10) { --n: 10; }
+.container span:nth-child(11) { --n: 11; }
+.container span:nth-child(12) { --n: 12; }
+.container span:nth-child(13) { --n: 13; }
+.container span:nth-child(14) { --n: 14; }
+.container span:nth-child(15) { --n: 15; }
+.container span:nth-child(16) { --n: 16; }
+.container span:nth-child(17) { --n: 17; }
+.container span:nth-child(18) { --n: 18; }
+.container span:nth-child(19) { --n: 19; }
+.container span:nth-child(20) { --n: 20; }
+.container span:nth-child(21) { --n: 21; }
+.container span:nth-child(22) { --n: 22; }
+.container span:nth-child(23) { --n: 23; }
+.container span:nth-child(24) { --n: 24; }
+.container span:nth-child(25) { --n: 25; }
+.container span:nth-child(26) { --n: 26; }
+.container span:nth-child(27) { --n: 27; }
+.container span:nth-child(28) { --n: 28; }
+.container span:nth-child(29) { --n: 29; }
+.container span:nth-child(30) { --n: 30; }
+.container span:nth-child(31) { --n: 31; }
+.container span:nth-child(32) { --n: 32; }
+.container span:nth-child(33) { --n: 33; }
+.container span:nth-child(34) { --n: 34; }
+.container span:nth-child(35) { --n: 35; }
+.container span:nth-child(36) { --n: 36; }
+.container span:nth-child(37) { --n: 37; }
+.container span:nth-child(38) { --n: 38; }
+.container span:nth-child(39) { --n: 39; }
+.container span:nth-child(40) { --n: 40; }
+.container span:nth-child(41) { --n: 41; }
+.container span:nth-child(42) { --n: 42; }
+.container span:nth-child(43) { --n: 43; }
+.container span:nth-child(44) { --n: 44; }
+.container span:nth-child(45) { --n: 45; }
+.container span:nth-child(46) { --n: 46; }
+.container span:nth-child(47) { --n: 47; }
+.container span:nth-child(48) { --n: 48; }
+.container span:nth-child(49) { --n: 49; }
+.container span:nth-child(50) { --n: 50; }
+.container span:nth-child(51) { --n: 51; }
+.container span:nth-child(52) { --n: 52; }
+.container span:nth-child(53) { --n: 53; }
+.container span:nth-child(54) { --n: 54; }
+.container span:nth-child(55) { --n: 55; }
+.container span:nth-child(56) { --n: 56; }
