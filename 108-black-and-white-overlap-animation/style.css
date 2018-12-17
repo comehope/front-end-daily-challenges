@@ -13,6 +13,7 @@ body {
     height: 60vmin;
     position: relative;
     margin-top: 20vmin;
+    --particles: 30;
     animation: zoom 5s linear infinite;
 }
 
@@ -40,3 +41,34 @@ body {
     50% { transform: rotate(var(--deg)) translateY(0); }
     100% { transform: rotate(var(--deg)) translateY(100%) scale(2); }
 }
+
+.circles span:nth-child(1) { --n: 1; }
+.circles span:nth-child(2) { --n: 2; }
+.circles span:nth-child(3) { --n: 3; }
+.circles span:nth-child(4) { --n: 4; }
+.circles span:nth-child(5) { --n: 5; }
+.circles span:nth-child(6) { --n: 6; }
+.circles span:nth-child(7) { --n: 7; }
+.circles span:nth-child(8) { --n: 8; }
+.circles span:nth-child(9) { --n: 9; }
+.circles span:nth-child(10) { --n: 10; }
+.circles span:nth-child(11) { --n: 11; }
+.circles span:nth-child(12) { --n: 12; }
+.circles span:nth-child(13) { --n: 13; }
+.circles span:nth-child(14) { --n: 14; }
+.circles span:nth-child(15) { --n: 15; }
+.circles span:nth-child(16) { --n: 16; }
+.circles span:nth-child(17) { --n: 17; }
+.circles span:nth-child(18) { --n: 18; }
+.circles span:nth-child(19) { --n: 19; }
+.circles span:nth-child(20) { --n: 20; }
+.circles span:nth-child(21) { --n: 21; }
+.circles span:nth-child(22) { --n: 22; }
+.circles span:nth-child(23) { --n: 23; }
+.circles span:nth-child(24) { --n: 24; }
+.circles span:nth-child(25) { --n: 25; }
+.circles span:nth-child(26) { --n: 26; }
+.circles span:nth-child(27) { --n: 27; }
+.circles span:nth-child(28) { --n: 28; }
+.circles span:nth-child(29) { --n: 29; }
+.circles span:nth-child(30) { --n: 30; }
