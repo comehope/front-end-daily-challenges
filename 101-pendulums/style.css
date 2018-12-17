@@ -49,3 +49,19 @@ body {
     left: -0.75em;
     box-shadow: -1em 4em 1em rgba(0, 0, 0, 0.1);
 }
+
+.pendulums span:nth-child(1) { --n: 1; }
+.pendulums span:nth-child(2) { --n: 2; }
+.pendulums span:nth-child(3) { --n: 3; }
+.pendulums span:nth-child(4) { --n: 4; }
+.pendulums span:nth-child(5) { --n: 5; }
+.pendulums span:nth-child(6) { --n: 6; }
+.pendulums span:nth-child(7) { --n: 7; }
+.pendulums span:nth-child(8) { --n: 8; }
+.pendulums span:nth-child(9) { --n: 9; }
+.pendulums span:nth-child(10) { --n: 10; }
+.pendulums span:nth-child(11) { --n: 11; }
+.pendulums span:nth-child(12) { --n: 12; }
+.pendulums span:nth-child(13) { --n: 13; }
+.pendulums span:nth-child(14) { --n: 14; }
+.pendulums span:nth-child(15) { --n: 15; }
