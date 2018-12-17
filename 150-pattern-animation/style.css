@@ -10,6 +10,7 @@ body {
 .container {
     font-size: 8px;
     display: grid;
+    --columns: 6;
     grid-template-columns: repeat(var(--columns), 1fr);
 }
 
