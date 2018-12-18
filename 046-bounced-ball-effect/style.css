@@ -25,8 +25,7 @@ body {
 	}
 }
 
-.loader::before {
-	content: '';
+.loader .ball {
 	position: absolute;
 	width: calc(3em - 0.3em * 2);
 	height: calc(3em - 0.3em * 2);
