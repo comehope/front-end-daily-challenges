@@ -10,12 +10,13 @@ body {
 .container {
     --dark: #222;
     --light: #ddd;
-    font-size: 30px;
+    font-size: 40px;
     width: calc(10em + 0.5em);
-    height: 8em;
+    height: 6em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .track {
@@ -33,7 +34,7 @@ body {
     align-items: center;
 }
 
-.track:nth-child(2) {
+.track:last-child {
     background-position: 0.5em;
 }
 
@@ -47,9 +48,10 @@ body {
     box-sizing: border-box;
     border: solid var(--dark);
     border-width: 0;
+    transition: 0.5s background-color 0.2s;
 }
 
-.track.highlights::before {
+.container:hover .track::before {
     background-color: white;
     border-width: 0.1em;
 }
@@ -62,27 +64,4 @@ body {
     to {
         left: calc(100% - 2em);
     }
-}
-
-.toggle {
-    order: -1;
-    width: 10em;
-    height: 2em;
-    border: 2px solid var(--dark);
-    border-radius: 0.2em;
-    font-size: 0.5em;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: black;
-    text-align: center;
-    line-height: 2em;
-    cursor: pointer;
-    user-select: none;
-    background-image: linear-gradient(to right, #ddd 50%, #999 50%);
-    background-size: 1em;
-    transition: 0.5s;
-}
-
-.toggle:hover {
-    background-position: 5em;
 }
