@@ -1,21 +1,22 @@
-const PI = '3141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067';
+const PI = '3141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067'
+let counter = 0
 
-d3.select('.pi')
-    .selectAll('span')
-    .data(PI)
-    .enter()
-    .append('span')
-    .attr('class', (d) => `d${d}`)
-    .style('--d', (d) => d)
-    .text((d) => d);
+let container = document.querySelector('.pi')
+PI.split('').forEach((d) => {
+    let span = document.createElement('span')
+    span.className = `d${d}`
+    span.style.setProperty('--d', d)
+    span.innerText = d
+    container.appendChild(span)
+})
 
 function show() {
-    d3.selectAll(`.pi span.d${number % 10}`)
-        .classed('show', true);
-    d3.selectAll(`.pi span.d${(number-1) % 10}`)
-        .classed('show', false);
-    number++;
+    Array.from(document.querySelectorAll(`.pi span.d${counter % 10}`))
+        .concat(Array.from(document.querySelectorAll(`.pi span.d${(counter - 1) % 10}`)))
+        .forEach(el => {
+        el.classList.toggle('show')
+    })
+    counter++
 }
 
-let number = 1;
-setInterval(show, 500);
+setInterval(show, 500)
