@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="choose-type">
+            <input type="radio" id="addition" name="arithmetic-type" value="1">
+            <label for="addition">addition</label>
+            <input type="radio" id="subtraction" name="arithmetic-type" value="2">
+            <label for="subtraction">subtraction</label>
+            <input type="radio" id="multiplication" name="arithmetic-type" value="3">
+            <label for="multiplication">multiplication</label>
+            <input type="radio" id="division" name="arithmetic-type" value="4">
+            <label for="division">division</label>
+        </div>
+        <div class="score">
+            <span>ROUND 15</span>
+            <span>SCORE 88%</span>
+        </div>
+        <div class="expression">
+            <span class="number">10</span>
+            <span class="operation">+</span>
+            <span class="number">20</span>
+            <span class="operation">=</span>
+            <span class="button show">?</span>
+            <span class="result">30</span>
+        </div>
+        <div class="judgment">
+            <span class="button right">✔</span>
+            <span class="button wrong">✘</span>
+        </div>
+    </div>
+</body>
+</html>

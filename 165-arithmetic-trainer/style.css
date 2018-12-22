@@ -1,0 +1,122 @@
+body{
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(lightyellow, tan);
+}
+
+#app {
+    width: 66vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1em 4em rgba(0, 0, 0, 0.5);
+	border-radius: 2em;
+	padding: 8em 5em;
+    background: linear-gradient(black, dimgray, black);
+    font-family: sans-serif;
+    font-size: 1vw;
+    user-select: none;
+}
+
+.choose-type input[name=arithmetic-type] {
+	position: absolute;
+	visibility: hidden;
+}
+
+.choose-type label {
+    font-size: 2.5em;
+    color: skyblue;
+    margin: 0.3em;
+	letter-spacing: 0.02em;
+    position: relative;
+    transition: 0.3s;
+}
+
+.choose-type label:not(:first-of-type)::before {
+	content: '|';
+	position: absolute;
+	left: -0.5em;
+	filter: opacity(0.6);
+}
+
+.choose-type label:hover {
+	color: deepskyblue;
+	cursor: pointer;
+}
+
+.choose-type input[name=arithmetic-type]:checked + label {
+	text-transform: capitalize;
+    color: deepskyblue;
+	border-style: solid;
+	border-width: 0 0 0.1em 0;
+}
+
+.score{
+    font-size: 2em;
+    color: silver;
+    margin: 1em 0 2em 0;
+    width: 45%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.expression {
+	font-size: 12em;
+	display: flex;
+	align-items: center;
+}
+
+.expression span {
+	margin: 0 0.05em;
+}
+
+.expression .number{
+	color: orange;
+}
+
+.expression .operation{
+	color: skyblue;
+}
+
+.expression .result{
+	color: gold;
+}
+
+.expression .show {
+	color: skyblue;
+	font-size: 0.8em;
+	line-height: 1em;
+	width: 1.5em;
+	text-align: center;
+}
+
+.judgment {
+	font-size: 8em;
+	align-self: flex-end;
+}
+
+.judgment .right {
+	color: lightgreen;
+}
+
+.judgment .wrong {
+	color: orangered;
+}
+
+.button {
+	background-color: #222;
+	border: 1px solid #555;
+	padding: 0.1em;
+}
+
+.button:hover {
+	background-color: #333;
+	cursor: pointer;
+}
+
+.button:active {
+	background-color: #222;
+}
