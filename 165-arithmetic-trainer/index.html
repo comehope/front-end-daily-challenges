@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
 </head>
 <body>
@@ -21,21 +21,22 @@
             <label for="division">division</label>
         </div>
         <div class="score">
-            <span>ROUND 15</span>
-            <span>SCORE 88%</span>
+            <span>ROUND {{round.all - 1}}</span>
+            <span>SCORE {{score}}%</span>
         </div>
         <div class="expression">
-            <span class="number">10</span>
-            <span class="operation">+</span>
-            <span class="number">20</span>
+            <span class="number">{{numbers[0]}}</span>
+            <span class="operation">{{operation}}</span>
+            <span class="number">{{numbers[1]}}</span>
             <span class="operation">=</span>
-            <span class="button show">?</span>
-            <span class="result">30</span>
+            <span class="button show" v-show="isThinking" @click="getResult">?</span>
+            <span class="result" v-show="!isThinking">{{result}}</span>
         </div>
-        <div class="judgment">
-            <span class="button right">✔</span>
-            <span class="button wrong">✘</span>
+        <div class="judgment" :style="{visibility: isThinking ? 'hidden' : 'visible'}">
+            <span class="button right" @click="answerRight">✔</span>
+            <span class="button wrong" @click="answerWrong">✘</span>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
