@@ -11,13 +11,17 @@ let vm = new Vue({
 			MULTIPLICATION: 3,
 			DIVISION: 4,
 			properties: {
-				1: {operation: '+', f: ([x, y]) => x + y, gen: (arr) => arr, level: [3, 2]},
-				2: {operation: '-', f: ([x, y]) => x - y, gen: ([a, b]) => a >= b ? [a, b] : [b, a], level: [3, 2]},
+				1: {operation: '+', f: ([x, y]) => x + y, gen: (arr) => arr, level: [2, 2]},
+				2: {operation: '-', f: ([x, y]) => x - y, gen: ([a, b]) => a >= b ? [a, b] : [b, a], level: [2, 2]},
 				3: {operation: '×', f: ([x, y]) => x * y, gen: (arr) => arr, level: [2, 1]},
-				4: {operation: '÷', f: ([x, y]) => x / y, gen: ([a, b]) => [a * b, b], level: [2, 1]}
+				4: {operation: '÷', f: ([x, y]) => x / y, gen: ([a, b]) => [a * b, b], level: [1, 2]}
 			}
         },
         arithmeticType: 1,
+        sound: {
+			right: new Howl({src: ['https://freesound.org/data/previews/203/203121_777645-lq.mp3']}),
+			wrong: new Howl({src: ['https://freesound.org/data/previews/415/415209_5121236-lq.mp3']})
+		},
     },
 
     computed: {
@@ -59,9 +63,11 @@ let vm = new Vue({
         },
         answerRight: function() {
             this.round.right++
+            this.sound.right.play()
             this.next()
         },
         answerWrong: function() {
+            this.sound.wrong.play()
             this.next()
         },
     },
