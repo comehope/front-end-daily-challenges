@@ -77,8 +77,8 @@ async function newGame() {
 }
 
 function shuffle() {
-    options = _.slice(_.shuffle(_.entries(animals)), -5)
-    answer = _.sample(_.slice(options, -4))
+    options = _(animals).entries().shuffle().slice(-5).value()
+    answer = _(options).slice(-4).sample()
 
     dom.faces.forEach((face, i) => {
         face.innerText = options[i][0]
