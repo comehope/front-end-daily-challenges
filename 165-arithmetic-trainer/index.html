@@ -12,13 +12,13 @@
 <body>
     <div id="app">
         <div class="choose-type">
-            <input type="radio" id="addition" name="arithmetic-type" value="1" v-model="arithmeticType">
+            <input type="radio" id="addition" name="arithmetic-type" :value="ARITHMETIC_TYPE.ADDITION" v-model="arithmeticType">
             <label for="addition">addition</label>
-            <input type="radio" id="subtraction" name="arithmetic-type" value="2" v-model="arithmeticType">
+            <input type="radio" id="subtraction" name="arithmetic-type" :value="ARITHMETIC_TYPE.SUBTRACTION" v-model="arithmeticType">
             <label for="subtraction">subtraction</label>
-            <input type="radio" id="multiplication" name="arithmetic-type" value="3" v-model="arithmeticType">
+            <input type="radio" id="multiplication" name="arithmetic-type" :value="ARITHMETIC_TYPE.MULTIPLICATION" v-model="arithmeticType">
             <label for="multiplication">multiplication</label>
-            <input type="radio" id="division" name="arithmetic-type" value="4" v-model="arithmeticType">
+            <input type="radio" id="division" name="arithmetic-type" :value="ARITHMETIC_TYPE.DIVISION" v-model="arithmeticType">
             <label for="division">division</label>
         </div>
         <div class="score">
