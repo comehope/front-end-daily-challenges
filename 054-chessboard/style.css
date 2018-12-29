@@ -15,13 +15,13 @@ body {
 }
 
 ul {
-	display: table;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
+	display: flex;
 }
 
 li {
-	display: table-cell;
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
