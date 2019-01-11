@@ -17,7 +17,6 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    z-index: 1;
 }
 
 .coffee-machine::before,
@@ -27,7 +26,6 @@ body {
     width: 2em;
     height: 2em;
     border: 0.3em solid transparent;
-    z-index: 2;
     border-radius: 50%;
     border-left-color: white;
     left: 3.8em;
@@ -36,6 +34,7 @@ body {
 .coffee-machine::before {
     top: 1.8em;
     transform: rotate(40deg);
+    z-index: 1;
 }
 
 .coffee-machine::after {
