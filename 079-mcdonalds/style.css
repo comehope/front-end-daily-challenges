@@ -15,7 +15,7 @@ body {
     background-color: currentColor;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 0 10em;
+    border: 10em solid red;
 }
 
 .mcdonalds::before {
