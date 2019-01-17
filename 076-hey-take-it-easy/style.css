@@ -13,8 +13,8 @@ body {
     font-size: 5px;
     color: cornsilk;
     background-color: currentColor;
-    box-shadow: 0 0 0 6em;
-    border-radius: 1em;
+    border: 6em solid;
+    border-radius: 7em;
     position: relative;
     --b: 1em solid darkslategray;
 }
