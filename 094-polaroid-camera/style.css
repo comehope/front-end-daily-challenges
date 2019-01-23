@@ -36,7 +36,7 @@ body {
         );
     border-radius: 2em;
     position: relative;
-    transform: translateY(-4em);
+    top: -4em;
 }
 
 .camera::before {
