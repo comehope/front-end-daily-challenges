@@ -21,17 +21,19 @@ p {
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0;
+	line-height: 1em;
 	animation: show-hide 10s infinite;
 	filter: opacity(0);
+	position: relative;
 }
 
 p:nth-child(1) {
-	transform: translateY(50%);
+	top: 0.5em;
 	animation-direction: normal;
 }
 
 p:nth-child(2) {
-	transform: translateY(-50%);
+	top: -0.5em;
 	animation-direction: reverse;
 	animation-delay: -1s;
 }
