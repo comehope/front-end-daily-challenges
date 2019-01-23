@@ -37,7 +37,7 @@ body {
 .card p span {
 	display: block;
 	text-align: right;
-	transform: translateY(-1em);
+	top: -1em;
 	position: relative;
 }
 
