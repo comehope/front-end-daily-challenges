@@ -27,6 +27,13 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    animation: wheel-run 4s linear infinite;
+}
+
+@keyframes wheel-run {
+    to {
+        transform: rotate(1turn);
+    }
 }
 
 .road {
@@ -58,13 +65,6 @@ body {
     border: 0.1em solid;
     border-color: #ccc transparent;
     transform: rotate(calc((var(--n) - 1) * 30deg));
-    animation: wheel-run 4s linear infinite;
-}
-
-@keyframes wheel-run {
-    to {
-        transform: rotate(calc((var(--n) - 1) * 30deg + 1turn));
-    }
 }
 
 .wheel span:nth-child(1) { --n: 1 }
