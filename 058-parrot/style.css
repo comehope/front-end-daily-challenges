@@ -20,11 +20,25 @@ body {
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	transform: rotate(45deg);
+}
+
+/* eye */
+.parrot::before {
+	content: '';
+	position: relative;
+	width: 1em;
+	height: 1em;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 1;
+	left: -1em;
+	transform-origin: 1em 0;
+	transition: 0.5s;
 }
 
 .parrot > * {
 	position: absolute;
-	transform: rotate(45deg);
 	transition: 0.5s;
 }
 
@@ -52,28 +66,21 @@ body {
 	border-radius: 50%;
 }
 
-.parrot .inner::before {
-	content: '';
-	position: absolute;
-	width: 1em;
-	height: 1em;
-	background-color: black;
-	border-radius: 50%;
-	left: -2em;
-	top: -0.5em;
+.parrot:hover::before {
+	transform: rotate(180deg);
 }
 
 .parrot:hover .outer {
-	transform: rotate(calc(45deg + 180deg));
+	transform: rotate(calc(180deg + 4turn));
 	border-color: transparent transparent lightseagreen darkcyan;
 }
 
 .parrot:hover .middle {
-	transform: rotate(calc(45deg - 180deg));
+	transform: rotate(calc(-180deg + 3turn));
 	border-color: transparent orange white gainsboro;
 }
 
 .parrot:hover .inner {
-	transform: rotate(calc(45deg + 90deg));
+	transform: rotate(calc(90deg + 2turn));
 	border-color: transparent gold transparent transparent;
 }
