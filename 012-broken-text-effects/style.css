@@ -32,13 +32,9 @@ html, body {
 }
 
 .text:hover::before {
-	left: -0.15em;
-	transform: rotate(-5deg);
-	top: -0.05em;
+	transform: rotate(-5deg) translate(-0.15em, -0.05em);
 }
 
 .text:hover::after {
-	left: 0.15em;
-	transform: rotate(5deg);
-	top: 0.05em;
+	transform: rotate(5deg) translate(0.15em, 0.05em);
 }
