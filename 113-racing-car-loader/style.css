@@ -22,6 +22,7 @@ body {
     background-color: currentColor;
     top: 1.5em;
     border-radius: 0 5em 1em 0 / 0 4em 1em 0;
+    animation: run 0.25s linear infinite;
 }
 
 @keyframes run {
