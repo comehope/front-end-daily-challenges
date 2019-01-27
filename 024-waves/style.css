@@ -41,7 +41,6 @@ html, body {
 	top: -250px;
 	left: calc((300px - 500px) / 2);
 	animation: drift linear infinite;
-	transform-origin: 50% 48%;
 }
 
 .sea .wave:nth-of-type(1) {
