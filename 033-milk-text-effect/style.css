@@ -35,7 +35,6 @@ p:nth-child(1) {
 p:nth-child(2) {
 	top: -0.5em;
 	animation-direction: reverse;
-	animation-delay: -1s;
 }
 
 @keyframes show-hide {
@@ -44,15 +43,11 @@ p:nth-child(2) {
 		letter-spacing: -0.8em;
 	}
 
-	25% {
+	35% {
 		filter: opacity(1) blur(0.08em);
 	}
 
-	40% {
-		filter: opacity(1) blur(0.24em);
-	}
-
-	40% {
+	70% {
 		filter: opacity(0) blur(0.24em);
 		letter-spacing: 0.24em;
 	}
