@@ -86,6 +86,7 @@ body {
     background-color: #0a0a16;
     z-index: 1;
     filter: opacity(0.7);
+    transition: 0.2s;
 }
 
 .toggle:checked ~ .light {
