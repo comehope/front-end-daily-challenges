@@ -27,16 +27,12 @@ body {
     box-shadow: 0 0 33px rgba(0, 0, 0, 0.3);
     animation: rotating 4s infinite cubic-bezier(0.6, -0.5, 0.3, 1.5);
     animation-delay: calc(1s - var(--n) * 100ms);
+    transform-origin: 0%;
 }
 
 @keyframes rotating {
-    from {
-        transform-origin: 0%;
-    }
-
     to {
         transform: rotate(1turn);
-        transform-origin: 0% 50%;
         filter: hue-rotate(5deg);
     }
 }
