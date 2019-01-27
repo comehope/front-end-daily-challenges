@@ -13,7 +13,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	animation-name: animate-sky;
+	animation-name: to-black;
 	position: relative;
 	overflow: hidden;
 }
@@ -33,10 +33,10 @@ body {
 
 .moon {
 	background-color: slategray;
-	animation-name: animate-moon;
+	animation-name: animate-moon, to-black;
 }
 
-@keyframes animate-sky {
+@keyframes to-black {
 	50% {
 		background-color: black;
 	}
@@ -52,11 +52,7 @@ body {
 	from {
 		transform: translateX(-100vmin);
 	}
-
-	50% {
-		background-color: black;
-	}
-
+	
 	to {
 		transform: translateX(100vmin);
 	}
