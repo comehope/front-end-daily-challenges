@@ -44,17 +44,18 @@ body {
 }
 
 @keyframes in-and-out {
-	0%, 5% {
-		top: -100%;
-	}
-
-	15%, 80% {
+	0%, 35%, 65%, 100% {
 		top: 0;
 		filter: opacity(1);
 	}
 
-	90%, 100% {
-		top: 100%;
-		filter: opacity(0);
-	}
+    45% {
+        top: 100%;
+        filter: opacity(0);
+    }
+
+    55% {
+    	top: -100%;
+    	filter: opacity(0);
+    }
 }
