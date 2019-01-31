@@ -16,8 +16,7 @@ body {
     border-top: 0.3em solid hotpink;
     border-radius: 50%;
     position: relative;
-    animation: rotating 2s ease-in-out infinite;
-    --direction: 1;
+    animation: rotating 2s linear infinite;
 }
 
 .loader::before,
@@ -49,16 +48,11 @@ body {
     text-align: center;
     line-height: 10em;
     font-family: sans-serif;
-    animation: rotating 2s linear infinite;
-    --direction: -1;
+    animation: rotating 2s ease-in-out infinite reverse;
 }
 
 @keyframes rotating {
-    50% {
-        transform: rotate(calc(180deg * var(--direction)));
-    }
-
-    100% {
-        transform: rotate(calc(360deg * var(--direction)));
-    }
+    33% {transform: rotate(0.33turn);}
+    66% {transform: rotate(0.66turn);}
+    100% {transform: rotate(1turn);}
 }
