@@ -72,18 +72,18 @@ body {
     left: -0.3em;
     top: 0.5em;
     box-shadow: 
-        0.5em 1em 0,
-        4em 1em 0 -0.2em,
-        4em 1em 0 -0.2em;
-    animation: kick 1s infinite linear;
+        0.5em 2em 0,
+        4.2em 1.75em 0 -0.2em,
+        4.4em 1.9em 0 -0.2em;
+    animation: kick 1s 0.4s infinite linear;
 }
 
 @keyframes kick {
-    40% {
+    60% {
         box-shadow: 
-            0.5em 2em 0,
-            4.2em 1.75em 0 -0.2em,
-            4.4em 1.9em 0 -0.2em;
+        0.5em 1em 0,
+        4em 1em 0 -0.2em,
+        4em 1em 0 -0.2em;
     }
 }
 
@@ -93,19 +93,19 @@ body {
     color: whitesmoke;
     background: currentColor;
     border-radius: 100% 100% 0 0;
-    transform: translate(0, -5em);
+    position: relative;
+    top: -5em;
     animation: cloudy 1s infinite linear forwards;
-    filter: opacity(0);
+    filter: opacity(0.75);
 }
 
 @keyframes cloudy {
     40% {
-        transform: translate(-3em, -5em);
         filter: opacity(0.75);
     }
 
-    55% {
-        transform: translate(-4em, -5em);
+    55%, 100% {
+        transform: translateX(-4em);
         filter: opacity(0);
     }
 }
