@@ -112,20 +112,19 @@ body {
     background-color: chocolate;
     top: 4.5em;
     left: calc((15em - 0.7em) / 2);
-    animation: 2s linear infinite;
+    animation: pouring 2s linear infinite;
 }
 
 .coffee::before {
-    animation-name: pouring-before;
     transform-origin: top;
 }
 
 .coffee::after {
-    animation-name: pouring-after;
     transform-origin: bottom;
+    animation-direction: reverse;
 }
 
-@keyframes pouring-before {
+@keyframes pouring {
     0%, 20% {
         transform: scaleY(0);
     }
@@ -134,18 +133,7 @@ body {
         transform: scaleY(1);
     }
 
-    70%, 100% {
+    50%, 100% {
         visibility: hidden;
-    }
-}
-
-@keyframes pouring-after {
-    0%, 70% {
-        visibility: hidden;
-        transform: scaleY(1);
-    }
-
-    80%, 100% {
-        transform: scaleY(0);
     }
 }
