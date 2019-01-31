@@ -24,11 +24,8 @@ body {
     border-radius: 50%;
     top: 0;
     left: 5em;
-    animation: 
-        walk linear infinite,
-        jump linear infinite,
-        squash linear infinite;
-    animation-duration: var(--duration);
+    animation: var(--duration) linear infinite;
+    animation-name: walk, jump, squash;
     animation-delay: calc(var(--n) * var(--duration) / var(--dots) * -1);
 }
 
