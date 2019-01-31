@@ -74,11 +74,11 @@ body {
 }
 
 @keyframes blink {
-    4%, 10%, 34%, 40% {
+    6%, 30%, 36% {
         transform: scaleY(1);
     }
 
-    7%, 37% {
+    3%, 33% {
         transform: scaleY(0);
     }
 }
