@@ -24,15 +24,11 @@ body {
     bottom: -0.2em;
     left: -3em;
     border-radius: 50%;
-    animation: shadow-animate 4s ease-in-out infinite;
+    animation: shadow-animate 2s ease-in-out infinite;
 }
 
 @keyframes shadow-animate {
-    0%, 50%, 100% {
-        transform: scale(1);
-    }
-
-    25%, 75% {
+    50% {
         transform: scale(1.15);
     }
 }
@@ -53,6 +49,7 @@ body {
     background-color: currentColor;
     top: 7em;
     border-radius: 100% 20% 0 0;
+
 }
 
 .head,
@@ -84,16 +81,16 @@ body {
     bottom: 0;
     left: -1.6em;
     border-radius: 1em 80% 0.4em 0.4em;
-    animation: feet-animation 2s ease-in-out infinite;
+    animation: feet-animation 3s linear infinite;
 }
 
 .feet::after {
-    animation-delay: 1s;
+    animation-delay: 1.5s;
 }
 
 @keyframes feet-animation {
     20% {
-        transform: translateX(3.4em) translateY(-1.6em) rotate(4deg);
+        transform: translateX(3.4em) translateY(-1.6em) rotate(-4deg);
     }
 
     30% {
@@ -101,10 +98,10 @@ body {
     }
 
     40% {
-        transform: translateX(5.6em) translateY(-0.6em) rotate(4deg);
+        transform: translateX(5.6em) translateY(-0.3em) rotate(4deg);
     }
 
-    44% {
+    45% {
         transform: translateX(5.6em) translateY(0) rotate(0deg);
     }
 }
