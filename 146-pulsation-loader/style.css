@@ -31,8 +31,7 @@ body {
     width: 0.5em;
     height: 50%;
     background-color: deeppink;
-    transform: scaleY(0.05) translateX(-0.5em);
-    animation: span-animate 1.5s infinite ease-in-out;
+    animation: span-animate 1.5s infinite ease-in-out backwards;
     animation-delay: calc(var(--n) * 0.05s);
 }
 
@@ -40,9 +39,11 @@ body {
     0%, 100% {
         transform: scaleY(0.05) translateX(-0.5em);
     }
+
     15% {
         transform: scaleY(1.2) translateX(1em);
     }
+
     90%, 100% {
         background-color: hotpink;
     }
