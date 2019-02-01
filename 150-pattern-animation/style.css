@@ -23,15 +23,14 @@ body {
 
 .square span {
     display: block;
-    border: 2.5em solid transparent;
+    border: 2.5em solid;
     color: #ddd;
     border-radius: 50%;
     transform: rotate(calc(45deg + 90deg * 0));
-    animation: rotation 2s ease-in-out infinite;
+    animation: rotation 2s cubic-bezier(0.2, 0.8, 0.8, 0.2) infinite;
 }
 
 @keyframes rotation {
-    0% { transform: rotate(calc(45deg + 90deg * 0)); }
     25% { transform: rotate(calc(45deg + 90deg * 1)); }
     50% { transform: rotate(calc(45deg + 90deg * 2)); }
     75% { transform: rotate(calc(45deg + 90deg * 3)); }
@@ -40,13 +39,11 @@ body {
 
 .square span:nth-child(1),
 .square span:nth-child(4) {
-    border-left-color: currentColor;
-    border-right-color: currentColor;
+    border-color: transparent currentColor currentColor transparent;
 }
 
 .square span:nth-child(2),
 .square span:nth-child(3) {
-    border-top-color: currentColor;
-    border-bottom-color: currentColor;
+    border-color: transparent currentColor currentColor transparent;
     animation-direction: reverse;
 }
