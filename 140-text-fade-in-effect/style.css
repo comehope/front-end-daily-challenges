@@ -5,6 +5,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	background: linear-gradient(pink, white, pink);
+	overflow: hidden;
 }
 
 .container span {
@@ -13,13 +14,16 @@ body {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 40px;
-	animation: side-slide 4s forwards infinite;
-	transform: translateX(-100vw) scale(0);
-	filter: opacity(0);
+	animation: side-slide 4s infinite backwards;
 	animation-delay: calc((var(--n) - 1) * 0.05s);
 }
 
 @keyframes side-slide {
+	0% {
+		transform: translateX(-100vw) scale(0);
+		filter: opacity(0);
+	}
+
 	15%, 20% {
 		transform: translateX(0.5em) scale(1);
 		color: purple;
