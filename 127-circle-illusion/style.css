@@ -29,29 +29,26 @@ body {
     width: 1em;
     height: 1em;
     background-color: hsl(calc(var(--n) * 80), 100%, 70%);
+    left: calc(10% - 0.5em);
     --duration: 2s;
     animation: 
         move var(--duration) cubic-bezier(0.6, -0.3, 0.7, 0) infinite,
-        morph var(--duration) ease-in-out infinite;
+        morph calc(var(--duration) / 2) ease-in-out infinite;
     animation-delay: calc(var(--duration) / 9 * var(--n) * -1);
 }
 
 @keyframes move {
-    0%, 100% {
-        left: calc(10% - 0.5em);
-    }
-
     50% {
         left: calc(90% - 0.5em);
     }
 }
 
 @keyframes morph {
-    0%, 50%, 100% {
+    0%, 100% {
         transform: scale(0.75, 1);
     }
 
-    25%, 75% {
+    50% {
         transform: scale(1.5, 0.5);
     }
 }
