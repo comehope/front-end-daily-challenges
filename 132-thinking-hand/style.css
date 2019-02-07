@@ -78,12 +78,12 @@ body {
 }
 
 @keyframes tap-upper {
-    0%, 50%, 100% {
-        transform: rotate(10deg) scale(var(--scale));
-    }
-
     40% {
         transform: rotate(50deg) scale(var(--scale));
+    }
+
+    50% {
+        transform: rotate(10deg) scale(var(--scale));
     }
 }
 
