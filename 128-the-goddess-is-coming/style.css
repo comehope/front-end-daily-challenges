@@ -25,11 +25,6 @@ body {
 }
 
 @keyframes slide {
-    from {
-        transform: translateX(0);
-        filter: brightness(1);
-    }
-
     to {
         transform: translatex(calc(8em - (1em * 1.25)));
         filter: brightness(1.45);
@@ -43,6 +38,7 @@ body {
 }
 
 .boys span {
+    transform-origin: -50% center;
     animation: var(--duration) ease-in-out infinite alternate;
 }
 
@@ -68,7 +64,6 @@ body {
     }
 
     35%, 100% {
-        transform-origin: -50% center;
         transform: rotate(-180deg);
     }
 }
@@ -79,7 +74,6 @@ body {
     }
 
     50%, 100% {
-        transform-origin: -50% center;
         transform: rotate(-180deg);
     }
 }
@@ -90,7 +84,6 @@ body {
     }
 
     65%, 100% {
-        transform-origin: -50% center;
         transform: rotate(-180deg);
     }
 }
@@ -101,7 +94,6 @@ body {
     }
 
     80%, 100% {
-        transform-origin: -50% center;
         transform: rotate(-180deg);
     }
 }
