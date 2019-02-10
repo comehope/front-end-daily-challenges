@@ -1,69 +1,59 @@
 body {
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(dimgray, black);
-}
-
-* {
-	box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(dimgray, black);
 }
 
 .court {
-	width: 20em;
-	height: 20em;
-	color: white;
-	border: 1em solid currentColor;
-	font-size: 16px;
-	position: relative;
+    width: 20em;
+    height: 20em;
+    border: 1em solid silver;
+    background-color: black;
+    border-radius: 1em;
+    position: relative;
 }
 
-.left-paddle,
-.right-paddle {
-	width: 1em;
-	height: calc(50% - 1em);
-	background-color: currentColor;
-	position: absolute;
-	animation: 1s linear infinite alternate;
+.paddle {
+    width: 1em;
+    height: 9em;
+    background-color: white;
+    border-radius: 0.5em;
+    position: absolute;
+    top: 1em;
 }
 
-.left-paddle {
-	top: 1em;
-	left: 1em;
-	animation-name: left-moving;
-}
-
-.right-paddle {
-	bottom: 1em;
-	right: 1em;
-	animation-name: right-moving;
-}
+.paddle.left {left: 1em;}
+.paddle.right {right: 1em;}
 
 .ball {
-	width: 100%;
-	height: 1em;
-	border-left: 1em solid currentColor;
-	position: absolute;
-	left: 2em;
-	top: calc(50% - 1.5em);
-	animation: bounce 1s linear infinite alternate;
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 2em;
+    top: 8.5em;
 }
 
-@keyframes left-moving {
-	to {
-		transform: translateY(100%);
-	}
+.paddle,
+.ball {
+    animation: 1s linear infinite alternate;
 }
 
-@keyframes right-moving {
-	to {
-		transform: translateY(-100%);
-	}
+.paddle {animation-name: moving;}
+.ball {animation-name: bounce;}
+.paddle.right {animation-delay: -1s;}
+
+@keyframes moving {
+    to {
+        transform: translateY(9em);
+    }
 }
 
 @keyframes bounce {
-	to {
-		left: calc(100% - 3em);
-	}
+    to {
+        transform: translateX(15em);
+    }
 }
