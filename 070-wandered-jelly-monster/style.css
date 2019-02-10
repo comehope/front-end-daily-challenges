@@ -1,13 +1,14 @@
 body {
     margin: 0;
     height: 100vh;
-    background-color: black;
+    background-image: linear-gradient(lightcyan 50%, black 50%);
 }
 
 .monster {
     width: 100vw;
-    height: 50vh;
-    background-color: lightcyan;
+    height: 16vmin;
+    top: calc(50% - 16vmin);
+    margin: 0;
     position: relative;
     overflow: hidden;
 }
@@ -17,28 +18,29 @@ body {
     width: 32vmin;
     height: 32vmin;
     background-color: teal;
-    border-radius: 43% 40% 43% 40%;
-    bottom: calc(-1 * 32vmin / 2 - 4vmin);
-    left: -2vmin;
+    border-radius: 43% 40%;
+    top: 2vmin;
+    left: calc((100vw - 32vmin) / 2);
     animation:
-        wander 5s linear infinite alternate,
+        body-wander 5s linear infinite alternate,
         wave 3s linear infinite,
         bounce 1s infinite alternate;
 }
 
 .eyes {
-    width: 24vmin;
+    width: 16vmin;
     height: 5vmin;
     position: absolute;
     bottom: 2vmin;
-    left: calc(32vmin - 24vmin - 2vmin);
-    animation: wander 5s linear infinite alternate;
+    left: calc((100vw - 16vmin) / 2);
+    display: flex;
+    justify-content: space-between;
+    animation: eyes-wander 5s linear infinite alternate;
 }
 
 .eyes::before,
 .eyes::after {
     content: '';
-    position: absolute;
     width: 5vmin;
     height: 5vmin;
     border: 1.25vmin solid white;
@@ -47,18 +49,19 @@ body {
     animation: blink 3s linear infinite;
 }
 
-.eyes::before {
-    left: 4vmin;
+@keyframes blink {
+    6%, 30%, 36% {transform: scaleY(1);}
+    3%, 33% {transform: scaleY(0);}
 }
 
-.eyes::after {
-    right: 4vmin;
+@keyframes body-wander {
+    from {left: -2vmin;}
+    to {left: calc(100vw - 32vmin + 2vmin);}
 }
 
-@keyframes bounce {
-    to {
-        bottom: calc(-1 * 32vmin / 2 - 2vmin);
-    }
+@keyframes eyes-wander {
+    from {left: 10vmin;}
+    to {left: calc(100vw - 16vmin - 10vmin);}
 }
 
 @keyframes wave {
@@ -67,18 +70,8 @@ body {
     }
 }
 
-@keyframes wander {
+@keyframes bounce {
     to {
-        left: calc(100vw - 32vmin + 2vmin);
-    }
-}
-
-@keyframes blink {
-    6%, 30%, 36% {
-        transform: scaleY(1);
-    }
-
-    3%, 33% {
-        transform: scaleY(0);
+        top: 4vmin;
     }
 }
