@@ -1,40 +1,36 @@
-html, body {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(brown, sandybrown);
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(brown, sandybrown);
 }
 
 .text {
-	font-size: 5em;
-	font-family: "arial black";
-	position: relative;
-	color: transparent;
+    font-size: 100px;
+    font-family: "arial black";
+    color: transparent;
+    position: relative;
 }
 
 .text::before,
 .text::after {
-	content: attr(data-text);
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: lightyellow;
-	transition: 0.2s;
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    color: lightyellow;
+    transition: 0.2s ease-in;
+    clip-path: polygon(var(--path));
 }
 
-.text::before {
-	clip-path: polygon(0 0, 60% 0, 30% 100%, 0 100%);
-}
-
-.text::after {
-	clip-path: polygon(60% 0, 100% 0, 100% 100%, 30% 100%);
-}
-
-.text:hover::before {
-	transform: rotate(-5deg) translate(-0.15em, -0.05em);
-}
-
+.text:hover::before,
 .text:hover::after {
-	transform: rotate(5deg) translate(0.15em, 0.05em);
+    transform:
+        rotate(calc(5deg * var(--direction)))
+        translateX(calc(0.15em * var(--direction)))
+        translateY(calc(0.05em * var(--direction)));
 }
+
+.text::before {--path: 0 0, 60% 0, 30% 100%, 0 100%; --direction: -1;}
+.text::after {--path: 60% 0, 100% 0, 100% 100%, 30% 100%;--direction: 1;}
