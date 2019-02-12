@@ -8,11 +8,11 @@ body {
 }
 
 .box {
+    font-size: 12px;
     width: 30em;
     height: 20em;
-    font-size: 10px;
     background-color: steelblue;
-    border: 0.5em solid #222;
+    border: 0.5em solid black;
     position: relative;
 }
 
@@ -24,26 +24,16 @@ body {
     border-radius: 50%;
     box-shadow: inset -0.3em -0.3em 0.5em rgba(0, 0, 0, 0.6);
     animation: 
-        moveX 2s linear infinite alternate,
-        moveY 2.5s linear infinite alternate;
+        moveX 2.3s linear infinite alternate,
+        moveY 3.7s linear infinite alternate;
 }
 
 @keyframes moveX {
-    from {
-        left: 0;
-    }
-
-    to {
-        left: calc(30em - 2em);
-    }
+    from {left: 0;}
+    to {left: calc(30em - 2em);}
 }
 
 @keyframes moveY {
-    from {
-        top: 0;
-    }
-
-    to {
-        top: calc(20em - 2em);
-    }
+    from {top: 0;}
+    to {top: calc(20em - 2em);}
 }
