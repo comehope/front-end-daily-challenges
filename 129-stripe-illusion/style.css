@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #999;
+    background-color: lightgray;
 }
 
 .container {
@@ -12,7 +12,6 @@ body {
     --light: #ddd;
     font-size: 40px;
     width: calc(10em + 0.5em);
-    height: 6em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -32,10 +31,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-}
-
-.track:last-child {
-    background-position: 0.5em;
+    margin: 1em 0;
 }
 
 .track::before {
@@ -43,25 +39,16 @@ body {
     position: absolute;
     width: 2em;
     height: 0.8em;
-    background-color: var(--light);
-    animation: move 5s linear infinite alternate;
+    background-color: var(--color);
     box-sizing: border-box;
-    border: solid var(--dark);
-    border-width: 0;
-    transition: 0.5s background-color 0.2s;
+    border: 0.1em solid var(--border-color);
+    animation: move 5s linear infinite alternate;
 }
 
-.container:hover .track::before {
-    background-color: white;
-    border-width: 0.1em;
-}
+.track:first-child::before {--color: var(--light); --border-color: transparent;}
+.track:last-child::before {--color: white; --border-color: var(--dark);}
 
 @keyframes move {
-    from {
-        left: 0;
-    }
-    
-    to {
-        left: calc(100% - 2em);
-    }
+    from {left: 0;}
+    to {left: calc(100% - 2em);}
 }
