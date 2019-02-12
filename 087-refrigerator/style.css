@@ -14,30 +14,30 @@ body{
     font-size: 10px;
     border-top: 1em solid #333;
     border-bottom: 1em solid #333;
-    background: 
-        linear-gradient(
-            to right,
-            transparent 40%,
-            gray 40%,
-            silver 41%,
-            dimgray 43%,
-            transparent 43%, transparent 48%,
-            gray 48%,
-            silver 49%,
-            dimgray 51%,
-            transparent 51%
-        ) no-repeat center / 100% 90%,
-        linear-gradient(
-            to right,
-            darkgray,
-            lightgray 10%,
-            silver 40%, silver 45%,
-            black 45%, black 46%,
-            silver 46%, silver 80%,
-            darkgray 90%,
-            dimgray
-        );
     border-radius: 4em / 0.5em;
+    --handles: linear-gradient(
+        to right,
+        transparent 40%,
+        gray 40%,
+        silver 41%,
+        dimgray 43%,
+        transparent 43%, transparent 48%,
+        gray 48%,
+        silver 49%,
+        dimgray 51%,
+        transparent 51%
+    ) no-repeat center / 100% 90%;
+    --surface: linear-gradient(
+        to right,
+        darkgray,
+        lightgray 10%,
+        silver 40%, silver 45%,
+        black 45%, black 46%,
+        silver 46%, silver 80%,
+        darkgray 90%,
+        dimgray
+    );
+    background: var(--handles), var(--surface);
     box-shadow: 0 0.5em 1em -0.5em rgba(0, 0, 0, 0.5);
     position: relative;
 }
@@ -48,37 +48,16 @@ body{
     position: absolute;
     width: 6em;
     height: 7.5em;
+    --light-1: radial-gradient(circle at 12% 10%, gold 0.2em, transparent 0.2em);
+    --light-2: radial-gradient(circle at 25% 10%, dodgerblue 0.2em, transparent 0.2em);
+    --light-3: radial-gradient(circle at 75% 10%, hotpink 0.2em, transparent 0.2em);
+    --light-4: radial-gradient(circle at 88% 10%, limegreen 0.2em, transparent 0.2em);
+    --lights: var(--light-1), var(--light-2), var(--light-3), var(--light-4);
     background: 
-        radial-gradient(
-            circle at 88% 10%,
-            limegreen 0.2em,
-            transparent 0.2em
-        ),
-        radial-gradient(
-            circle at 75% 10%,
-            hotpink 0.2em,
-            transparent 0.2em
-        ),
-        radial-gradient(
-            circle at 25% 10%,
-            dodgerblue 0.2em,
-            transparent 0.2em
-        ),
-        radial-gradient(
-            circle at 12% 10%,
-            gold 0.2em,
-            transparent 0.2em
-        ),
-        radial-gradient(
-            circle at 50% 22%,
-            black 1em,
-            transparent 1em
-        ),
-        linear-gradient(
-            to bottom,
-            transparent 25%,
-            #222 25%
-        ) no-repeat center top / 94% 98%,
+        var(--lights),
+        radial-gradient(circle at 50% 22%, black 1em, transparent 1em),
+        linear-gradient(to bottom, transparent 25%, #222 25%)
+            no-repeat center top / 94% 98%,
         black;
     top: calc((100% - 7.5em) / 2);
     left: 2.5em;
@@ -90,28 +69,13 @@ body{
     position: absolute;
     width: 2em;
     height: 4em;
+    --bubble-1: radial-gradient(circle at 35% 40%, lightblue 0.1em, transparent 0.4em);
+    --bubble-2: radial-gradient(circle at 65% 60%, lightblue 0.1em, transparent 0.3em);
+    --bubble-3: radial-gradient(circle at 45% 80%, lightblue 0.1em, transparent 0.2em);
+    --bubbles: var(--bubble-1), var(--bubble-2), var(--bubble-3);
     background: 
-        radial-gradient(
-            circle at 35% 40%,
-            lightblue 0.1em,
-            transparent 0.4em
-        ),
-        radial-gradient(
-            circle at 65% 60%,
-            lightblue 0.1em,
-            transparent 0.3em
-        ),
-        radial-gradient(
-            circle at 45% 80%,
-            lightblue 0.1em,
-            transparent 0.2em
-        ),
-        linear-gradient(
-            to bottom,
-            lightskyblue 25%,
-            transparent 25%
-        ),
-        dodgerblue;
+        var(--bubbles),
+        linear-gradient(to bottom, lightskyblue 25%, dodgerblue 25%);
     bottom: calc((100% - 7.5em) / 2);
     left: calc(2.5em + (6em - 2em) / 2);
     clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
