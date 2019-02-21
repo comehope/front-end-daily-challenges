@@ -10,60 +10,52 @@ body {
 .neon {
     position: relative;
     overflow: hidden;
-    filter: brightness(200%);
+    user-select: none;
 }
 
 .text {
-    background-color: black;
     color: white;
-    font-size: 80px;
+    font-size: 150px;
     font-weight: bold;
     font-family: sans-serif;
     text-transform: uppercase;
-    user-select: none;
+    margin: 0;
+    filter: brightness(2);
+    background-color: black;
 }
 
 .text::before {
     content: attr(data-text);
     position: absolute;
-    color: white;
-    filter: blur(0.02em);
+    filter: blur(3px);
     mix-blend-mode: difference;
 }
 
 .gradient {
     position: absolute;
-    background: linear-gradient(45deg, red, gold, lightgreen, gold, red);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: linear-gradient(45deg, red, gold, lightgreen, gold, red);
     mix-blend-mode: multiply;
 }
 
 .spotlight {
     position: absolute;
-    top: -100%;
+    top: -200%;
     left: -100%;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(
-            circle,
-            white,
-            transparent 25%
-        ) center / 25% 25%,
-        radial-gradient(
-            circle,
-            white,
-            black 25%
-        ) center / 12.5% 12.5%;
-    animation: light 5s linear infinite;
+    right: -100%;
+    bottom: -200%;
+    background: radial-gradient(circle, white, black 25%)
+        center / 5% 5%;
+    transform: rotate(45deg);
     mix-blend-mode: color-dodge;
+    animation: light 10s linear infinite;
 }
 
 @keyframes light {
     to {
-        transform: translate(50%, 50%);
+        transform: translate(25%, 25%);
     }
 }
