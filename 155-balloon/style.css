@@ -4,23 +4,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(deepskyblue, skyblue, lightblue 20%);
+    background-color: lightblue;
 }
 
 .balloon {
     width: 12em;
     height: 19em;
-    font-size: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: drift 2s infinite alternate;
-}
-
-@keyframes drift {
-    to {
-        transform: translateY(-5%);
-    }
 }
 
 .envelope {
@@ -44,16 +36,16 @@ body {
     position: absolute;
     width: 0;
     height: 0;
-    border-width: 10em 5.5em 0 5.5em;
-    border-style: solid;
-    border-color: currentColor transparent transparent transparent;
+    border-top: 10em solid;
+    border-left: 5.5em solid transparent;
+    border-right: 5.5em solid transparent;
     left: calc(50% - 5.5em);
     top: 8.45em;
 }
 
 .envelope span:nth-child(2) {
     transform: scaleX(0.4);
-    filter: brightness(0.85) contrast(1.4);
+    color: darkorange;
 }
 
 .basket {
@@ -78,9 +70,9 @@ body {
     width: 105%;
     height: 0.3em;
     background-color: saddlebrown;
+    border-radius: 0.3em;
     left: calc((100% - 105%) / 2);
     top: 1.3em;
-    border-radius: 0.3em;
 }
 
 .basket span {
