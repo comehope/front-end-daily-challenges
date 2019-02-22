@@ -7,20 +7,16 @@ body {
 }
 
 .chaplin {
+    font-size: 10px;
     width: 40em;
     height: 30em;
-    font-size: 10px;
     background-color: #eee;
-    box-shadow: 0 0 3em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    color: #555;
-    transition: 1s linear;
-}
-
-.chaplin:hover {
+    color: #333;
     box-shadow: 0 0 4em 1em rgba(0, 0, 0, 0.2);
 }
 
@@ -30,9 +26,9 @@ body {
     height: 4.6em;
     background-color: currentColor;
     border-radius: 2.3em 2.3em 0 0;
-    top: 1.4em;
     display: flex;
     justify-content: center;
+    top: 1.4em;
 }
 
 .hat::before {
@@ -49,31 +45,31 @@ body {
     position: absolute;
     width: 1.5em;
     height: 0;
+    border-bottom: 1em solid currentColor;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
     top: 11.6em;
-    border: solid transparent;
-    border-width: 0 0.4em 1em 0.4em;
-    border-bottom-color: currentColor;
 }
 
 .stick {
     position: absolute;
-    width: 0.8em;
-    height: 10.5em;
-    background-color: currentColor;
-    bottom: 0;
-    left: calc((100% - (5.6em - 0.8em)) / 2);
+    width: 5.6em;
+    height: 3em;
+    box-sizing: border-box;
+    border: 0.8em solid;
+    border-radius: 5.6em 5.6em 0 0;
+    border-bottom: none;
+    bottom: 10.5em;
 }
 
 .stick::before {
     content: '';
     position: absolute;
-    box-sizing: border-box;
-    width: 5.6em;
-    height: 3em;
-    border: 0.8em solid;
-    border-radius: 5.6em 5.6em 0 0;
-    border-bottom: none;
-    top: -3em;
+    width: 0.8em;
+    height: 10.5em;
+    background-color: currentColor;
+    left: -0.8em;
+    bottom: -10.5em;
 }
 
 .stick::after {
@@ -83,8 +79,8 @@ body {
     height: 0.8em;
     background-color: currentColor;
     border-radius: 50%;
-    left: calc(5.6em - 0.8em);
-    top: -0.4em;
+    right: -0.8em;
+    bottom: calc(0.8em / 2 * -1);
 }
 
 .quote {
@@ -98,21 +94,5 @@ body {
     flex-direction: column;
 }
 
-.quote span:nth-child(1) {
-    letter-spacing: 0.05em;
-}
-
-.quote span:nth-child(2) {
-    font-size: 1.6em;
-}
-
-.quote span:nth-child(1),
-.quote span:nth-child(3) {
-    filter: opacity(0);
-    transition: 1s ease-in;
-}
-
-.chaplin:hover .quote span:nth-child(1),
-.chaplin:hover .quote span:nth-child(3) {
-    filter: opacity(1);
-}
+.quote span:nth-child(1) {letter-spacing: 0.05em;}
+.quote span:nth-child(2) {font-size: 1.6em;}
