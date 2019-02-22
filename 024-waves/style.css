@@ -1,68 +1,57 @@
-html, body {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(antiquewhite, navajowhite);
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightcyan;
 }
 
 .sea {
-	width: 300px;
-	height: 300px;
-	background-color: whitesmoke;
-	background-image: linear-gradient(
-		darkblue,
-		rgba(255, 255, 255, 0) 80%,
-		rgba(255, 255, 255, 0.5));
-	border-radius: 5px;
-	box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
-	position: relative;
-	overflow: hidden;
-}
-
-.sea .title {
-	color: white;
-	font-size: 24px;
-	font-family: serif;
-	text-align: center;
-	line-height: 250px;
-	text-transform: uppercase;
-	letter-spacing: 0.4em;
-	position: absolute;
-	z-index: 1;
-	width: 100%;
+    font-size: 10px;
+    width: 30em;
+    height: 30em;
+    background-color: whitesmoke;
+    border-radius: 0.5em;
+    box-shadow: 0 0.2em 3em rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(
+        darkblue,
+        rgba(255, 255, 255, 0) 80%,
+        rgba(255, 255, 255, 0.5));
+    position: relative;
+    overflow: hidden;
 }
 
 .sea .wave {
-	position: absolute;
-	width: 500px;
-	height: 500px;
-	border-radius: 43%;
-	top: -250px;
-	left: calc((300px - 500px) / 2);
-	animation: drift linear infinite;
+    position: absolute;
+    width: 50em;
+    height: 50em;
+    background-color: var(--color);
+    border-radius: 43%;
+    bottom: 5em;
+    left: calc((30em - 50em) / 2);
+    filter: opacity(var(--opacity));
+    animation: drift linear infinite;
+    animation-duration: calc(var(--duration) * 1s);
 }
 
-.sea .wave:nth-of-type(1) {
-	background: deepskyblue;
-	filter: opacity(0.4);
-	animation-duration: 5s;
-}
-
-.sea .wave:nth-of-type(2) {
-	background: deepskyblue;
-	filter: opacity(0.4);
-	animation-duration: 7s;
-}
-
-.sea .wave:nth-of-type(3) {
-	background-color: orangered;
-	filter: opacity(0.1);
-	animation-duration: 9s;
-}
+.sea .wave:nth-child(1) {--duration: 5; --color: deepskyblue; --opacity: 0.4;}
+.sea .wave:nth-child(2) {--duration: 7; --color: deepskyblue; --opacity: 0.4;}
+.sea .wave:nth-child(3) {--duration: 9; --color: orangered; --opacity: 0.1;}
 
 @keyframes drift {
-	from {
-		transform: rotate(1turn);
-	}
+    to {
+        transform: rotate(-1turn);
+    }
+}
+
+.sea .title {
+    z-index: 1;
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    text-align: center;
+    position: relative;
+    top: 5em;
 }
