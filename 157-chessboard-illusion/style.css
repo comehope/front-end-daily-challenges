@@ -7,42 +7,39 @@ body {
 }
 
 .container {
-    width: 100vmin;
-    height: 100vmin;
+    width: 96vw;
     display: flex;
     flex-direction: column;
-    border-bottom: 0.5vmin solid gray;
 }
 
-.container span {
+.container div {
     width: inherit;
-    height: 10vmin;
-    background: 
-        linear-gradient(
-            gray, gray 0.5vmin,
-            transparent 0.5vmin
-        ),
-        repeating-linear-gradient(
-            to right,
-            black, black 10vmin,
-            transparent 10vmin, transparent 20vmin
-        )
+    height: 6vw;
+    border-bottom: 0.2vw solid var(--border-color);
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--dark-color), var(--dark-color) 6vw,
+        var(--light-color) 6vw, var(--light-color) 12vw
+    );
+    background-position: calc(var(--offset) * 1vw) 0;
+    --border-color: gray;
+    --dark-color: black;
+    --light-color: white;
+    animation: reveal 10s linear infinite;
 }
 
-.container span:nth-child(odd) {
-    animation: move 5s linear infinite;
+.container div:first-child {
+    border-top: 0.2vw solid var(--border-color);
 }
 
-.container span:nth-child(even) {
-    animation: move 5s linear infinite reverse;
-}
-
-@keyframes move {
-    0%, 55%, 100% {
-        background-position: 0 0;
-    }
-
-    5%, 50% {
-        background-position: 5vmin 0;
+@keyframes reveal {
+    51%, 100% {
+        --border-color: black;
+        --dark-color: gray;
+        --light-color: silver;
     }
 }
+
+.container div:nth-child(4n+1) {--offset: 1.5;}
+.container div:nth-child(even) {--offset: 3.0;}
+.container div:nth-child(4n+3) {--offset: 4.5;}
