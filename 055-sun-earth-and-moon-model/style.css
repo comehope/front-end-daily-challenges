@@ -5,7 +5,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: black;
-    overflow: hidden;
 }
 
 .container {
@@ -13,12 +12,13 @@ body {
     width: 40em;
     height: 40em;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sun {
     position: absolute;
-    top: 15em;
-    left: 15em;
     width: 10em;
     height: 10em;
     background-color: yellow;
@@ -29,51 +29,14 @@ body {
 .earth,
 .moon {
     position: absolute;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-    border-width: 0.1em 0.1em 0 0;
+    width: calc(var(--diameter) * 1em);
+    height: calc(var(--diameter) * 1em);
+    border-width: 0.1em;
+    border-style: solid solid none none;
+    border-color: silver transparent transparent transparent;
     border-radius: 50%;
-}
-
-/* rotation period 365.2422 days */
-.earth {
-    top: 5em;
-    left: 5em;
-    width: 30em;
-    height: 30em; 
-    animation: orbit 36.5s linear infinite;   
-}
-
-/* rotation period 27.322 days */
-.moon {
-    top: 0;
-    right: 0;
-    width: 8em;
-    height: 8em; 
-    animation: orbit 2.7s linear infinite;
-}
-
-.earth::before,
-.moon::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-}
-
-.earth::before {
-    top: 2.8em;
-    right: 2.8em;
-    width: 3em;
-    height: 3em;
-    background-color: aqua;    
-}
-
-.moon::before {
-    top: 0.8em;
-    right: 0.2em;
-    width: 1.2em;
-    height: 1.2em;
-    background-color: silver;
+    animation: orbit linear infinite;
+    animation-duration: calc(var(--duration) * 1s);
 }
 
 @keyframes orbit {
@@ -81,3 +44,21 @@ body {
         transform: rotate(1turn);
     }
 }
+
+.earth {--diameter: 30; --duration: 36.5;}
+.moon {--diameter: 8; --duration: 2.7; top: 0.3em; right: 0.3em;}
+
+.earth::before,
+.moon::before {
+    content: '';
+    position: absolute;
+    width: calc(var(--diameter) * 1em);
+    height: calc(var(--diameter) * 1em);
+    background-color: var(--color);
+    border-radius: 50%;
+    top: calc(var(--top) * 1em);
+    right: calc(var(--right) * 1em);
+}
+
+.earth::before {--diameter: 3; --color: dodgerblue; --top: 2.8; --right: 2.8;}
+.moon::before {--diameter: 1.2; --color: white; --top: 0.8; --right: 0.2;}
