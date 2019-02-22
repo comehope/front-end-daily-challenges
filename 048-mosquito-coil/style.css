@@ -1,96 +1,70 @@
 body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: radial-gradient(circle at center, midnightblue, black);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, midnightblue, black);
 }
 
 .coil {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	transform: translateX(1em);
+    width: 17em;
+    height: 17em;
+    color: darkgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .coil::before,
 .coil::after {
-	content: '';
-	position: absolute;
-	border-radius: 50%;
-	width: 1em;
-	height: 1em;
-	top: -0.5em;
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
 }
 
 .coil::before {
-	left: -1.5em;
-	background: darkgreen;
+    background-color: currentColor;
 }
 
 .coil::after {
-	left: -9.5em;
-	background: darkred;
-	transform: scale(0.9);
-	box-shadow: 0 0 1em white;
-	animation: blink 1.5s ease-in-out infinite alternate;
-	z-index: -1;
+    left: 0;
+    background-color: darkred;
+    transform: scale(0.9);
+    box-shadow: 0 0 1em white;
+    z-index: -1;
 }
 
-.coil span {
-	position: absolute;
-	width: calc((var(--n) * 2 - 1) * 1em); /* width = 2n - 1 */
-	height: calc((var(--n) - 0.5) * 1em); /* height = n - 0.5 */
-	border: 1em solid darkgreen;
+.coil div {
+    position: absolute;
+    width: calc((var(--n) * 2 + 1) * 1em);
+    height: calc((var(--n) + 0.5) * 1em);
+    box-sizing: border-box;
+    border: 1em solid;
 }
 
-.coil span:nth-child(odd) {
-	align-self: flex-end;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-	border-bottom: none;
+.coil div:nth-child(odd) {
+    align-self: flex-end;
+    border-bottom: none;
+    transform: translateY(calc(17em / 2 * -1)) translateX(1em);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
-.coil span:nth-child(even) {
-	border-radius: 0 0 50% 50% / 0 0 100% 100%;
-	border-top: none;
-	transform: translateX(-1em);
+.coil div:nth-child(even) {
+    align-self: flex-start;
+    border-top: none;
+    transform: translateY(calc(17em / 2));
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
 
-.coil span:nth-child(1) {
-	--n: 1;
-}
-
-.coil span:nth-child(2) {
-	--n: 2;
-}
-
-.coil span:nth-child(3) {
-	--n: 3;
-}
-
-.coil span:nth-child(4) {
-	--n: 4;
-}
-
-.coil span:nth-child(5) {
-	--n: 5;
-}
-
-.coil span:nth-child(6) {
-	--n: 6;
-}
-
-.coil span:nth-child(7) {
-	--n: 7;
-}
-
-.coil span:nth-child(8) {
-	--n: 8;
-}
-
-@keyframes blink {
-	to {
-		box-shadow: 0 0 0 white;
-	}
-}
+.coil div:nth-child(1) {--n: 1;}
+.coil div:nth-child(2) {--n: 2;}
+.coil div:nth-child(3) {--n: 3;}
+.coil div:nth-child(4) {--n: 4;}
+.coil div:nth-child(5) {--n: 5;}
+.coil div:nth-child(6) {--n: 6;}
+.coil div:nth-child(7) {--n: 7;}
+.coil div:nth-child(8) {--n: 8;}
