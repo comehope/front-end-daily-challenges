@@ -5,36 +5,31 @@ body {
     align-items: center;
     justify-content: center;
     background-color: black;
-    overflow: hidden;
 }
 
 .container {
-    width: 30em;
     font-size: 12px;
-    color: lime; 
+    width: 30em;
+    height: 30em;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: change-color 5s linear infinite;
+    position: relative;
 }
 
-@keyframes change-color {
-    to {
-        filter: hue-rotate(1turn);
-    }
-}
-
-.container span {
+.container div {
     position: absolute;
-    --diameter: calc(5em + (var(--n) - 1) * 3em);
+    --diameter: calc(15% + (var(--n) - 1) * 10%);
     width: var(--diameter);
     height: var(--diameter);
-    border-style: solid;
-    border-width: 1em 1em 0 0;
-    border-color: currentColor transparent;
+    color: lime; 
+    border-width: 1em;
+    border-style: solid solid none none;
+    border-color: currentColor transparent transparent transparent;
     border-radius: 50%;
-    animation: rotating linear infinite;
-    animation-duration: calc(5s / (9 - var(--n) + 1));
+    animation: linear infinite;
+    animation-name: rotating, change-color;
+    animation-duration: calc(5s / (9 - var(--n) + 1)), 5s;
 }
 
 @keyframes rotating {
@@ -43,38 +38,18 @@ body {
     }
 }
 
-.container span:nth-child(1) {
-    --n: 1;
+@keyframes change-color {
+    to {
+        filter: hue-rotate(1turn);
+    }
 }
 
-.container span:nth-child(2) {
-    --n: 2;
-}
-
-.container span:nth-child(3) {
-    --n: 3;
-}
-
-.container span:nth-child(4) {
-    --n: 4;
-}
-
-.container span:nth-child(5) {
-    --n: 5;
-}
-
-.container span:nth-child(6) {
-    --n: 6;
-}
-
-.container span:nth-child(7) {
-    --n: 7;
-}
-
-.container span:nth-child(8) {
-    --n: 8;
-}
-
-.container span:nth-child(9) {
-    --n: 9;
-}
+.container div:nth-child(1) {--n: 1;}
+.container div:nth-child(2) {--n: 2;}
+.container div:nth-child(3) {--n: 3;}
+.container div:nth-child(4) {--n: 4;}
+.container div:nth-child(5) {--n: 5;}
+.container div:nth-child(6) {--n: 6;}
+.container div:nth-child(7) {--n: 7;}
+.container div:nth-child(8) {--n: 8;}
+.container div:nth-child(9) {--n: 9;}
