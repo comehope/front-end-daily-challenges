@@ -4,12 +4,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, white, gray);
+    background: linear-gradient(black, gray, silver, gray, black);
 }
 
 .macbook {
-    width: 50em;
     font-size: 10px;
+    width: 50em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,70 +18,52 @@ body {
 .screen {
     width: 40em;
     height: calc(40em * 0.667);
-    background-color: black;
+    box-sizing: border-box;
+    border: black solid;
+    border-width: 1.8em 1.3em 1.7em 1.3em;
     border-radius: 3% 3% 0 0 / 5%;
-    border: 0.2em solid silver;
-    border-bottom: none;
-    position: relative;
-}
-
-.screen::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    box-shadow: 0 0 0 0.1em silver;
     background: radial-gradient(
         circle at right bottom,
-        rgba(255, 255, 255, 0.4) 75%,
-        rgba(255, 255, 255, 0.6) 75%
-    );
-    margin: 4.3% 3.2%;
+        rgba(255, 255, 255, 0.4) 33em,
+        rgba(255, 255, 255, 0.6) 33em
+    ), black;
 }
 
 .base {
     width: inherit;
-    height: 1.65em;
-    background: linear-gradient(
-        white,
+    height: 1.75em;
+    border-radius: 0 0 10% 10% / 0 0 50% 50%;
+    --top: linear-gradient(
+        to right,
+        hsla(0, 0%, 0%, 0.5) 0%,
+        hsla(100, 100%, 100%, 0.8) 1%,
+        hsla(0, 0%, 0%, 0.4) 4%,
+        transparent 15%,
+        hsla(100, 100%, 100%, 0.8) 50%,
+        transparent 85%,
+        hsla(0, 0%, 0%, 0.4) 96%,
+        hsla(100, 100%, 100%, 0.8) 99%,
+        hsla(0, 0%, 0%, 0.5) 100%
+    ) no-repeat top / 100% 55%;
+    --bottom: linear-gradient(
         white 55%,
         #999 60%,
         #222 90%,
-        rgba(0, 0, 0, 0.1) 100%
+        hsla(0, 0%, 0%, 0.1) 100%
     );
-    border-radius: 0 0 10% 10% / 0 0 50% 50%;
-    position: relative;
+    background: var(--top), var(--bottom);
 }
 
 .base::before {
     content: '';
     position: absolute;
-    width: inherit;
-    height: 55%;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.5) 0%,
-        rgba(255, 255, 255, 0.8) 1%,
-        rgba(0, 0, 0, 0.4) 4%,
-        transparent 15%,
-        rgba(255, 255, 255, 0.8) 50%,
-        transparent calc(100% - 15%),
-        rgba(0, 0, 0, 0.4), calc(100% - 4%),
-        rgba(255, 255, 255, 0.8) calc(100% - 1%),
-        rgba(0, 0, 0, 0.5) 100%
-    );
-}
-
-.base::after {
-    content: '';
-    position: absolute;
     width: 7em;
     height: 0.7em;
-    background-color: #ddd;
+    border-radius: 0 0 7% 7% / 0 0 95% 95%;
     left: calc(50% - 7em / 2);
     box-shadow: 
         inset -0.5em -0.1em 0.3em rgba(0, 0, 0, 0.2),
         inset 0.5em 0.1em 0.3em rgba(0, 0, 0, 0.2);
-    border-radius: 0 0 7% 7% / 0 0 95% 95%;
+    background-color: #ddd;
 }
