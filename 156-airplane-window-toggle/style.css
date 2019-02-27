@@ -105,13 +105,8 @@ body {
 }
 
 @keyframes move {
-    from {
-        left: -150%;
-    }
-
-    to {
-        left: 150%;
-    }
+    from {left: -150%;}
+    to {left: 150%;}
 }
 
 .clouds span::before,
@@ -124,34 +119,13 @@ body {
     border-radius: 50%;
 }
 
-.clouds span::before {
-    top: -2em;
-    left: 2em;
-}
+.clouds span::before {top: -2em; left: 2em;}
+.clouds span::after {top: -1em; right: 1em;}
 
-.clouds span::after {
-    top: -1em;
-    right: 1em;
-}
+.clouds span:nth-child(2) {top: 40%; animation-delay: -1s;}
+.clouds span:nth-child(3) {top: 60%; animation-delay: -0.5s;}
+.clouds span:nth-child(4) {top: 20%; animation-delay: -1.5s;}
+.clouds span:nth-child(5) {top: 70%; animation-delay: -3s;}
 
-.clouds span:nth-child(2) {
-    top: 40%;
-    animation-delay: -1s;
-}
-
-.clouds span:nth-child(3) {
-    top: 60%;
-    animation-delay: -0.5s;
-}
-
-.clouds span:nth-child(4) {
-    top: 20%;
-    transform: scale(2);
-    animation-delay: -1.5s;
-}
-
-.clouds span:nth-child(5) {
-    top: 70%;
-    transform: scale(1.5);
-    animation-delay: -3s;
-}
+.clouds span:nth-child(4) {transform: scale(2);}
+.clouds span:nth-child(5) {transform: scale(1.5);}
