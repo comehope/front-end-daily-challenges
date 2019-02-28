@@ -1,72 +1,55 @@
 body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
 }
 
 .rainbow {
-	width: 20em;
-	height: 10em;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
+    width: 20em;
+    height: 10em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: move 4s linear infinite alternate;
 }
 
-.rainbow span {
-	position: absolute;
-	box-sizing: border-box;
-	width: calc(100% - 2em * (var(--n) - 1));
-	height: calc(200% - 2em * (var(--n) - 1));
-	border: 1em solid;
-	border-top-color: transparent;
-	border-left-color: transparent;
-	border-radius: 50%;
-	transform: translateY(5em) rotate(225deg);
-	animation: rotating 3s infinite;
-	animation-delay: calc(0.05s * var(--n));
+@keyframes move {
+    50% {
+        transform: translateY(5em);
+    }
 }
 
-.rainbow span:nth-child(1) {
-	--n: 1;
-	color: orangered;
+.rainbow div {
+    box-sizing: border-box;
+    background-color: currentColor;
+    filter: opacity(0.6);
+    position: absolute;
+    width: calc(100% - 2em * (var(--n) - 1));
+    height: calc(200% - 2em * (var(--n) - 1));
+    border-radius: 10%;
+    animation: change 2s linear infinite;
+    animation-delay: calc(0.1s * var(--n));
 }
 
-.rainbow span:nth-child(2) {
-	--n: 2;
-	color: orange;
+@keyframes change {
+    50%, 100% {
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1em solid;
+        border-color: transparent currentColor currentColor transparent;
+        transform: rotate(225deg);
+        filter: opacity(1);
+    }
 }
 
-.rainbow span:nth-child(3) {
-  --n: 3;
-  color: yellow;
-}
-
-.rainbow span:nth-child(4) {
-  --n: 4;
-  color: mediumspringgreen;
-}
-
-.rainbow span:nth-child(5) {
-  --n: 5;
-  color: deepskyblue;
-}
-
-.rainbow span:nth-child(6) {
-  --n: 6;
-  color: mediumpurple;
-}
-
-@keyframes rotating {
-	0%, 20% {
-		transform: translateY(5em) rotate(225deg);
-	}
-
-	80%, 100% {
-		transform: translateY(5em) rotate(calc(225deg + 360deg));
-	}
-}
+.rainbow div:nth-child(1) {--n: 1; color: orangered;}
+.rainbow div:nth-child(2) {--n: 2; color: orange;}
+.rainbow div:nth-child(3) {--n: 3; color: yellow;}
+.rainbow div:nth-child(4) {--n: 4; color: mediumspringgreen;}
+.rainbow div:nth-child(5) {--n: 5; color: deepskyblue;}
+.rainbow div:nth-child(6) {--n: 6; color: mediumpurple;}
