@@ -20,9 +20,10 @@ body {
 .wheel {
     width: 9em;
     height: 9em;
-    border: 0.4em solid #777;
     border-radius: 50%;
-    box-shadow: 0 0 0 0.5em #111;
+    box-shadow: 
+        0 0 0 0.4em #777,
+        0 0 0 0.9em #111;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,10 +37,19 @@ body {
     }
 }
 
+.wheel span {
+    position: absolute;
+    width: 8em;
+    height: 1em;
+    border: 0.1em #ccc;
+    border-style: solid none;
+    transform: rotate(calc((var(--n) - 1) * 30deg));
+}
+
 .road {
     width: inherit;
     height: 0.2em;
-    background-image: linear-gradient(
+    background: linear-gradient(
             to right,
             silver 0, silver 4em,
             transparent 4em, transparent 5em,
@@ -47,8 +57,8 @@ body {
             transparent 10em, transparent 12em,
             silver 12em, silver 14em,
             transparent 14em, transparent 15em
-        );
-    background-position: 15em;
+        ) 15em;
+    transform: translateY(-1.3em);
     animation: road-run 6s linear infinite;
 }
 
@@ -56,15 +66,6 @@ body {
     to {
         background-position: -15em;
     }
-}
-
-.wheel span {
-    position: absolute;
-    width: 8em;
-    height: 1em;
-    border: 0.1em solid;
-    border-color: #ccc transparent;
-    transform: rotate(calc((var(--n) - 1) * 30deg));
 }
 
 .wheel span:nth-child(1) { --n: 1 }
