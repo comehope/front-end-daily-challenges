@@ -57,18 +57,18 @@ body {
 .fox .eyes::before,
 .fox .eyes::after {
     border: 0.3em solid;
-    border-color: black black transparent transparent;
     border-radius: 50%;
     top: 4.5em;
 }
 
 .fox .eyes::before {
     left: 1em;
+    border-color: black black transparent transparent;
 }
 
 .fox .eyes::after {
     right: 1em;
-    transform: rotate(-90deg);
+    border-color: black transparent transparent  black;
 }
 
 .fox .ears::before,
