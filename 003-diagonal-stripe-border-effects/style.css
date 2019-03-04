@@ -1,72 +1,68 @@
-html,
-body,
-.box .content {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: pink;
 }
 
-.box {
-	width: 300px;
-	height: 300px;
-	box-sizing: border-box;
-	padding: 15px;
+.container {
+	font-size: 10px;
+	width: 25em;
+	height: 25em;
+	padding: 1.5em;
 	position: relative;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	border-radius: 1em;
 	overflow: hidden;
 }
 
-.box::before {
+.container::before {
 	content: '';
 	position: absolute;
 	width: 150%;
 	height: 150%;
 	background: repeating-linear-gradient(
-			white 0%,
-			white 7.5px,
-			hotpink 7.5px,
-			hotpink 15px,
-			white 15px,
-			white 22.5px,
-			hotpink 22.5px,
-			hotpink 30px);
+			white 0%, white 0.75em,
+			hotpink 0.75em, hotpink 1.5em);
 	transform: translateX(-20%) translateY(-20%) rotate(-45deg);
-	animation: animate 20s linear infinite;
+	animation: animate 30s linear infinite;
+	z-index: -1;
 }
 
-.box .content {
-	position: relative;
+.container::after {
+	content: '';
+	position: absolute;
+	top: 1.5em;
+	width: calc(100% - 3em);
+	height: calc(100% - 3em);
 	background-color: white;
-	flex-direction: column;
-	box-sizing: border-box;
-	padding: 30px;
-	text-align: center;
+	box-shadow: 
+		0 0 2px deeppink,
+		0 0 5px rgba(0, 0, 0, 1),
+		inset 0 0 5px rgba(0, 0, 0, 1);
+	border-radius: 1em;
+	z-index: -1;
+}
+
+.container p {
+	position: absolute;
+	margin: 0;
+	top: 0;
+	color: hsla(328, 100%, 54%, 0.8);
+	font-size: 120px;
 	font-family: sans-serif;
-}
-
-.box,
-.box .content {
-	box-shadow: 0 0 2px deeppink,
-				0 0 5px rgba(0, 0, 0, 1),
-				inset 0 0 5px rgba(0, 0, 0, 1);
-	border-radius: 10px;
-}
-
-.box .content h2 {
-	color: deeppink;
-}
-
-.box .content p {
-	color: dimgray;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: -3px 3px silver;
+	line-height: 2.4em;
+	transform: rotate(-45deg);
+	user-select: none;
 }
 
 @keyframes animate {
-	from {
-		background-position: 0;
-	}
-
 	to {
-		background-position: 0 450px;
+		background-position: 0 50em;
 	}
 }
