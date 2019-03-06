@@ -1,5 +1,6 @@
-html, body {
-	height: 100%;
+body {
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -7,9 +8,9 @@ html, body {
 }
 
 .loader {
+	font-size: 10px;
 	width: 15em;
 	height: 15em;
-	font-size: 10px;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -25,22 +26,12 @@ html, body {
 	border: 1em solid dimgray;
 	border-radius: 0.2em;
 	animation: rotating linear infinite;
+	animation-duration: calc(var(--duration) * 1s);
 }
 
-.loader span:nth-child(1) {
-	--n: 1;
-	animation-duration: 1s;
-}
-
-.loader span:nth-child(2) {
-	--n: 2;
-	animation-duration: 2s;
-}
-
-.loader span:nth-child(3) {
-	--n: 3;
-	animation-duration: 4s;
-}
+.loader span:nth-child(1) {--n: 1; --duration: 1;}
+.loader span:nth-child(2) {--n: 2; --duration: 2;}
+.loader span:nth-child(3) {--n: 3; --duration: 4;}
 
 .loader span::before,
 .loader span::after {
@@ -51,15 +42,8 @@ html, body {
 	background-color: gold;
 }
 
-.loader span::before {
-	top: -1em;
-	left: -1em;
-}
-
-.loader span::after {
-	bottom: -1em;
-	right: -1em;
-}
+.loader span::before {top: -1em; left: -1em;}
+.loader span::after {bottom: -1em; right: -1em;}
 
 @keyframes rotating {
 	to {
