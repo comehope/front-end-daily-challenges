@@ -1,57 +1,52 @@
-html,
 body {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: navajowhite;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: navajowhite;
 }
 
 .box {
-	display: flex;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .box .inner {
-	width: 7em;
-	height: 3em;
-	line-height: 3em;
-	font-size: 70px;
-	font-family: sans-serif;
-	font-weight: bold;
-	white-space: nowrap;
-	overflow: hidden;
+    font-size: 10px;
+    width: 50%;
+    height: 21em;
+    font-family: sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.box .inner:first-child {
-	background-color: indianred;
-	color: darkred;
-	transform-origin: right;
-	transform: perspective(1.5em) rotateY(-15deg);
+.box .inner.left {
+    background-color: indianred;
+    transform-origin: right;
+    transform: perspective(10em) rotateY(-15deg);
 }
 
-.box .inner:last-child {
-	background-color: lightcoral;
-	color: antiquewhite;
-	transform-origin: left;
-	transform: perspective(1.5em) rotateY(15deg);
+.box .inner.right {
+    background-color: lightcoral;
+    transform-origin: left;
+    transform: perspective(10em) rotateY(15deg);
 }
 
 .box .inner span {
-	position: absolute;
-	animation: marquee 5s linear infinite;
+    font-size: 70px;
+    line-height: 3em;
+    position: absolute;
+    animation: marquee 5s linear infinite;
+    animation-fill-mode: backwards;
 }
 
-.box .inner:first-child span {
-	animation-delay: 2.5s;
-	left: -100%;
-}
+.box .inner.left span {color: darkred; animation-delay: 2.5s;}
+.box .inner.right span {color: antiquewhite;}
 
 @keyframes marquee {
-	from {
-		left: 100%;
-	}
-
-	to {
-		left: -100%;
-	}
+    from {left: 100%;}
+    to {left: -100%;}
 }
