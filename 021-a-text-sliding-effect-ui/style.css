@@ -1,71 +1,67 @@
-html, body {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: darkcyan;
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkcyan;
+    overflow: hidden;
+}
+
+div {
+    font-family: sans-serif;
 }
 
 h1 {
-	font-family: sans-serif;
-	color: gold;
-	text-align: center;
-	position: relative;
+    color: gold;
+    text-align: center;
+    position: relative;
 }
 
 h1::after {
-	content: '?';
-	position: absolute;
-	top: -0.35em;
-	left: 0;
-	font-size: 25em;
-	transform: rotate(15deg);
-	color: cyan;
-	filter: opacity(0.3);
-	text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    content: '?';
+    position: absolute;
+    top: -0.25em;
+    left: -0.1em;
+    font-size: 25em;
+    line-height: 1em;
+    transform: rotate(15deg);
+    color: hsl(180, 60%, 40%);
+    z-index: -1;
 }
 
 p {
-	width: 400px;
-	height: 2.5em;
-	color: gold;
-	font-size: 24px;
-	border: 2px solid gold;
-	line-height: 2.5em;
-	text-align: center;
-	border-radius: 10px;
-	font-family: sans-serif;
-	letter-spacing: 2px;
-	word-spacing: 2px;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-	position: relative;
-	overflow: hidden;
+    font-size: 24px;
+    width: 400px;
+    height: 2.5em;
+    color: gold;
+    border: 2px solid darkkhaki;
+    line-height: 2.5em;
+    text-align: center;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
 p span {
-	position: absolute;
-	width: 100%;
-	top: 0;
-	left: 0;
-	transition: 0.5s ease-out;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: 0.5s cubic-bezier(0.75, 0, 0.25, 1);
 }
 
-p .question {
-	left: 0;
+p span.answer {
+    color: whitesmoke;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    background: hsla(0, 0%, 0%, 0.1);
+    left: -100%;
 }
 
-p:hover .question {
-	left: 100%;
-}
-
-p .answer {
-	color: whitesmoke;
-	font-size: 1.1em;
-	text-transform: uppercase;
-	background: rgba(0, 0, 0, 0.1);
-	left: -100%;
-}
-
-p:hover .answer {
-	left: 0;
+p:hover span {
+    cursor: pointer;
+    transform: translateX(100%);
 }
