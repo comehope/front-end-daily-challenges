@@ -1,47 +1,49 @@
 body {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .frame {
-	width: 100vmin;
-	height: 100vmin;
-	background-color: whitesmoke;
-	position: relative;
-	perspective: 40vmin;
+    width: 100vmin;
+    height: 100vmin;
+    background-color: whitesmoke;
+    position: relative;
+    perspective: 40vmin;
 }
 
 .wall {
-	overflow: hidden;
-	transform-origin: 0 0;
-	position: absolute;
-	width: 100%;
-	font-size: 75vmin;
-	font-weight: bold;
+    overflow: hidden;
+    transform-origin: 0 0;
+    position: absolute;
+    width: 100%;
+    font-size: 75vmin;
+    font-weight: bold;
 }
 
 .wall.top {
-	transform: rotate(0deg) rotateX(-90deg);
-	top: 0;
-	left: 0;
+    transform: rotate(0deg) rotateX(-90deg);
+    top: 0;
+    left: 0;
 }
 
 .wall.right {
-	transform: rotate(90deg) rotateX(-90deg);
-	top: 0;
-	left: 100%;
+    transform: rotate(90deg) rotateX(-90deg);
+    top: 0;
+    left: 100%;
 }
 
 .wall.bottom {
-	transform: rotate(180deg) rotateX(-90deg);
-	top: 100%;
-	left: 100%;
+    transform: rotate(180deg) rotateX(-90deg);
+    top: 100%;
+    left: 100%;
 }
 
 .wall.left {
-	transform: rotate(270deg) rotateX(-90deg);
-	top: 100%;
-	left: 0;
+    transform: rotate(270deg) rotateX(-90deg);
+    top: 100%;
+    left: 0;
 }
