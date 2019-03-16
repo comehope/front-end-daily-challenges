@@ -1,78 +1,51 @@
 body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: radial-gradient(circle at center, navy, black);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, navy, black);
 }
 
 .heart {
-	width: 14em;
-	height: 11em;
-	font-size: 20px;
-	display: flex;
-	justify-content: space-between;
+    font-size: 20px;
+    width: 14em;
+    height: 11em;
+    display: flex;
+    justify-content: space-between;
 }
 
 .heart span {
-	width: 1em;
-	height: var(--h);
-	background-color: var(--c);
-	border-radius: 0.5em;
-	position: relative;
-	top: var(--t);
-	animation: beating 5s infinite;
+    width: 1em;
+    height: 100%;
+    top: 0;
+    background-color: mediumpurple;
+    border-radius: 0.5em;
+    position: relative;
+    animation: beating 5s infinite;
+    animation-fill-mode: backwards;
 }
 
-.heart span:nth-child(1),
-.heart span:nth-child(9) {
-	--c: orangered;
-	--h: 3em;
-	--t: 2.2em;
-}
-
-.heart span:nth-child(2),
-.heart span:nth-child(8) {
-	--c: gold;
-	--h: 6em;
-	--t: 0.6em;
-}
-
-.heart span:nth-child(3),
-.heart span:nth-child(7) {
-	--c: limegreen;
-	--h: 8em;
-	--t: 0;
-}
-
-.heart span:nth-child(4),
-.heart span:nth-child(6) {
-	--c: dodgerblue;
-	--h: 9em;
-	--t: 0.8em;
-}
-
-.heart span:nth-child(5) {
-	--c: mediumpurple;
-	--h: 9.4em;
-	--t: 1.6em;
-}
+.heart span:nth-child(8n+1) {--height: 3em; --top: 2.2em; --color: orangered;}
+.heart span:nth-child(6n+2) {--height: 6em; --top: 0.6em; --color: gold;}
+.heart span:nth-child(4n+3) {--height: 8em; --top: 0; --color: limegreen;}
+.heart span:nth-child(2n+4):not(:nth-child(8)) {--height: 9em; --top: 0.8em; --color: dodgerblue;}
+.heart span:nth-child(5) {--height: 9.4em; --top: 1.6em; --color: mediumpurple;}
 
 @keyframes beating {
-	0%, 30% {
-		top: var(--t);
-		height: var(--h);
-		background-color: var(--c);
-		filter: blur(0);
-		width: 1em;
-	}
+    0%, 30%, 100% {
+        top: var(--top);
+        height: var(--height);
+        background-color: var(--color);
+        filter: blur(0);
+        width: 1em;
+    }
 
-	60%, 70% {
-		top: 25%;
-		height: 50%;
-		background-color: lightblue;
-		filter: blur(5px);
-		width: 0.1em;
-	}
+    60%, 70% {
+        top: 25%;
+        height: 50%;
+        background-color: lightblue;
+        filter: blur(5px);
+        width: 0.1em;
+    }
 }
