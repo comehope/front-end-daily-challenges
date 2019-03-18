@@ -12,44 +12,40 @@ body {
 	font-size: 24px;
 	font-family: monospace;
 	border-radius: 0.5em;
+	position: relative;
 }
 
 .code p {
 	white-space: pre;
 	padding: 0 1em;
 	margin: 0.5em;
+	line-height: 1.2em;
 }
 
-.code p:not(:last-child) {
-	animation: step 2s infinite;
-	animation-delay: var(--d);
+.code::before,
+.code::after {
+	content: '';
+	position: absolute;
+	width: 94%;
+	height: 1.2em;
+	left: 3%;
+	top: calc(1em + 0.5em + (1.2em + 0.5em) * var(--n));
+	background-color: yellow;
+	mix-blend-mode: exclusion;
+	animation: 2s steps(4) infinite;
 }
 
-.code p:nth-child(2) {
-	--d: 0s;
+.code::before {--n: 1; animation-name: move;}
+.code::after {--n: 0; animation-name: show;}
+
+@keyframes move {
+	0%, 25% {--n: 1;}
+	26%, 50% {--n: 2;}
+	51%, 75% {--n: 3;}
+	76%, 100% {--n: 4;}
 }
 
-.code p:nth-child(3) {
-	--d: 0.5s;
-}
-
-.code p:nth-child(4) {
-	--d: 1s;
-}
-
-.code p:nth-child(1),
-.code p:nth-child(5) {
-	--d: 1.5s;
-}
-
-@keyframes step {
-	0%, 25% {
-		color: white;
-		background-color: dodgerblue;
-	}
-
-	26%, 100% {
-		color: black;
-		background-color: transparent;
-	}
+@keyframes show {
+	0%, 70% {visibility: hidden;}
+	71%, 100% {visibility: show;}
 }
