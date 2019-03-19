@@ -1,47 +1,33 @@
 body {
-	margin: 0;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
 }
 
-.eyes {
-	width: 40em;
-	height: 10em;
-	font-size: 10px;
-	position: relative;
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 10em;
+    display: flex;
+    justify-content: space-between;
 }
 
-.eyes > * {
-	box-sizing: border-box;
-	position: absolute;
-	width: 15em;
-	height: 10em;
-	border: solid white;
-	border-width: 0 5em;
-	animation: blink 2s linear infinite;
-}
-
-.eyes .left {
-	left: 0;
-	border-radius: 50% 0;
-	transform: rotate(25deg);
-}
-
-.eyes .right {
-	right: 0;
-	border-radius: 0 50%;
-	transform: rotate(-25deg);
+.eye {
+    box-sizing: border-box;
+    width: 15em;
+    border: solid white;
+    border-width: 0 5em;
+    border-radius: 50% 0;
+    animation: blink 2s linear infinite;
 }
 
 @keyframes blink {
-	40%, 60% {
-		border-width: 0 5em;
-	}
-
-	50% {
-		border-width: 0 7.5em;
-	}
+    40%, 60% {border-width: 0 5em;}
+    50% {border-width: 0 7.5em;}
 }
+
+.eye.left {transform: rotate(25deg);}
+.eye.right {transform: rotateY(180deg) rotate(25deg);}
