@@ -9,7 +9,6 @@ body {
 
 p {
 	font-size: 20vw;
-	margin: 0;
 	color: white;
 	font-family: sans-serif;
 	font-weight: bold;
@@ -25,14 +24,14 @@ p {
 		mediumpurple,
 		hotpink,
 		orangered);
-	background-size: 110vw;
-	animation: sliding 30s linear infinite;
+	background-size: 100vw;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	animation: sliding 1.5s linear infinite;
 }
 
 @keyframes sliding {
 	to {
-		background-position: -2000vw;
+		background-position: 100vw;
 	}
 }
