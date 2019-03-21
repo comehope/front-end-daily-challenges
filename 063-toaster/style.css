@@ -8,13 +8,13 @@ body {
 }
 
 .toaster {
+	font-size: 10px;
 	width: 30em;
 	height: 30em;
 	background-color: snow;
-	font-size: 10px;
+	border-radius: 50%;
 	position: relative;
 	z-index: 1;
-	border-radius: 50%;
 }
 
 .body {
@@ -67,17 +67,12 @@ body {
 	position: absolute;
 	width: 1.5em;
 	height: 2em;
-	background: tomato;
+	background-color: tomato;
 	top: 24em;
 }
 
-.legs::before {
-	left: 9em;
-}
-
-.legs::after {
-	right: 10em;
-}
+.legs::before {left: 9em;}
+.legs::after {right: 10em;}
 
 .handle {
 	width: 4.2em;
@@ -104,11 +99,6 @@ body {
 }
 
 @keyframes bake {
-	0%, 20% {
-		transform: translateY(0);
-	}
-
-	80%, 100% {
-		transform: translateY(6em);
-	}
+	0%, 20% {transform: translateY(0);}
+	80%, 100% {transform: translateY(6em);}
 }
