@@ -8,9 +8,9 @@ body {
 }
 
 .loader {
+    font-size: 20px;
     width: 10em;
     height: 10em;
-    font-size: 20px;
 }
 
 .loader::before,
@@ -26,32 +26,15 @@ body {
         0 4em, 2em 4em, 4em 4em, 6em 4em,
         0 6em, 2em 6em, 4em 6em, 6em 6em;
     border-radius: 50%;
-    animation: round 2s ease infinite;
+    animation: round 2s linear infinite;
+    mix-blend-mode: color-dodge;
 }
 
-.loader::before {
-    color: gold;
-}
-
-.loader::after {
-    color: dodgerblue;
-    animation-delay: -1s;
-}
+.loader::before {color: gold;}
+.loader::after {color: dodgerblue; animation-delay: -1s;}
 
 @keyframes round {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-
-    25% {
-        transform: translateX(3em) translateY(0);
-    }
-
-    50% {
-        transform: translateX(3em) translateY(3em);
-    }
-
-    75% {
-        transform: translateX(0) translateY(3em);
-    }
+    0% {transform: translateX(0) translateY(0);}
+    25% {transform: translateX(3em) translateY(3em);}
+    75% {transform: translateX(1em) translateY(1em);}
 }
