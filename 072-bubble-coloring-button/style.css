@@ -7,14 +7,13 @@ body {
     background-color: black;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
+ul {
     padding: 0;
 }
 
-nav ul li {
+ul li {
     --c: goldenrod;
+    list-style-type: none;
     color: var(--c);
     font-size: 16px;
     border: 0.3em solid var(--c);
@@ -34,39 +33,28 @@ nav ul li {
     margin: 1em;
 }
 
-nav ul li span {
+ul li span {
     position: absolute;
     width: 25%;
-    height: 100%;
+    height: inherit;
     background-color: var(--c);
-    transform: translateY(150%);
     border-radius: 50%;
+    transform: translateY(150%);
     left: calc((var(--n) - 1) * 25%);
     transition: 0.5s;
     transition-delay: calc((var(--n) - 1) * 0.1s);
     z-index: -1;
 }
 
-nav ul li:hover {
+ul li:hover {
     color: black;
 }
 
-nav ul li:hover span {
+ul li:hover span {
     transform: translateY(0) scale(2);
 }
 
-nav ul li span:nth-child(1) {
-    --n: 1;
-}
-
-nav ul li span:nth-child(2) {
-    --n: 2;
-}
-
-nav ul li span:nth-child(3) {
-    --n: 3;
-}
-
-nav ul li span:nth-child(4) {
-    --n: 4;
-}
+ul li span:nth-child(1) {--n: 1;}
+ul li span:nth-child(2) {--n: 2;}
+ul li span:nth-child(3) {--n: 3;}
+ul li span:nth-child(4) {--n: 4;}
