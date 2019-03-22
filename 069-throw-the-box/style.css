@@ -9,15 +9,20 @@ body {
 }
 
 .loader {
+    font-size: 30px;
     width: 6em;
     border-bottom: 0.25em solid white;
-    font-size: 30px;
     border-radius: 0.125em;
     position: relative;
     left: 0.5em;
     top: 0.5em;
-    animation: throw 3s infinite;
     transform-origin: 20%;
+    animation: throw 3s infinite;
+}
+
+@keyframes throw {
+    0%, 70%, 100% {transform: rotate(-45deg);}
+    80% {transform: rotate(-135deg);}
 }
 
 .loader::before {
@@ -29,59 +34,24 @@ body {
     bottom: 0;
     left: 0.5em;
     border-radius: 0.25em;
-    animation: push 3s infinite;
-}
-
-@keyframes throw {
-    0%, 70%, 100% {
-        transform: rotate(-45deg);
-    }
-
-    80% {
-        transform: rotate(-135deg);
-    }
+    animation: 3s infinite;
+    animation-name: push, disappear;
 }
 
 @keyframes push {
-    0% {
-        transform: translateX(0) rotate(0deg);
-    }
+    0% {transform: translateX(0) rotate(0deg);}
+    5% {transform: translateX(0) rotate(-5deg);}
+    20%, 25% {transform: translateX(1em) rotate(calc(90deg * 1 + 5deg));}
+    30% {transform: translateX(1em) rotate(calc(90deg * 1 - 5deg));}
+    40%, 45% {transform: translateX(2em) rotate(calc(90deg * 2 + 5deg));}
+    50% {transform: translateX(2em) rotate(calc(90deg * 2 - 5deg));}
+    60%, 65% {transform: translateX(3em) rotate(calc(90deg * 3 + 5deg));}
+    70% {transform: translateX(3em) translateY(0) rotate(calc(90deg * 3 - 5deg)) scale(1);}
+    80% {transform: translateX(0) translateY(-5em) rotate(-5deg) scale(0);}
+    90% {transform: translateX(0) translateY(0) rotate(0deg) scale(0);}
+}
 
-    5% {
-        transform: translateX(0) rotate(-5deg);
-    }
-    
-    20%, 25% {
-        transform: translateX(1em) rotate(calc(90deg * 1 + 5deg));
-    }
-
-    30% {
-        transform: translateX(1em) rotate(calc(90deg * 1 - 5deg));
-    }
-
-    40%, 45% {
-        transform: translateX(2em) rotate(calc(90deg * 2 + 5deg));
-    }
-
-    50% {
-        transform: translateX(2em) rotate(calc(90deg * 2 - 5deg));
-    }
-
-    60%, 65% {
-        transform: translateX(3em) rotate(calc(90deg * 3 + 5deg));
-    }
-
-    70% {
-        transform: translateX(3em) translateY(0) rotate(calc(90deg * 3 - 5deg)) scale(1);
-        filter: opacity(1);
-    }
-
-    80% {
-        transform: translateX(0) translateY(-5em) rotate(-5deg) scale(0);
-        filter: opacity(0.5);
-    }
-
-    90% {
-        transform: translateX(0) translateY(0) rotate(0deg) scale(0);
-    }
+@keyframes disappear {
+    0%, 70%, 100% {filter: opacity(1);}
+    80% {filter: opacity(0.5);}
 }
