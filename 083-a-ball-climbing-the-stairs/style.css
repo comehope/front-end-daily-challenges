@@ -8,9 +8,10 @@ body {
 }
 
 .loader {
+    --duration: 5s;
+    font-size: 40px;
     width: 7em;
     height: 5em;
-    font-size: 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -24,111 +25,58 @@ body {
     position: absolute;
     width: 1em;
     height: 1em;
+    background-color: white;
     border-radius: 50%;
     bottom: 1em;
-    animation: climbing 5s infinite;
-    visibility: hidden;
-    background-color: white;
+    animation: var(--duration) infinite;
+    animation-name: jumpY, moveX, hideMe;
+    animation-timing-function: cubic-bezier(0.4, 1.7, 0.5, 1.2), ease, ease;
 }
 
-.loader::before {
-    left: 0;
-    --direction: 1;
-}
+.loader::before {left: 0; --direction: 1;}
+.loader::after {left: 6em; --direction: -1;}
 
 .loader::after {
-    left: 6em;
-    animation-delay: 2.5s;
-    --direction: -1;
+    animation-delay: calc(var(--duration) / 2 * -1);
 }
 
-@keyframes climbing {
-    0% {
-        bottom: 1em;
-        visibility: visible;
-        left: calc(3em - 2 * 1.5em * var(--direction));
-    }
-
-    7% {
-        bottom: calc(2em + 0.3em);
-    }
-
-    10% {
-        bottom: 2em;
-        left: calc(3em - 1 * 1.5em * var(--direction));
-    }
-
-    17% {
-        bottom: calc(3em + 0.3em);
-    }
-
-    20% {
-        bottom: 3em;
-        left: calc(3em - 0 * 1.5em * var(--direction));
-    }
-
-    27% {
-        bottom: calc(4em + 0.3em);
-    }
-
-    30% {
-        bottom: 4em;
-        left: calc(3em + 1 * 1.5em * var(--direction));
-    }
-
-    37% {
-        bottom: calc(5em + 0.3em);
-    }
-
-    40% {
-        bottom: 5em;
-        left: calc(3em + 2 * 1.5em * var(--direction));
-    }
-
-    50% {
-        bottom: 1em;
-        left: calc(3em + 2 * 1.5em * var(--direction));
-    }
-
-    50%, 100% {
-        visibility: hidden;
-    }
+@keyframes jumpY {
+    0%, 100% {bottom: 1em;}
+    10% {bottom: 2em;}
+    20% {bottom: 3em;}
+    30% {bottom: 4em;}
+    40% {bottom: 5em; animation-timing-function: ease;}
+    50% {bottom: 1em;}
 }
 
+@keyframes moveX {
+    0%, 100% {transform: translateX(0);}
+    10% {transform: translateX(calc(1 * 1.5em * var(--direction)));}
+    20% {transform: translateX(calc(2 * 1.5em * var(--direction)));}
+    30% {transform: translateX(calc(3 * 1.5em * var(--direction)));}
+    40%, 50% {transform: translateX(calc(4 * 1.5em * var(--direction)));}
+}
+
+@keyframes hideMe {
+    50%, 100% {visibility: hidden;}
+}
+
+/* columns */
 .loader span {
     width: 1em;
     height: calc(var(--n) * 1em);
-    background-color: white;
-    animation: sort 5s infinite;
+    background-color: hsla(0, 0%, 75%);
     border-radius: 0.1em;
+    animation: sort ease var(--duration) infinite;
 }
 
 @keyframes sort {
-    0%, 40%, 100% {
-        height: calc(var(--n) * 1em);
-    }
-
-    50%, 90% {
-        height: calc(5em - (var(--n) - 1) * 1em);
-    }
+    0%, 40%, 100% {height: calc(var(--n) * 1em);}
+    50%, 90% {height: calc((6 - var(--n)) * 1em);}
 }
 
-.loader span:nth-child(1) {
-    --n: 1;
-}
-
-.loader span:nth-child(2) {
-    --n: 2;
-}
-
-.loader span:nth-child(3) {
-    --n: 3;
-}
-
-.loader span:nth-child(4) {
-    --n: 4;
-}
-
-.loader span:nth-child(5) {
-    --n: 5;
-}
+.loader span:nth-child(1) {--n: 1;}
+.loader span:nth-child(2) {--n: 2;}
+.loader span:nth-child(3) {--n: 3;}
+.loader span:nth-child(4) {--n: 4;}
+.loader span:nth-child(5) {--n: 5;}
