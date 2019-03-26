@@ -8,14 +8,9 @@ body {
 }
 
 .loader {
-    --diameter: 8em;
-    --width: calc(var(--diameter) * 2);
-    --stroke-width: calc(var(--diameter) / 40);
-    --dot-diameter: calc(var(--diameter) / 10);
-    width: var(--width);
-    height: var(--diameter);
+    width: 16em;
+    height: 8em;
     position: relative;
-    color: white;
     overflow: hidden;
 }
 
@@ -28,62 +23,42 @@ body {
 
 .loader::before {
     width: inherit;
-    height: var(--stroke-width);
-    background-color: currentColor;
+    height: 0.2em;
+    background-color: hsla(0, 0%, 85%);
 }
 
 .loader::after {
     box-sizing: border-box;
-    width: var(--diameter);
-    height: var(--diameter);
-    border: var(--stroke-width) solid;
+    width: 50%;
+    height: inherit;
+    border: 0.2em solid hsla(0, 0%, 85%);
     border-radius: 50%;
     left: 25%;
 }
 
 .loader span {
     position: absolute;
-    width: var(--dot-diameter);
-    height: var(--dot-diameter);
-    background-color: currentColor;
+    width: 5%;
+    height: 10%;
+    background-color: white;
     border-radius: 50%;
-    bottom: var(--stroke-width);
-    left: calc(var(--dot-diameter) * -1);
-    animation:
-        run 2s linear infinite,
-        rotating 2s linear infinite;
-    --vertical-center: calc((var(--diameter) / 2 - var(--stroke-width) - var(--dot-diameter)) * -1);
-    transform-origin: 50% var(--vertical-center);
+    bottom: 0.2em;
+    left: -5%;
+    animation: 2s linear infinite;
+    transform-origin: 50% -3em;
+    animation-name: run, rotating;
 }
 
-.loader span:nth-child(2) {
-    animation-delay: 0.075s;
-}
-
-.loader span:nth-child(3) {
-    animation-delay: 0.15s;
-}
+.loader span:nth-child(2) {animation-delay: 0.075s;}
+.loader span:nth-child(3) {animation-delay: 0.15s;}
 
 @keyframes run {
-    0% {
-        left: calc(var(--dot-diameter) * -1);
-    }
-
-    10%, 60% {
-        left: calc((var(--width) - var(--dot-diameter)) / 2);
-    }
-
-    70%, 100% {
-        left: var(--width);
-    }
+    0% {left: -5%;}
+    10%, 60% {left: calc((100% - 5%) / 2);}
+    70%, 100% {left: 100%;}
 }
 
 @keyframes rotating {
-    0%, 10% {
-        transform: rotate(0deg);
-    }
-
-    60%, 100% {
-        transform: rotate(-1turn);
-    }
+    0%, 10% {transform: rotate(0deg);}
+    60%, 100% {transform: rotate(-1turn);}
 }
