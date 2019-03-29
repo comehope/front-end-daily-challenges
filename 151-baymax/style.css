@@ -8,19 +8,29 @@ body {
 }
 
 .baymax {
+    font-size: 10px;
     width: 30em;
     height: 41em;
-    font-size: 10px;
+    color: white;
     display: flex;
     justify-content: center;
     position: relative;
 }
 
-.head {
+.baymax * {
     position: absolute;
+}
+
+.baymax *::before,
+.baymax *::after {
+    content: '';
+    position: absolute;
+}
+
+.head {
     width: 9em;
     height: 6em;
-    background-color: white;
+    background-color: currentColor;
     border-radius: 50%;
     box-shadow: 
         inset 0 -1.5em 3em rgba(0, 0, 0, 0.2),
@@ -38,8 +48,6 @@ body {
 
 .head .eyes::before,
 .head .eyes::after {
-    content: '';
-    position: absolute;
     width: 0.8em;
     height: 0.9em;
     background-color: #222;
@@ -47,12 +55,10 @@ body {
     top: -0.3em;
 }
 
-.head .eyes::after {
-    right: 0;
-}
+.head .eyes::before {left: 0;}
+.head .eyes::after {right: 0;}
 
 .body {
-    position: absolute;
     width: inherit;
 }
 
@@ -60,7 +66,7 @@ body {
     position: absolute;
     width: 19em;
     height: 26em;
-    background-color: white;
+    background-color: currentColor;
     top: 4em;
     left: calc((100% - 19em) / 2);
     border-radius: 50%;
@@ -71,7 +77,7 @@ body {
     position: absolute;
     width: 2em;
     height: 2em;
-    background-color: white;
+    background-color: currentColor;
     border-radius: 50%;
     top: 4em;
     right: 4em;
@@ -85,7 +91,7 @@ body {
     position: absolute;
     width: 24em;
     height: 31em;
-    background-color: white;
+    background-color: currentColor;
     top: 5.5em;
     left: calc((100% - 24em) / 2);
     border-radius: 50%;
@@ -102,9 +108,7 @@ body {
 
 .body .arm::before,
 .body .arm::after {
-    content: '';
-    position: absolute;
-    background-color: white;
+    background-color: currentColor;
     border-radius: 50%;
     transform-origin: top;
     z-index: -3;
@@ -121,18 +125,16 @@ body {
     width: 8em;
     height: 15em;
     top: 9.5em;
-    transform: rotate(-5deg);
     left: -0.8em;
+    transform: rotate(-5deg);
     box-shadow: inset 0.4em -1em 1em rgba(0, 0, 0, 0.2);
 }
 
 .body .arm .fingers::before,
 .body .arm .fingers::after {
-    content: '';
-    position: absolute;
     width: 1.8em;
     height: 4em;
-    background-color: white;
+    background-color: currentColor;
     border-radius: 50%;
     transform-origin: top;
 }
@@ -152,36 +154,39 @@ body {
     z-index: -3;
 }
 
-.body .arm.left {
+.body .arm.right {
     transform: scaleX(-1);
     right: 0;
     z-index: -3;
 }
 
-.leg {
+.legs {
     position: absolute;
-    width: 5em;
+    width: 15em;
     height: 16em;
     bottom: 0;
-    background-color: white;
-    border-bottom-right-radius: 1.5em;
-    left: 10em;
-    box-shadow: inset -0.7em -0.6em 0.7em rgba(0, 0, 0, 0.1);
+    transform: translateX(2.5em);
     z-index: -3;
 }
 
-.leg::before {
-    content: '';
-    position: absolute;
+.legs .leg {
+    width: 5em;
+    height: inherit;
+    background-color: currentColor;
+    border-radius: 0 0 1.5em 0;
+    box-shadow: inset -0.7em -0.6em 0.7em rgba(0, 0, 0, 0.1);
+}
+
+.legs .leg::before {
     width: 2.5em;
     height: inherit;
-    background-color: white;
+    background-color: currentColor;
     left: -2.5em;
-    border-bottom-left-radius: 100%;
+    border-radius: 0 0 0 100%;
     box-shadow: inset 0.7em 1.5em 0.7em rgba(0, 0, 0, 0.4);
 }
 
-.leg.left {
+.legs .leg.right {
     transform-origin: right;
     transform: scaleX(-1);
 }
