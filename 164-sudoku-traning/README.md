@@ -13,3 +13,5 @@ video3: https://scrimba.com/p/pEgDAM/cG7bWc8
 video4: https://scrimba.com/p/pEgDAM/cez34fp
 
 Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/a/1190000017311527
+
+Inspired by: Original

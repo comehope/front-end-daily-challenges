@@ -9,3 +9,5 @@ video1: https://scrimba.com/p/pEgDAM/cazRgcL
 video2: https://scrimba.com/p/pEgDAM/ceDK7cB
 
 Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/a/1190000016750591
+
+Inspired by: Kevin Jannis https://codepen.io/kevinjannis/pen/Eianz

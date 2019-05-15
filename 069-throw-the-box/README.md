@@ -5,3 +5,5 @@ See demo on Codepen: https://codepen.io/comehope/pen/qKwXbx
 Watch interactive video on Scrimba: https://scrimba.com/p/pEgDAM/cD96VUM
 
 Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/a/1190000015470411
+
+Inspired by: Pawel https://codepen.io/pawelqcm/pen/dMqrqd

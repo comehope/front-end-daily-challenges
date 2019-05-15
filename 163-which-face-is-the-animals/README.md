@@ -11,3 +11,5 @@ video2: https://scrimba.com/p/pEgDAM/cNJWncR
 video3: https://scrimba.com/p/pEgDAM/cvgP8td
 
 Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/a/1190000017212162
+
+Inspired by: web-tiki https://codepen.io/web-tiki/pen/JXwLGQ

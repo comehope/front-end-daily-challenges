@@ -9,3 +9,5 @@ video1: https://scrimba.com/p/pEgDAM/c86mdUZ
 video2: https://scrimba.com/p/pEgDAM/cmVNbTW
 
 Read annotated source on Segmentfault(zh-cn): https://segmentfault.com/a/1190000016158465
+
+Inspired by: Hugo Groutel https://codepen.io/HugoGroutel/pen/dJniD
