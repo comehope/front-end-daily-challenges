@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.safari {
+    font-size: 10px;
+    width: 15em;
+    height: 15em;
+    background-color: snow;
+    border-radius: 25%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marks {
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(
+        hsl(191, 98%, 55%),
+        hsl(220, 88%, 53%)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marks span {
+    position: absolute;
+    width: 0.1em;
+    height: var(--h);
+    background-color: snow;
+    transform: rotate(var(--rotate-deg)) translateY(var(--y));
+}
+
+.marks span:nth-child(odd) {--h: 0.9em; --y: 6em;}
+.marks span:nth-child(even) {--h: 0.5em; --y: 6.2em;}
+
+.pointer {
+    position: absolute;
+    width: 1.4em;
+    height: 12em;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(30deg);
+    animation: rotate 1s ease-in-out infinite alternate;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(50deg);
+    }
+}
+
+.pointer::before,
+.pointer::after {
+    content: '';
+    border-bottom: 6em solid var(--c);
+    border-left: 0.7em solid transparent;
+    border-right: 0.7em solid transparent;
+}
+
+.pointer::after {
+    transform: rotate(180deg);
+}
+
+.pointer::before {--c: crimson;}
+.pointer::after {--c: snow;}
