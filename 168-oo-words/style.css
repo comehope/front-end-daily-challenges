@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: steelblue;
+}
+
+.word {
+    font-size: 100px;
+    color: linen;
+    font-family: monospace;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.word span:first-child,
+.word span:last-child {
+    color: pink;
+}
+
+.word span:not(:first-child):not(:last-child) {
+    background-image: radial-gradient(
+        circle at center,
+        linen 0.05em,
+        transparent 0.05em
+    );
+}
