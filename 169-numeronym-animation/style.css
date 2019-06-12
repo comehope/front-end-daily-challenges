@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(bisque, lightcyan);
+}
+
+.container {
+    width: 100%;
+}
+
+.word {
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    font-family: monospace;
+    --t: 0.5s;
+}
+
+.word p {
+    margin: 0.3em 0;
+}
+
+.word:hover {
+    cursor: pointer;
+}
+
+.middle {
+    color: tomato;
+    overflow: hidden;
+    transition: var(--t);
+    transition-delay: var(--t);
+    position: relative;
+    width: var(--w);
+}
+
+.middle.hide {
+    width: 0;
+    transition: var(--t);
+}
+
+.middle span {
+    position: absolute;
+    transform: translateX(0);
+    transition: var(--t);
+    transition-delay: var(--t);
+}
+
+.middle.hide span {
+    transform: translateX(-50%);
+    transition: var(--t);
+}
