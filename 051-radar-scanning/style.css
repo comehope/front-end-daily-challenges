@@ -8,28 +8,30 @@ body {
 }
 
 .radar {
+	font-size: 32px;
 	width: calc(8em + 1.5em);
 	height: calc(8em + 1.5em);
-	background: 
-		linear-gradient(
+	--vertical-line: linear-gradient(
 			90deg,
 			transparent 49.75%,
 			darkgreen 49.75%,
 			darkgreen 50.25%,
-			transparent 50.25%
-			),
-		linear-gradient(
+			transparent 50.25%);
+	--horizontal-line: linear-gradient(
 			transparent 49.75%,
 			darkgreen 49.75%,
 			darkgreen 50.25%,
-			transparent 50.25%),
-		repeating-radial-gradient(
+			transparent 50.25%);
+	--concentric-circles: repeating-radial-gradient(
 			transparent 0,
 			transparent 0.95em,
 			darkgreen 0.95em,
-			darkgreen 1em),
+			darkgreen 1em);
+	background: 
+		var(--vertical-line),
+		var(--horizontal-line),
+		var(--concentric-circles),
 		linear-gradient(black, black);
-	font-size: 32px;
 	position: relative;
 	border-radius: 50%;
 }
@@ -41,14 +43,13 @@ body {
 	height: calc(8em /2);
 	background: linear-gradient(
 		45deg,
-		rgba(0, 0, 0, 0) 50%,
-		rgba(0, 192, 0, 1) 100%
-		);
+		hsla(0, 0%, 0%, 0) 50%,
+		hsla(120, 100%, 38%, 1) 100%);
 	border-radius: 100% 0 0 0;
 	top: calc(1.5em / 2);
 	left: calc(1.5em / 2);
+	transform-origin: right bottom;
 	animation: scanning 5s linear infinite;
-	transform-origin: 100% 100%;
 }
 
 @keyframes scanning {
