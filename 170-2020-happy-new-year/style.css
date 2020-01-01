@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkred;
+}
+
+figure {
+    font-size: 60px;
+    display: grid;
+    grid-template-columns: repeat(8, 1em);
+    grid-template-rows: repeat(3, 1em);
+    color: whitesmoke;
+}
+
+.two {
+    background-color: currentColor;
+    filter: drop-shadow(4em 0);
+}
+
+.two.part1 {grid-area: 1/1;border-radius: 100% 0 0 0;}
+.two.part2 {grid-area: 2/2;border-radius: 0 0 100% 0;}
+.two.part3 {grid-area: 3/1;border-radius: 100% 0 0 0;}
+.two.part4 {grid-area: 3/2;border-radius: 0 0 0 100%;}
+
+.zero.copy-1 {grid-area: 2/3/4/5;}
+.zero.copy-2 {grid-area: 2/7/4/9;}
+
+.zero {
+    width: 0;
+    height: 0;
+    border: 1em solid;
+    border-color: currentColor transparent;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    animation: round 4s linear infinite;
+}
+
+@keyframes round {
+    to {
+        transform: rotate(calc(-45deg + -1turn));
+    }
+}
+
+.text.happy {grid-area: 1/2;}
+.text.new {grid-area: 2/4;}
+.text.year {grid-area: 1/6;}
+
+.text {
+    font-size: 0.66em;
+    text-transform: uppercase;
+    font-family: cursive;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding-left: 0.25em;
+    mix-blend-mode: difference;
+}
