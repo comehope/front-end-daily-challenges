@@ -17,7 +17,7 @@ figure {
 
 .two {
     background-color: currentColor;
-    filter: drop-shadow(4em 0);
+    filter: drop-shadow(4em 0 0 whitesmoke);
 }
 
 .two.part1 {grid-area: 1/1;border-radius: 100% 0 0 0;}
