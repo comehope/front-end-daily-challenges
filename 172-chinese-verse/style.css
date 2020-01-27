@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: dodgerblue;
+    background-color: currentColor;
+}
+
+.words {
+    display: flex;
+    font-size: 15vmin;
+    width: 5em;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.words p {
+    line-height: 1em;
+    margin: 0;
+    animation: 6s ease-in-out infinite;
+    animation-delay: calc(var(--n) * 1s);
+    animation-name: appear, move;
+}
+
+.words p:nth-child(1) {--n: 1;}
+.words p:nth-child(2) {--n: 2;}
+.words p:nth-child(3) {--n: 3;}
+.words p:nth-child(4) {--n: 4;}
+.words p:nth-child(5) {--n: 5;}
+
+@keyframes appear {
+    50% {
+        text-shadow: 0.05em 0.05em 0.3em hsla(0, 0%, 0%, 0.4);
+    }
+}
+
+@keyframes move {
+    from {transform: translateX(-30%);}
+    to {transform: translateX(30%);}
+}
