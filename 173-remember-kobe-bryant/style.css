@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(circle, #542482, black);
+}
+
+.ball {
+    width: 50vmin;
+    height: 50vmin;
+    font-size: 50vmin;
+    line-height: 1em;
+    position: relative;
+    transform: translateY(10%);
+}
+
+.ball::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 30%;
+    left: -10%;
+    top: -20%;
+    border: 2vmin solid orange;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: 0 0 0.1em hsla(60, 100%, 50%, 0.5);
+}
+
+.ball::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    left: 0;
+    bottom: 0;
+    background-color: hsla(0, 0%, 0%, 0.6);
+    border-radius: 50%;
+    z-index: -1;
+}
