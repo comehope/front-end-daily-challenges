@@ -4,7 +4,7 @@ body {
     display: flex;
     align-items: center; 
     justify-content: center;
-    background-image: radial-gradient(circle, #542482, #000);
+    background-image: radial-gradient(circle, #542482, black);
 }
 .ball {
     width: 50vmin;
@@ -18,12 +18,12 @@ body {
     position: absolute;
     width: 127%;
     height: 30%;
-    left: 4%;
+    left: 5%;
     top: -20%;
     border: 2vmin solid orange;
     box-sizing: border-box;
     border-radius: 50%;
-    box-shadow: 0 0 0.1em rgba(255, 255, 0, .5);
+    box-shadow: 0 0 0.1em hsla(60, 100%, 50%, 0.5);
 }
 .ball::after {
     content: '';
