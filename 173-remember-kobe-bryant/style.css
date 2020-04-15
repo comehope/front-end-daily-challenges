@@ -12,6 +12,7 @@ body {
     font-size: 50vmin;
     line-height: 1em;
     position: relative;
+    transform: translateY(10%);
 }
 .ball::before {
     content: '';
