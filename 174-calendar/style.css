@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #eee, #ccc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 32em;
+    height: 38em;
+    font-size: 14px;
+    --main-color: sandybrown;
+    background-image: linear-gradient(to bottom, var(--main-color) 50%, white 50%);
+    border-radius: 1em;
+    box-shadow: 
+        0 2px 1px rgba(0, 0, 0, 0.2),
+        0 3px 1px white;
+    position: relative;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    width: 0.6em;
+    height: 2.3em;
+    background-color: white;
+    top: calc(50% - 2.3em / 2);
+    border-radius: 0.3em;
+    box-shadow: 
+        0 3px 1px rgba(0, 0, 0, 0.3),
+        0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container::before {left: 2em;}
+.container::after {right: 2em;}
+
+.today {
+    height: 50%;
+    padding: 3em;
+    box-sizing: border-box;
+    color: white;
+}
+
+.today .day {
+    font-size: 8em;
+    line-height: 1em;
+    font-weight: bold;
+}
+
+.today .month {
+    font-size: 4em;
+    line-height: 1em;
+    text-transform: lowercase;
+}
+
+.calendar {
+    padding-top: 3.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar .days,
+.calendar .dates {
+    width: 28em;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    line-height: 2em;
+    text-align: center;
+}
+
+.calendar .days {
+    color: var(--main-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.calendar .dates {
+    color: dimgray;
+}
+
+.calendar .dates .previous-month,
+.calendar .dates .next-month {
+    color: lightgray;
+}
+
+.calendar .dates .current-day {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.calendar .dates span:hover {
+    background-color: lightgray;
+    color: white;
+}
+
+.calendar .dates span {
+    transition: 0.3s;
+}
