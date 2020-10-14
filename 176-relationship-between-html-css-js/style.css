@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.person {
+    width: 320px;
+    height: 537px;
+    background-image: url(css.png);
+    position: relative;
+    cursor: move;
+}
+
+.person .inside {
+    width: 100%;
+    height: 100px;
+    background-image: url(html.png);
+    background-position: center;
+    box-sizing: border-box;
+    border: 5px solid gray;
+    border-radius: 0.3em;
+    position: absolute;
+    top: 25%;
+    background-attachment: fixed;
+    pointer-events: none;
+}
+
+.selector {
+    position: absolute;
+    width: 9em;
+    top: calc(50% - 8em / 2);
+    left: 3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.selector input {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.selector label {
+    font-size: 1.5em;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.selector input:checked + label {
+    color: dodgerblue;
+}
