@@ -1,0 +1,128 @@
+:root {
+    /*
+    the block angle represent the vertex position of the triangle,
+    it has four values:
+    0 - the vertex at top-left
+    90 - the vertex at top-right
+    180 - the vertex at bottom-right
+    270 - the vertex at bottom-left
+    */
+    --block-angle-1: 0;
+    --block-angle-2: 0;
+    --block-angle-3: 0;
+    --block-angle-4: 0;
+}
+
+body {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75em;
+    font-family: sans-serif;
+    background: linear-gradient(to right bottom, lightcyan, lightblue);
+}
+
+h1 {
+    font-weight: normal;
+    margin: 2em;
+    letter-spacing: 0.1em;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    width: 65em;
+}
+
+.sample {
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sample > .tile {
+    margin-bottom: 4em;
+}
+
+.sample > .tile .block {
+    cursor: pointer;
+}
+
+.sample .pattern-list {
+    font-size: 0.2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5em;
+}
+
+.sample .pattern-list .tile {
+    cursor: pointer;
+}
+
+/* the color of default pattern is a lighter color */
+.sample .pattern-list .tile:first-child .block {
+    color: lightgrey;
+}
+
+.production {
+    width: 40em;
+}
+
+.production .floor {
+    --count-of-per-side: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--count-of-per-side), 1fr);
+    font-size: calc(2em / var(--count-of-per-side));
+}
+
+.production .grid-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.production .grid-list button {
+    font-size: 1.5em;
+    width: 6em;
+    letter-spacing: 0.4em;
+    cursor: pointer;
+}
+
+.tile {
+    width: 20em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tile .block {
+    width: 10em;
+    height: 10em;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    color: dimgray;
+    position: relative;
+    transition: 0.2s;
+}
+
+.tile .block::before {
+    content: '';
+    position: absolute;
+    border-width: calc(5em - 1px);
+    border-style: solid;
+    border-color: currentColor transparent transparent currentColor;
+}
+
+.tile .block:nth-child(1) {transform: rotate(calc(var(--block-angle-1) * 1deg));}
+.tile .block:nth-child(2) {transform: rotate(calc(var(--block-angle-2) * 1deg));}
+.tile .block:nth-child(3) {transform: rotate(calc(var(--block-angle-3) * 1deg));}
+.tile .block:nth-child(4) {transform: rotate(calc(var(--block-angle-4) * 1deg));}
+
+.sample > .tile,
+.production .floor {
+    box-shadow: 
+        0 0 0 9px lightcyan,
+        0 0 0 10px grey;
+}
