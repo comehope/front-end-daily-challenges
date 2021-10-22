@@ -1,4 +1,4 @@
-# TITLE
+# Penrose triangle
 
 See demo on Codepen: https://codepen.io/comehope/pen/RyvgMZ
 

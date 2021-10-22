@@ -1,4 +1,4 @@
-# Online/offline detector
+# Online status detector
 
 See demo on Codepen: https://codepen.io/comehope/pen/oPjWvw
 
