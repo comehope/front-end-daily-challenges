@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+}
+
+.calendar {
+    width: 152px;
+    height: 218px;
+    background-image: 
+        linear-gradient(
+            firebrick 0,
+            firebrick 45px,
+            lightgoldenrodyellow 45px,
+            lightgoldenrodyellow 208px,
+            darkkhaki 208px,
+            darkkhaki 218px
+        );
+    position: relative;
+}
+
+.calendar::before {
+    content: '';
+    position: absolute;
+    height: 45px;
+    width: 100%;
+    background-color: firebrick;
+    background-image: 
+        radial-gradient(circle at 40px 20px, orange 5px, transparent 5px),
+        radial-gradient(circle at 110px 20px, orange 5px, transparent 5px);
+    z-index: 3;
+}
+
+.page {
+    margin-top: 45px;
+    width: 100%;
+    height: 163px;
+    box-sizing: border-box;
+    padding: 16px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    background-color: lightgoldenrodyellow;
+}
+
+.page p {
+    color: darkslategray;
+    margin: 0;
+    line-height: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.page p.month,
+.page p.day-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.page p.day {
+    font-weight: bold;
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.page::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+    background-image: 
+        linear-gradient(-45deg, lightgoldenrodyellow 50%, transparent 50%),
+        linear-gradient(45deg, lightgoldenrodyellow 50%, transparent 50%);
+    background-repeat: repeat-x;
+    background-size: 10px 10px;
+    filter: drop-shadow(0 -5px 1px rgba(0, 0, 0, 0.1));
+    z-index: 2;
+}
+
+.page.tear {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    transform-origin: top left;
+    animation: 1s linear forwards;
+    animation-name: tear-down, tear-fade, tear-shake;
+}
+
+@keyframes tear-down {
+    from, 20% {top: 0;}
+    to {top: 200px;}
+}
+
+@keyframes tear-fade {
+    from, 70% {filter: opacity(1);}
+    to {filter: opacity(0);}
+}
+
+@keyframes tear-shake {
+    from, to {transform: rotate(0deg);}
+    20% {transform: rotate(10deg);}
+}
